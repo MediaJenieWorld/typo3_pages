@@ -51,7 +51,7 @@
     .text-container {
       text-align: center;
       margin: 2em 0px;
-      color: var(--purple);
+      color: var(--theme-color);
     }
 
     .test-card {
@@ -106,7 +106,7 @@
 
       .control-dots {
         .dot {
-          background: var(--purple);
+          background: var(--theme-color);
         }
       }
 

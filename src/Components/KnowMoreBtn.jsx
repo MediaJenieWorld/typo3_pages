@@ -6,7 +6,11 @@ const KnowMoreBtn = ({ btnClass = "", link, label = "KNOW MORE" }) => {
         <button className={btnClass + " button"}
             aria-label={label}
         >
-            {label}
+            <Link style={{
+                textDecoration: "none"
+            }} to={link || "#"}>
+                {label}
+            </Link>
         </button>
     );
 };

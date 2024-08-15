@@ -62,8 +62,12 @@ body {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  --purple: #9747ff;
-  --purple-menu: #8c4ce0;
+  --theme-color: #9747ff;
+  --theme-color-menu: #8c4ce0;
+  --header-link-color: #ffffff;
+  --header-link-hover-color: #dadada;
+  --know-btn-text-color: #fff;
+  --know-btn-text-hover-color: #fff;
 
   font-size: 10px;
   font-weight: normal;
@@ -103,7 +107,7 @@ body {
   }
   > div > div:not(.header1)::before {
     content: "";
-    background-color: var(--purple);
+    background-color: var(--theme-color);
     height: 100%;
     width: 100%;
     position: fixed;
@@ -113,6 +117,60 @@ body {
     opacity: 1;
     transform: translateX(0);
     animation: moveRight 1s forwards;
+  }
+}
+
+.button {
+  font-size: 1.5em;
+  padding: 10px 30px;
+  background: #ffdd2c;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease-in-out;
+
+  a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  &.purple {
+    background-color: var(--theme-color);
+    color: var(--know-btn-text-color);
+    a {
+      color: var(--know-btn-text-color);
+    }
+  }
+  &:hover {
+    background-color: #000000;
+    color: var(--know-btn-text-hover-color);
+    a {
+      color: var(--know-btn-text-hover-color);
+    }
+  }
+}
+body.yellow {
+  --theme-color: #ffce00;
+  --theme-color-menu: #ffce00;
+  --know-btn-text-color: #000;
+  --know-btn-text-hover-color: #fff;
+  --header-link-color: #000;
+  --header-link-hover-color: #000000a2;
+  .button {
+    &.purple {
+      background-color: var(--theme-color);
+      color: var(--know-btn-text-color);
+      a {
+        color: var(--know-btn-text-color);
+      }
+    }
+    &:hover {
+      background-color: #000000;
+      color: var(--know-btn-text-hover-color);
+      a {
+        color: var(--know-btn-text-hover-color);
+      }
+    }
   }
 }
 
@@ -194,34 +252,4 @@ pre {
 
 .text-700 {
   font-weight: 700;
-}
-
-.button {
-  font-size: 1.5em;
-  padding: 10px 30px;
-  background: #ffdd2c;
-  border-radius: 5px;
-  border: none;
-  font-weight: 700;
-  transition: background-color 0.3s ease-in-out;
-
-  a {
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  &.purple {
-    background-color: var(--purple);
-    color: #fff;
-    a {
-      color: #fff;
-    }
-  }
-  &:hover {
-    background-color: #000000;
-    color: white;
-    a {
-      color: white;
-    }
-  }
 }

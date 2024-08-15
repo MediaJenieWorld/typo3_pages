@@ -17,7 +17,7 @@
     .section-2 {
 
         h4 {
-            color: var(--purple);
+            color: var(--theme-color);
         }
 
         .flex {
@@ -45,7 +45,7 @@
             }
 
             .col-1 {
-                border-right: 2px solid var(--purple);
+                border-right: 2px solid var(--theme-color);
             }
         }
     }
@@ -71,7 +71,7 @@
             cursor: pointer;
 
             h3 {
-                color: var(--purple);
+                color: var(--theme-color);
             }
         }
 
@@ -203,7 +203,7 @@
             margin-bottom: 2rem;
 
             button {
-                background-color: var(--purple);
+                background-color: var(--theme-color);
                 color: #fff;
                 cursor: pointer;
                 padding: 10px 30px;

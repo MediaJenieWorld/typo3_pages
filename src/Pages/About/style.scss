@@ -55,7 +55,7 @@
 
       .control-dots {
         .dot {
-          background: var(--purple);
+          background: var(--theme-color);
         }
       }
     }
@@ -133,12 +133,97 @@
     padding: calc(var(--main-p-x) * 6) calc(var(--main-p-x) * 4);
 
     .text-center-wrapper {
-      width: 90%;
-      border-left: 6px solid var(--purple);
+      width: 50%;
+      border-left: 6px solid var(--theme-color);
       padding: 0 var(--main-p-x);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+      row-gap: 1.5rem;
 
-      p {
-        padding-top: 1em;
+      .flex-col {
+        p {
+          padding-top: 1em;
+          border-top: 1px solid #d1d1d1;
+        }
+
+      }
+    }
+  }
+
+  .testimonials {
+    padding: 0 var(--main-p-x);
+
+    .text-container {
+      text-align: center;
+      margin: 2em 0px;
+    }
+
+    .test-card {
+      padding: 2em;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      .author {
+        margin-top: 2em;
+      }
+    }
+
+    .carousel {
+      .carousel-status {
+        color: #000000;
+        text-shadow: none;
+      }
+
+      .next-arrow,
+      .pre-arrow {
+        opacity: 0;
+        z-index: 10;
+        padding: 5px;
+        border-radius: 4px;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        width: 60px;
+        background-color: transparent;
+        border: none;
+        transform: translateY(-50%);
+        transition: background-color .3s ease-in-out, opacity .2s ease-in-out;
+
+        img {
+          height: 30px;
+          margin: auto 0;
+          object-fit: contain;
+        }
+
+        &:hover {
+          color: white;
+          background-color: rgba(0, 0, 0, 0.155);
+        }
+      }
+
+      .pre-arrow {
+        left: 0px;
+        top: 50%;
+      }
+
+      .control-dots {
+        .dot {
+          background: var(--theme-color);
+        }
+      }
+    }
+
+    &:hover {
+      .carousel {
+
+        .next-arrow,
+        .pre-arrow {
+          opacity: 1;
+        }
+
       }
     }
   }

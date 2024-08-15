@@ -1,9 +1,9 @@
 .header1 {
     --h-p-x: 1rem;
-    --purple: #9747FF;
-    --purple-menu: #8C4CE0;
+    --theme-color: #ffce00;
+    --theme-color-menu: #ffce00;
     width: 100%;
-    background-color: var(--purple);
+    background-color: var(--theme-color);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,7 @@
 
             h3 {
                 font-size: var(--text-32);
+                color: var(--header-link-color);
             }
 
             img {
@@ -75,7 +76,7 @@
 
             &:hover {
                 // filter: brightness(.9);
-                --bg-color: #6500ea;
+                --bg-color: #ffce00;
             }
 
             &.active {
@@ -113,7 +114,7 @@
         width: 100%;
         height: 0%;
         transition: height .3s ease-in-out, padding .5s ease-in-out;
-        background-color: var(--purple-menu);
+        background-color: var(--theme-color-menu);
         padding: 0 var(--h-p-x);
         overflow: hidden;
         display: flex;
@@ -136,13 +137,13 @@
 
             .h3 {
                 font-size: var(--text-60);
-                color: #ffffff;
+                color: var(--header-link-color);
                 text-decoration: none;
                 transition: color .1s ease-in-out, text-decoration .1s ease-in-out;
                 cursor: pointer;
 
                 &:hover {
-                    color: #dadada;
+                    color: var(--header-link-hover-color);
                     text-decoration: underline;
                 }
             }
@@ -156,10 +157,10 @@
                 a {
                     // font-size: 1vmax;
                     font-size: var(--text-32);
-                    color: #ffffff;
+                    color: var(--header-link-color);
                     text-decoration: none;
                     padding: 0 1rem;
-                    border-right: 1px solid #ffffff;
+                    border-right: 1px solid var(--header-link-color);
                     transition: color .1s ease-in-out, text-decoration .1s ease-in-out;
 
                     &:last-child {
@@ -168,7 +169,7 @@
                     }
 
                     &:hover {
-                        color: #dadada;
+                        color: var(--header-link-hover-color);
                         text-decoration: underline;
                     }
                 }

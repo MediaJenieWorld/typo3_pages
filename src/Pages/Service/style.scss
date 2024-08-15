@@ -2,6 +2,27 @@
   // padding: var(--main-p-y) 0;
   padding: 0;
 
+  .two-text-sections {
+    padding: calc(var(--main-p-y)* 4) calc(var(--main-p-x) * 4);
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      pre {
+        color: #191B1D;
+
+        &.desciption {
+          color: #191B1D99;
+        }
+      }
+    }
+  }
+
   .section-1 {
     padding: calc(var(--main-p-x) * 6) calc(var(--main-p-x) * 4);
 
@@ -9,7 +30,7 @@
       line-height: var(--text-20);
     }
 
-    p {
+    pre:nth-of-type(2) {
       padding-top: 2em;
     }
   }
@@ -133,7 +154,7 @@
 
       .control-dots {
         .dot {
-          background: var(--purple);
+          background: var(--theme-color);
         }
       }
     }
@@ -154,12 +175,21 @@
   .Service {
     --main-p-x: 1rem;
     --main-p-y: .5rem;
-    font-size: 8px;
+    font-size: 10px;
 
     .section-1,
     .section-3,
-    .section-4 {
-      padding: calc(var(--main-p-y)* 6) var(--main-p-x);
+    .section-4,
+    .two-text-sections {
+      padding: calc(var(--main-p-y)* 6) calc(var(--main-p-x) * 3);
+    }
+
+    .two-text-sections {
+      grid-template-columns: 1fr;
+
+      .description {
+        line-height: 3rem;
+      }
     }
 
     .section-4 .card {
@@ -207,5 +237,18 @@
 @media screen and (max-width:480px) {
   .Service {
     font-size: 7px;
+
+    .section-1,
+    .section-3,
+    .section-4,
+    .two-text-sections {
+      padding: calc(var(--main-p-y)* 6) var(--main-p-x);
+    }
+
+    .two-text-sections {
+      .description {
+        line-height: 2rem;
+      }
+    }
   }
 }

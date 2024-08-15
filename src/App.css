@@ -1,5 +1,5 @@
 .loading {
-  background-color: var(--purple);
+  background-color: var(--theme-color);
   height: 100%;
   width: 100%;
   position: fixed;

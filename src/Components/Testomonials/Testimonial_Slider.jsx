@@ -70,7 +70,7 @@ const TestimonialsSlider = ({ data = fakeTestimonials }) => {
             <p className="text-28">{testimonial.summary}</p>
             <div className="author">
               <p className="text-28 text-600">{testimonial.author}</p>
-              <p className="text-10">{testimonial.position}</p>
+              <p className="text-16 text-600">{testimonial.position}</p>
             </div>
           </div>
         ))
