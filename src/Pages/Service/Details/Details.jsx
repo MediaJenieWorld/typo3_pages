@@ -24,24 +24,20 @@ const fakeCardData = [
   },
 ];
 
-
 const DetailsPage = () => {
   return (
     <div className="Details">
-      <CoverPageImage src={"/assets/Service/cover.png"} />
+      <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">
-        <pre className="text-84 text-600">
-          {`What we do?`}
-        </pre>
-        <pre className="text-28">
-          {`Strategic Consulting & Research`}
-        </pre>
+        <pre className="text-84 text-600">{`What we do?`}</pre>
+        <pre className="text-28">{`Strategic Consulting & Research`}</pre>
       </div>
       <div className="cards-section">
         {fakeCardData.map((card, i) => {
           return (
             <div className="card" key={i}>
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 src={card.imgSrc}
                 alt={card.imgSrc}
                 height={450}
@@ -71,7 +67,8 @@ const DetailsPage = () => {
       </div>
       <div id="section-4" className="Big-container">
         <div className="left parent">
-          <img loading="lazy"
+          <img
+            loading="lazy"
             className="backImage"
             src="/assets/Service/float-card.webp"
             alt="bg-image"
@@ -128,7 +125,6 @@ function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE" }) {
       <a href={link || "#link"}>{lable}</a>
     </button>
   );
-};
-
+}
 
 export default DetailsPage;
