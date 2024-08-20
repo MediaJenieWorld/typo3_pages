@@ -1,0 +1,4 @@
+create env file 
+
+CLOUD_URL="mongodb+srv://deepshikhareact:user123@cluster0.ynyzkrk.mongodb.net/typo3_Contact?retryWrites=true&w=majority&appName=Cluster0"
+LOCAL_URL="mongodb://localhost:27017/typo3_Contact"
