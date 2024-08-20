@@ -1,6 +1,7 @@
 import TestimonialsSlider from "@/Components/Testomonials/Testimonial_Slider";
 import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
+import ScrollToTop from "@/Components/ScrollTop";
 
 const fakeDes =
   "Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text.";
@@ -102,13 +103,13 @@ paragraph can go here in 200 words. This can be multi-line text. `;
 const ServicePage = () => {
   return (
     <div className="Service">
+      <ScrollToTop />
       <CoverPageImage src={"/assets/Service/service-hero.webp"} />
       <div className="section-1">
         <pre className="text-84 text-600">{story}</pre>
         <pre className="text-28 text-600">
           {`We bring your brand & customers closer through great
 Customer Experiences built on insights, strategy, design,
-digital, content & managed services
 digital, content & managed services.
 
 We help you:

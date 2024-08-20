@@ -20,6 +20,7 @@ const Footer = () => {
         <Link to="/services/details">Digital</Link>
       </div>
       <div className="section section-2 text-28">
+        <Link to="/resource">Resource</Link>
         <Link to="/about/behindUs">Company</Link>
         <Link to="/about/behindUs">People</Link>
         <Link to="/work">Our Work</Link>
@@ -46,6 +47,14 @@ const Footer = () => {
             height={24}
             width={24}
             src="/icons/twitter.svg"
+            alt="social-icon"
+          />
+        </Link>
+        <Link to="#">
+          <img loading="lazy"
+            height={24}
+            width={24}
+            src="/icons/linkedIn.svg"
             alt="social-icon"
           />
         </Link>

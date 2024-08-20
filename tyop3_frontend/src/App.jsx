@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css"
+import WordPressPage from "./Components/WorkPress/WordPressPage";
 const Header1 = lazy(() => import("./Components/Header1/Header"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/resource" element={<WordPressPage />} />
           <Route path="/services/details" element={<DetailsPage />} />
           <Route path="*" element={<Home />} />
         </Routes>

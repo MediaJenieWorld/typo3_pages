@@ -2,9 +2,11 @@ import CoverPageImage from "@/Components/CoverPage"
 import ContactForm from "./Form"
 import Map from "./Map"
 import "./styles.scss"
+import ScrollToTop from "@/Components/ScrollTop"
 const ContactPage = () => {
     return (
         <div className="ContactPage">
+            <ScrollToTop />
             <CoverPageImage src={"/assets/Contact/cover.webp"} />
             <div className="section-1">
                 <h4 className="text-32 text-600">Reach us </h4>
@@ -22,7 +24,7 @@ const ContactPage = () => {
 Residency Road,
 Bengaluru – 560 025
 India`}
- 
+
                         </pre>
                     </div>
 

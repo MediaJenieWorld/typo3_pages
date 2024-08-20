@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import CoverPageImage from "@/Components/CoverPage";
 import "./style.scss";
+import ScrollToTop from "@/Components/ScrollTop";
 
 const WorkPage = () => {
   const images = [
@@ -35,6 +36,7 @@ const WorkPage = () => {
 
   return (
     <div className="Work">
+      <ScrollToTop />
       <CoverPageImage src={"/assets/Work/cover.webp"} />
       <div className="section-1">
         <h4 className="text-32 text-600">Our Work</h4>

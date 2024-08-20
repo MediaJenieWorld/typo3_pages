@@ -1,5 +1,6 @@
 import CoverPageImage from "@/Components/CoverPage";
 import "./style.scss";
+import ScrollToTop from "@/Components/ScrollTop";
 
 const fakeCardData = [
   {
@@ -60,6 +61,7 @@ const faq = [{
 const DetailsPage = () => {
   return (
     <div className="Details">
+      <ScrollToTop />
       <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">
         <pre className="text-84 text-600">{`What we do?`}</pre>
@@ -90,13 +92,13 @@ const DetailsPage = () => {
         <div className="text-center-wrapper">
           <h2 className="text-72 text-600">User Focused. Insight Driven.</h2>
           <p className="text-28">
-          
-We are a Customer Experience Agency. We bring your brand & customers
-closer through great customer experiences. With a leadership team of
-veterans having 20+ years of experience in their respective domains, we
-provide solutions with a razor-sharp focus on your users. With us on
-board, what you get is a rare-combination of customer experience +
-creative + digital + content + services.
+
+            We are a Customer Experience Agency. We bring your brand & customers
+            closer through great customer experiences. With a leadership team of
+            veterans having 20+ years of experience in their respective domains, we
+            provide solutions with a razor-sharp focus on your users. With us on
+            board, what you get is a rare-combination of customer experience +
+            creative + digital + content + services.
           </p>
         </div>
       </div>
@@ -118,12 +120,12 @@ creative + digital + content + services.
               <div className="text-wrapper">
                 <h2 className="text-60 text-700">Applied Psychology</h2>
                 <p className="text-32 text-400">
-                Veterans, seasoned, grey-haired, golden-haired,
-                freshers, rebels... MediaJenie has an eclectic
-                mix of passionate professionals from different
-                domains. Our leadership team comprises of
-                industry veterans with 20+ years experience in
-                their respective domains.
+                  Veterans, seasoned, grey-haired, golden-haired,
+                  freshers, rebels... MediaJenie has an eclectic
+                  mix of passionate professionals from different
+                  domains. Our leadership team comprises of
+                  industry veterans with 20+ years experience in
+                  their respective domains.
                 </p>
               </div>
               <KnowMoreBtn />
