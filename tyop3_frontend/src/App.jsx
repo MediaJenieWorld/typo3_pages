@@ -1,18 +1,23 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css"
-import WordPressPage from "./Components/WorkPress/WordPressPage";
+
 const Header1 = lazy(() => import("./Components/Header1/Header"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const Home = lazy(() => import("./Pages/Home/Home"));
 const CardsPage = lazy(() => import("./Pages/page"));
 const About = lazy(() => import("./Pages/About/About"));
 const BehindUs = lazy(() => import("./Pages/BehindUs/BehindUs"));
-const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
+// const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
 const ServicePage = lazy(() => import("./Pages/Service/Service"));
 const DetailsPage = lazy(() => import("./Pages/Service/Details/Details"));
 const WorkPage = lazy(() => import("./Pages/Work/Work"));
-const ContactPage = lazy(() => import("./Pages/Contact/page"));
+const ContactPage = lazy(() => import("./Pages/Contact/Contact"));
+const WordPressPage = lazy(() => import("./Components/WorkPress/WordPressPage"));
+const ResourcePage = lazy(() => import("./Pages/Resource/Resource"));
+const ResourceBlogPage = lazy(() => import("./Pages/Resource/Blog/Blog"));
+
+
 const App = () => {
 
   return (
@@ -29,7 +34,9 @@ const App = () => {
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicePage />} />
-          <Route path="/resource" element={<WordPressPage />} />
+          <Route path="/terms" element={<WordPressPage />} />
+          <Route path="/resource" element={<ResourcePage />} />
+          <Route path="/resource/blog" element={<ResourceBlogPage />} />
           <Route path="/services/details" element={<DetailsPage />} />
           <Route path="*" element={<Home />} />
         </Routes>

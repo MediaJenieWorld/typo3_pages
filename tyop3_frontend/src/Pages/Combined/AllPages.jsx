@@ -1,6 +1,6 @@
 import About from "../About/About"
 import BehindUs from "../BehindUs/BehindUs"
-import ContactPage from "../Contact/page"
+import ContactPage from "../Contact/Contact"
 import Home from "../Home/Home"
 import DetailsPage from "../Service/Details/Details"
 import ServicePage from "../Service/Service"

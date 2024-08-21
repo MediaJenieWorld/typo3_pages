@@ -3,10 +3,11 @@ import "./style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import ImageComp from "@/Components/Image";
 import ScrollToTop from "@/Components/ScrollTop";
+import { Fragment } from "react";
 
 const headingText = `We are a CX Agency based in Bangalore.`;
 
-const subHeadingText = "We bring your brand& customers closer";
+const subHeadingText = "We bring your brand & customers closer";
 const descriptionText = "through great customer experiences.";
 
 const story = `We are a customer-experience
@@ -198,7 +199,9 @@ const Home = () => {
         <h2 className="text-84 text-700">Success Stories</h2>
         <div className="list">
           {successStoriesData.map((item, index) => {
-            return <SuccessStoryConatiner data={item} key={index} />
+            return <div className="story-list-item" key={index}>
+              <SuccessStoryConatiner data={item} />
+            </div>
           })}
         </div>
 
@@ -220,7 +223,7 @@ const Home = () => {
               <div className="text-wrapper">
                 <h2 className="text-60 text-700">Why CX is critical?</h2>
                 <p className="text-32 text-400">
-                When products, technology and services become commoditized and brands face intense competition, “experience” will be the one aspect that differentiate them from the rest. If you focus on delivering great customer experience (CX) at every touch point of your brand, you are not just driving growth & profit, but also becoming a better organization internally. Because, to deliver great CX, you need to REALLY KNOW your customer. By having a deeper understanding about them and delivering experiences that connects with them at an emotional level, your brand is forging a deeper, stronger and meaningful bond with the right audience. 
+                  When products, technology and services become commoditized and brands face intense competition, “experience” will be the one aspect that differentiate them from the rest. If you focus on delivering great customer experience (CX) at every touch point of your brand, you are not just driving growth & profit, but also becoming a better organization internally. Because, to deliver great CX, you need to REALLY KNOW your customer. By having a deeper understanding about them and delivering experiences that connects with them at an emotional level, your brand is forging a deeper, stronger and meaningful bond with the right audience.
                 </p>
               </div>
               <KnowMoreBtn link={"/about"} />
@@ -232,15 +235,15 @@ const Home = () => {
   );
 };
 
-const SuccessStoryConatiner = ({ data, key }) => {
+const SuccessStoryConatiner = ({ data }) => {
   const { category, heading, text } = data
-  return <div key={key} className="story-list-item">
+  return <Fragment>
     <h3 className="text-36">
       {heading}
     </h3>
     <p className="text-28 text-500">{text}</p>
     <h4 className="category text-32 text-600">{category}</h4>
-  </div>
+  </Fragment>
 }
 
 function AllServices() {
