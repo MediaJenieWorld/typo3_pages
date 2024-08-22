@@ -1,2 +1,3 @@
-export const baseUrl = "http://localhost:5055";
-export const contactFormApi = "http://localhost:5055/addContactDetails";
+export const baseUrl = "https://xperiento.mediajenie.com/api";
+export const contactFormApi =
+  "https://xperiento.mediajenie.com/api/addContactDetails";

@@ -8,67 +8,10 @@ const subHeadingText = "for a US based tech consulting firm";
 const descriptionText = `3 line description of the client/ project etc goes here
 and in the next line...`;
 
-// const cards = [
-//   "/assets/Work/image (1).webp",
-//   "/assets/Work/image (2).webp",
-//   "/assets/Work/image (3).webp",
-//   "/assets/Work/image (4).webp",
-// ]
-
-const cards = [
-  {
-    imageSrc: "/assets/Work/image (1).webp",
-    title: `MedTracker approached us to create a great experience for their mobile app. We
-started with the users and designed an intuitive UX design and UI design.`,
-    text: "",
-  },
-  {
-    imageSrc: "/assets/Work/image (2).webp",
-    title: `We produced the people-success video for Indegene, featuring 19 interns who were
-having a great career-start there.`,
-    text: "",
-  },
-  {
-    imageSrc: "/assets/Work/image (3).webp",
-    title: `Vaishnavi Estate Coffee (VEC) is a top coffee grower from Coorg, India. They have
-been growing coffee since 1928 in their estates. When VEC wanted to launch their
-own brand of fresh-coffee powder, it was a given that we need to produce some
-great visuals that capture the real side of the brand.`,
-    text: "",
-  },
-
-  {
-    imageSrc: "/assets/Work/image (4).webp",
-    title: `UX & UI Design. Website design & development. Built on Vue-JS + Strapi Headless
-CMS. API Integrations.`,
-    text: "",
-  },
-];
-
-// const cards2 = [
-//   "/assets/Work/image (5).webp",
-//   "/assets/Work/image (6).webp",
-// ]
-
-const cards2 = [
-  {
-    imageSrc: "/assets/Work/image (5).webp",
-    title: `Medtech startup's mobile app helps people to manage their medicine intake and
-health. To present the mobile app and its value to its target audience, MedTracker
-asked us to produce a demo video.`,
-    text: "",
-  },
-  {
-    imageSrc: "/assets/Work/image (6).webp",
-    title: `
-When Vaishnavi Estate with its 100 years of legacy, launched its coffee brand, we
-had to make sure it is perceived and accepted across various audience segments.
-Nothing better than some short video content.`,
-    text: "",
-  },
-];
-
 const WorkPage = () => {
+
+  const cards = projects()
+
   const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE" }) => {
     return (
       <button className={btnClass + " button"}>
@@ -88,6 +31,7 @@ const WorkPage = () => {
       </div>
       <div className="card-section">
         {cards.map((val, i) => {
+          if (i >= 4) return
           return (
             <div key={i} className="card">
               <div className="img">
@@ -101,7 +45,7 @@ const WorkPage = () => {
               </div>
               <div className="text-container">
                 <p className="text-36 text-600">{val.title}</p>
-                <KnowMoreBtn lable="VIEW PROJECT" />
+                <KnowMoreBtn link={val?.link || "#"} lable="VIEW PROJECT" />
               </div>
             </div>
           );
@@ -124,7 +68,8 @@ const WorkPage = () => {
         </div>
       </div>
       <div className="card-section">
-        {cards2.map((val, i) => {
+        {cards.map((val, i) => {
+          if (i < 4) return
           return (
             <div key={i} className="card">
               <div className="img">
@@ -138,7 +83,7 @@ const WorkPage = () => {
               </div>
               <div className="text-container">
                 <p className="text-36 text-600">{val.title}</p>
-                <KnowMoreBtn lable="VIEW PROJECT" />
+                <KnowMoreBtn link={val?.link || "#"} lable="VIEW PROJECT" />
               </div>
             </div>
           );
@@ -152,3 +97,53 @@ const WorkPage = () => {
 };
 
 export default WorkPage;
+
+
+function projects() {
+  return [
+    {
+      imageSrc: "/assets/Work/image (1).webp",
+      title: `MedTracker approached us to create a great experience for their mobile app. We
+started with the users and designed an intuitive UX design and UI design.`,
+      text: "",
+      link: "/work/Medtracker"
+    },
+    {
+      imageSrc: "/assets/Work/appleBees (1).jpg",
+      title: `Web Solutions.We designed & developed the website for AppleBees' India launch.`,
+      text: "",
+      link: "/work/AppleBees"
+    },
+
+    {
+      imageSrc: "/assets/Work/image (3).webp",
+      title: `VEC Photography, We wanted to capture the honest and down-to-earth side of the brand. Nothing can be better than capturing the real people behind this terrific coffee. The images are not touched-up, but true and grounded. Just like these people and the coffee they grow.`,
+      text: "",
+      link: "/work/VEC_Photography"
+    },
+
+    {
+      imageSrc: "/assets/Work/image (4).webp",
+      title: `UX & UI Design. Website design & development. Built on Vue-JS + Strapi Headless
+CMS. API Integrations.`,
+      text: "",
+    },
+    {
+      imageSrc: "/assets/Work/image (5).webp",
+      title: `Medtech startup's mobile app helps people to manage their medicine intake and
+health. To present the mobile app and its value to its target audience, MedTracker
+asked us to produce a demo video.`,
+      text: "",
+    },
+    {
+      imageSrc: "/assets/Work/image (6).webp",
+      title: `
+When Vaishnavi Estate with its 100 years of legacy, launched its coffee brand, we
+had to make sure it is perceived and accepted across various audience segments.
+Nothing better than some short video content.`,
+      text: "",
+      link: "/work/VE_Coffee",
+    },
+  ];
+
+}

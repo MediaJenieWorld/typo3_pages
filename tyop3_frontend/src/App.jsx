@@ -16,9 +16,10 @@ const ContactPage = lazy(() => import("./Pages/Contact/Contact"));
 const WordPressPage = lazy(() => import("./Components/WorkPress/WordPressPage"));
 const ResourcePage = lazy(() => import("./Pages/Resource/Resource"));
 const ResourceBlogPage = lazy(() => import("./Pages/Resource/Blog/Blog"));
-const Medtracker = lazy(() => import("./Pages/Work/medtracker/MedTracker"));
+const Medtracker = lazy(() => import("./Pages/Work/Medtracker/MedTracker"));
 const VE_Coffee = lazy(() => import("./Pages/Work/VE_Coffee/VE_Coffee"));
-
+const VEC_Photography = lazy(() => import("./Pages/Work/VEC_Photography/VEC_Photography"));
+const AppleBeesPage = lazy(() => import("./Pages/Work/AppleBees/AppleBees"));
 
 const App = () => {
 
@@ -33,13 +34,16 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<WorkPage />} />
-          <Route path="/work/medtracker" element={<Medtracker />} />
-          <Route path="/work/ve_coffee" element={<VE_Coffee />} />
+          <Route path="/work/Medtracker" element={<Medtracker />} />
+          <Route path="/work/VE_Coffee" element={<VE_Coffee />} />
+          <Route path="/work/VEC_Photography" element={<VEC_Photography />} />
+          <Route path="/work/AppleBees" element={<AppleBeesPage />} />
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/terms" element={<WordPressPage />} />
           <Route path="/resource" element={<ResourcePage />} />
+
           <Route path="/resource/blog" element={<ResourceBlogPage />} />
           <Route path="/services/details" element={<DetailsPage />} />
           <Route path="*" element={<Home />} />
