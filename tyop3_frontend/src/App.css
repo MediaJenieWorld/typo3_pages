@@ -15,3 +15,33 @@
     transform: translateX(0);
   }
 }
+
+.line-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  font-size: 2rem;
+  .word-wrapper {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: reveals 3s 1 forwards;
+    overflow: hidden;
+
+    .char-wrapper {
+      display: inline-block;
+      transform: translateY(100%);
+      animation: reveals 3s 1 forwards;
+    }
+  }
+}
+
+@keyframes reveals {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
