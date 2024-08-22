@@ -1,5 +1,16 @@
+import { contactFormApi } from "@/Utils/api"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+Validations
+
+import Validations from "@/Utils/FormValidations"
+
+const {
+    firstName,
+    email,
+    phoneNumber,
+    subject,
+} = Validations
 
 const icons = [
     {
@@ -26,7 +37,7 @@ const icons = [
 
 
 const ContactForm = () => {
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
 
     const [category, setCategory] = useState([])
     const [loading, setLoading] = useState(false)
@@ -63,7 +74,7 @@ const ContactForm = () => {
                 body: JSON.stringify(data)
             };
 
-            const response = await fetch("http://localhost:5055/addContactDetails", requestOptions);
+            const response = await fetch(contactFormApi, requestOptions);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -73,8 +84,8 @@ const ContactForm = () => {
             alert("Form submitted successfully!");
             console.log("Response data:", responseData);
         } catch (error) {
-            alert("Error :", error.message)
-            console.error("Error submitting form:", error.message);
+            alert("Form Submission Failed")
+            console.error("Error submitting form:", error || error.message);
         }
         setLoading(false)
     };
@@ -84,12 +95,27 @@ const ContactForm = () => {
         <form onSubmit={handleSubmit(submitForm)} className='Form'>
             <h2 className='text-42 text-600'>Drop a line and we will get in touch with you.</h2>
             <div className="fields">
-                <input {...register("firstName")} type="text" placeholder="First Name" />
-                <input {...register("lastName")} type="text" placeholder="Last Name" />
-                <input {...register("email")} type="email" placeholder="Email Address" />
-                <input {...register("phoneNumber")} type="number" placeholder="Phone Number" />
-                <input {...register("organization")} type="text" placeholder="Organization" />
-                <input {...register("designation")} type="text" placeholder="Designation" />
+                <div className="field">
+                    <input {...register("firstName", firstName)} type="text" placeholder="First Name" />
+                    {errors.firstName && <p>{errors.firstName.message}</p>}
+                </div>
+                <div className="field">
+                    <input {...register("lastName")} type="text" placeholder="Last Name" />
+                </div>
+                <div className="field">
+                    <input {...register("email", email)} type="email" placeholder="Email Address" />
+                    {errors.email && <p>{errors.email.message}</p>}
+                </div>
+                <div className="field">
+                    <input {...register("phoneNumber", phoneNumber)} type="number" placeholder="Phone Number" />
+                    {errors.phoneNumber && <p>{errors.phoneNumber.message}</p>}
+                </div>
+                <div className="field">
+                    <input {...register("organization")} type="text" placeholder="Organization" />
+                </div>
+                <div className="field">
+                    <input {...register("designation")} type="text" placeholder="Designation" />
+                </div>
             </div>
             <h2 className='text-42 text-600'>Interested in....</h2>
             <div className="flex-icons">
@@ -106,8 +132,9 @@ const ContactForm = () => {
                     </div>
                 })}
             </div>
+            {/* {errors.subject && <p>{errors.subject.message}</p>} */}
+            <textarea {...register("subject")} name="subject" id="subject" placeholder="Your Subject"></textarea>
 
-            <textarea {...register("message")} name="" id="" placeholder="Your Message"></textarea>
             <div className="submit">
                 <button className="button">Submit</button>
             </div>

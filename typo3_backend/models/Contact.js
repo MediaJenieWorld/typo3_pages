@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema(
   {
-    message: {
+    subject: {
       type: String,
-      default: "",
-      //   required: true,
+      // default: "",
+        required: true,
     },
     firstName: {
       type: String,
-      default: "",
-      //   required: true,
+      // default: "",
+        required: true,
     },
     lastName: {
       type: String,
@@ -19,13 +19,13 @@ const contactSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      default: "",
-      //   required: true,
+      // default: "",
+        required: true,
     },
     phoneNumber: {
       type: String,
-      default: "",
-      //   required: true,
+      // default: "",
+        required: true,
     },
     organization: {
       type: String,
