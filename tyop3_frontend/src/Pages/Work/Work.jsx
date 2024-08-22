@@ -61,10 +61,10 @@ const WorkPage = () => {
           alt="Banner"
         />
         <div className="overlay">
-          <pre className="text-84 text-700">{headingText}</pre>
-          <h3 className="text-48 text-500">{subHeadingText}</h3>
-          <pre className="text-32 text-500">{descriptionText}</pre>
-          <KnowMoreBtn link={"/work"} lable="VIEW WORK" />
+          <pre className="text-84 text-700">Gloria Jeans Coffee</pre>
+          <h3 className="text-48 text-500">For Gloria Jeans Coffee - India launch -, we designed & developed the website.</h3>
+          {/* <pre className="text-32 text-500">{descriptionText}</pre> */}
+          <KnowMoreBtn link={"/work/Gloria_Coffee"} lable="VIEW WORK" />
         </div>
       </div>
       <div className="card-section">
@@ -124,9 +124,11 @@ started with the users and designed an intuitive UX design and UI design.`,
 
     {
       imageSrc: "/assets/Work/image (4).webp",
-      title: `UX & UI Design. Website design & development. Built on Vue-JS + Strapi Headless
+      title: `SafeTree
+Digital, UX & UI Design. Website design & development. Built on Vue-JS + Strapi Headless
 CMS. API Integrations.`,
       text: "",
+      link: "/work/Safe_Tree"
     },
     {
       imageSrc: "/assets/Work/image (5).webp",

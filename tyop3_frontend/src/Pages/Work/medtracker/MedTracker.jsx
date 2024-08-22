@@ -2,7 +2,7 @@ import ImageComp from '@/Components/Image'
 import React from 'react'
 import "./style.scss";
 
-const Medtracker = () => {
+const MedtrackerPage = () => {
     return (
         <div className='Medtracker'>
             <div className="section-1">
@@ -36,4 +36,4 @@ const Medtracker = () => {
     )
 }
 
-export default Medtracker
+export default MedtrackerPage

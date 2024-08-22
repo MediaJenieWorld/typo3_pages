@@ -91,14 +91,13 @@ const Header = () => {
         {menuItems.map((item, index) => (
           <div key={index} className="item-section">
             <Link to={item.url} className="h3"> {item.title}</Link>
-            <div className="items">
-              {item.links &&
-                item.links.map((link, linkIndex) => (
-                  <Link key={linkIndex} to={link.href}>
-                    {link.label}
-                  </Link>
-                ))}
-            </div>
+            {item.links && <div className="items">
+              {item.links.map((link, linkIndex) => (
+                <Link key={linkIndex} to={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>}
           </div>
         ))}
       </nav>
