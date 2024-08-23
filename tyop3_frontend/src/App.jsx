@@ -16,6 +16,7 @@ const ContactPage = lazy(() => import("./Pages/Contact/Contact"));
 const WordPressPage = lazy(() => import("./Components/WorkPress/WordPressPage"));
 const ResourcePage = lazy(() => import("./Pages/Resource/Resource"));
 const ResourceBlogPage = lazy(() => import("./Pages/Resource/Blog/Blog"));
+const MedtrackerUiPage = lazy(() => import("./Pages/Work/MedtrackerUi/MedTrackerUi"));
 const MedtrackerPage = lazy(() => import("./Pages/Work/Medtracker/MedTracker"));
 const VE_Coffee = lazy(() => import("./Pages/Work/VE_Coffee/VE_Coffee"));
 const VEC_Photography = lazy(() => import("./Pages/Work/VEC_Photography/VEC_Photography"));
@@ -38,6 +39,7 @@ const App = () => {
 
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/Medtracker" element={<MedtrackerPage />} />
+          <Route path="/work/MedtrackerUi" element={<MedtrackerUiPage />} />
           <Route path="/work/VE_Coffee" element={<VE_Coffee />} />
           <Route path="/work/VEC_Photography" element={<VEC_Photography />} />
           <Route path="/work/AppleBees" element={<AppleBeesPage />} />

@@ -4,34 +4,31 @@ import "./style.scss";
 
 const MedtrackerPage = () => {
     return (
-        <div className='Medtracker'>
+        <div className='MedtrackerPage'>
             <div className="section-1">
-                <h1 className="text-84 text-600"> MedTrac&shy;ker UI</h1>
-                <h2 className="text-60 text-600">
-                    Digital
-                </h2>
+                <h1 className="text-84 text-600"> MedTracker</h1>
+                <h2 className="text-60 text-600">Content Production</h2>
             </div>
             <div className="description">
                 <p className='time'>
-                    UX & UI - Mobile App 2020
+                    MedTracker - 2020
                 </p>
                 <p className='txt'>
-                    MedTracker approached us to create a great experience for their mobile app. We started
-                    with the users and designed an intuitive UX design and UI design.
+                    Medtech startup's mobile app helps people to manage their medicine intake and health.
+                    To present the mobile app and its value to its target audience, MedTracker asked us to
+                    produce a demo video.
                 </p>
             </div>
             <div className="hero-image">
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/MedTracker/medtrack.webp"} />
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/MedTracker/medtrack (3).webp"} />
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/MedTracker/medtrack (4).webp"} />
+                <iframe width="1154" height="649" src="https://www.youtube.com/embed/0DBgKh8EBIg" title="MedTracker AD" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
-            <div className="padding">
-                <p>UX & UI for MedTracker was a challenge. We had to make this easy-to-use for elderly users as well as care-givers. And when there are many medications to be managed for a single user, the UI must be intuitive to avoid confusions.</p>
+            <div className="centered">
+                <h3 style={{ color: "#191b1d", width: "770px" }} className='text-42'>
+                    Product demo videos need not be screen-shot based. That is
+                    why we decided to take the storytelling route to present
+                    MedTracker app demo.
+                </h3>
             </div>
-            <div className="hero-image">
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/MedTracker/medtrack (1).webp"} />
-            </div>
-
         </div>
     )
 }

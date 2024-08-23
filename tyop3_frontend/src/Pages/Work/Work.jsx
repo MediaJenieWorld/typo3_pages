@@ -106,7 +106,7 @@ function projects() {
       title: `MedTracker approached us to create a great experience for their mobile app. We
 started with the users and designed an intuitive UX design and UI design.`,
       text: "",
-      link: "/work/Medtracker"
+      link: "/work/MedtrackerUi"
     },
     {
       imageSrc: "/assets/Work/appleBees (1).jpg",
@@ -114,7 +114,6 @@ started with the users and designed an intuitive UX design and UI design.`,
       text: "",
       link: "/work/AppleBees"
     },
-
     {
       imageSrc: "/assets/Work/image (3).webp",
       title: `VEC Photography, We wanted to capture the honest and down-to-earth side of the brand. Nothing can be better than capturing the real people behind this terrific coffee. The images are not touched-up, but true and grounded. Just like these people and the coffee they grow.`,
@@ -136,6 +135,7 @@ CMS. API Integrations.`,
 health. To present the mobile app and its value to its target audience, MedTracker
 asked us to produce a demo video.`,
       text: "",
+      link: "/work/Medtracker"
     },
     {
       imageSrc: "/assets/Work/image (6).webp",

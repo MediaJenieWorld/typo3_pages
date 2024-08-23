@@ -1,4 +1,4 @@
-.MedtrackerPage {
+.MedtrackerUiPage {
     padding: 0;
 
     .section-1 {
@@ -30,20 +30,24 @@
         }
     }
 
+    .padding {
+        padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
+
+        p {
+            padding: calc(var(--main-p-x) * 4) 0;
+
+        }
+    }
+
     .hero-image {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
-        iframe {
+        img {
             object-fit: contain;
-            height: auto;
-            min-height: 500px;
-            width: 100%;
             max-width: 1000px;
-            flex-shrink: 1;
-            flex-basis: 100%;
         }
     }
 
@@ -51,23 +55,15 @@
         color: rgba(25, 27, 29, .6);
         font-size: var(--text-28);
     }
-
-    .centered {
-        padding: calc(var(--main-p-x) * 6) calc(var(--main-p-x) * 4);
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
 }
 
 @media screen and (max-width:730px) {
-    .MedtrackerPage {
+    .MedtrackerUiPage {
         font-size: 8px;
 
         .section-1,
         .description,
-        .centered,
+        .padding,
         .hero-image {
             padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
         }
@@ -84,7 +80,7 @@
 }
 
 @media screen and (max-width:480px) {
-    .MedtrackerPage {
+    .MedtrackerUiPage {
         .section-1 {
             font-size: 6px;
 
@@ -96,13 +92,11 @@
         }
 
         .description {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: 1fr;
         }
 
         .section-1,
         .description,
-        .centered,
         .hero-image {
             padding: calc(var(--main-p-x)* 2) var(--main-p-x);
         }
