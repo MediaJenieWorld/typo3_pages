@@ -148,6 +148,13 @@ body {
       color: var(--know-btn-text-hover-color);
     }
   }
+  &:has(a) {
+    padding: 0;
+    a {
+      display: block;
+      padding: 10px 30px;
+    }
+  }
 }
 body.yellow {
   --theme-color: #ffce00;

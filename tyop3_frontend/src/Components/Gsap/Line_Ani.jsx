@@ -2,6 +2,7 @@ import React, { Fragment, useLayoutEffect, useRef } from 'react';
 import "./styles/LineAnimation.scss";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { promiseImgLoaded } from '@/Utils/checksImagesLoaded';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,34 +11,39 @@ const WordSplitter = ({ word, index, delay = 1 }) => {
     const triggerRef = useRef(null);
 
     useLayoutEffect(() => {
-        // Create a timeline for the word's characters
-        const char_tl = gsap.timeline({
-            scrollTrigger: triggerRef.current,
-            defaults: {
-                duration: .5, // Duration for character animation
-                stagger: {
-                    amount: 0.2, // Stagger amount for characters
-                    from: "start"
-                },
-                ease: 'expo.out',
-                delay
-            }
-        });
+        var char_tl = null
+        async function loadItems() {
+            const x = await promiseImgLoaded()
+            if (x) {
+                char_tl = gsap.timeline({
+                    scrollTrigger: triggerRef.current,
+                    defaults: {
+                        duration: .5, // Duration for character animation
+                        stagger: {
+                            amount: 0.2, // Stagger amount for characters
+                            from: "start"
+                        },
+                        ease: 'expo.out',
+                        delay
+                    }
+                });
 
-        // Animate letters
-        char_tl.to(
-            lettersRef.current,
-            {
-                y: "0%",
-                stagger: {
-                    amount: 0.5, // Stagger amount for characters
-                    from: "start"
-                }
+                // Animate letters
+                char_tl.to(
+                    lettersRef.current,
+                    {
+                        y: "0%",
+                        stagger: {
+                            amount: 0.5, // Stagger amount for characters
+                            from: "start"
+                        }
+                    }
+                );
             }
-        );
-
+        }
+        loadItems()
         return () => {
-            char_tl.kill();
+            char_tl?.kill();
         };
     }, [word]);
 

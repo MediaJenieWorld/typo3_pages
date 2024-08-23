@@ -1,20 +1,6 @@
 .Safe_Tree_Page {
     padding: 0;
 
-    .section-1 {
-        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
-        background-color: #ebebeb;
-
-        h1 {
-            font-size: calc(var(--text-84) * 1.5);
-        }
-
-        h2 {
-            font-size: var(--text-84);
-            color: rgba(25, 27, 29, .6)
-        }
-    }
-
     .description {
         padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
         display: grid;
@@ -52,7 +38,7 @@
         }
     }
 
-    p,
+    .p,
     pre {
         font-weight: 400;
         color: rgba(25, 27, 29, .6);
@@ -96,7 +82,7 @@
     .Safe_Tree_Page .grid {
         display: block;
 
-        iframe {
+        img {
             width: 100%;
             height: 80vh;
             flex-basis: 100%;
@@ -112,16 +98,12 @@
     .Safe_Tree_Page {
         font-size: 8px;
 
-
-
-        .section-1,
         .description,
         .hero-image,
         .grid,
         .padding {
             padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
         }
-
 
         .grid {
             display: flex;
@@ -147,23 +129,12 @@
 
 @media screen and (max-width:480px) {
     .Safe_Tree_Page {
-        .section-1 {
-            font-size: 6px;
-
-            h1 {
-                overflow-wrap: break-word;
-                // word-break: break-all;
-                hyphens: manual;
-            }
-        }
-
         .description {
             display: flex;
             flex-direction: column;
         }
 
         .grid,
-        .section-1,
         .hero-image,
         .description {
             padding: calc(var(--main-p-x)* 2) var(--main-p-x);

@@ -1,62 +1,61 @@
 import React from 'react'
 import "./style.scss";
-import ImageComp from '@/Components/Image';
+import ProjectHead from '@/Components/Gsap/ProjectHead';
+import GsapImage from '@/Components/Gsap/Image_Ani';
+import LineSplitter from '@/Components/Gsap/Line_Ani';
 
 const VEC_Photography = () => {
     return (
         <div className='VEC_Photography'>
-            <div className="section-1">
-                <h1 className="text-84 text-600">
-                    VEC Photography</h1>
-                <h2 className="text-60 text-600">
-                    Content Production
-                </h2>
-            </div>
-            <div className="description">
-                <p className='time'>
-                    Vaishnavi Estate Coffee - 2022
-                </p>
-                <p className='txt text-28'>
-                    Vaishnavi Estate Coffee (VEC) is a top coffee grower from Coorg, India. They have been
+            <ProjectHead
+                title="VEC Photography"
+                category="Content Production"
+                date="Vaishnavi Estate Coffee - 2022"
+                description="Vaishnavi Estate Coffee (VEC) is a top coffee grower from Coorg, India. They have been
                     growing coffee since 1928 in their estates. When VEC wanted to launch their own brand
                     of fresh-coffee powder, it was a given that we need to produce some great visuals that
-                    capture the real side of the brand.
-                </p>
-            </div>
+                    capture the real side of the brand."
+            />
             <div className="grid">
-                <ImageComp src={"/Work/VEC_Photography/vc-photo-03.webp"} height={"auto"} width={"auto"} />
-                <ImageComp src={"/Work/VEC_Photography/vc-photo-02.jpg"} height={"auto"} width={"auto"} />
+                <GsapImage src={"/Work/VEC_Photography/vc-photo-03.webp"} height={"auto"} width={"auto"} />
+                <GsapImage src={"/Work/VEC_Photography/vc-photo-02.jpg"} height={"auto"} width={"auto"} />
             </div>
             <div className="description">
                 <div className="time"></div>
-                <p className='txt padding py-0'>
-                    A legacy of around 100 years, 3 generations of coffee growers... Vaishnavi Estate is a dream-come-true for a coffee aficionado. They grow sustainable, shade-grown coffee, that is roasted & ground fresh, before packing.
-                </p>
+                <div className='p txt padding py-0'>
+                    <LineSplitter>
+                        A legacy of around 100 years, 3 generations of coffee growers... Vaishnavi Estate is a dream-come-true for a coffee aficionado. They grow sustainable, shade-grown coffee, that is roasted & ground fresh, before packing.
+                    </LineSplitter>
+                </div>
             </div>
             <div className="hero-image">
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-01.webp"} />
-                <ImageComp height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-04.webp"} />
+                <GsapImage height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-01.webp"} />
+                <GsapImage height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-04.webp"} />
             </div>
             <div className="centered">
-                <h3 style={{ color: "#191b1d", width: "770px" }} className='text-42'>
-                    The human side of sustainable, single-origin &
-                    shade-grown coffee of Vaishnavi Estate.
-                </h3>
+                <div style={{ color: "#191b1d", width: "770px" }} className='text-42'>
+                    <LineSplitter>
+                        The human side of sustainable, single-origin &
+                        shade-grown coffee of Vaishnavi Estate.
+                    </LineSplitter>
+                </div>
             </div>
 
             <div className="description">
                 <div className="time">
-                    <ImageComp style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-05.jpg"} />
+                    <GsapImage style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-05.jpg"} />
                 </div>
                 <div className="txt">
-                    <ImageComp style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-06.webp"} />
+                    <GsapImage style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-06.webp"} />
                 </div>
             </div>
             <div className="description">
                 <div className="time"></div>
-                <p className='txt padding py-0'>
-                    We wanted to capture the honest and down-to-earth side of the brand. Nothing can be better than capturing the real people behind this terrific coffee. The images are not touched-up, but true and grounded. Just like these people and the coffee they grow.
-                </p>
+                <div className='p txt padding py-0'>
+                    <LineSplitter>
+                        We wanted to capture the honest and down-to-earth side of the brand. Nothing can be better than capturing the real people behind this terrific coffee. The images are not touched-up, but true and grounded. Just like these people and the coffee they grow.
+                    </LineSplitter>
+                </div>
             </div>
 
         </div>

@@ -1,6 +1,5 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all";
-import { useLayoutEffect } from "react"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,12 +8,13 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
     let newAlt = alt || src
     let getSrc = src.includes("http") ? src : "/assets/" + src
 
-    useLayoutEffect(() => {
+
+    const handleLoad = () => {
         const img = document.querySelector(`[data-image-name="${getSrc}"]`)
         img.style.scale = "1.1"
-        const layer = document.querySelector(`[data-layer-name="${getSrc}"]`)
+        const layer = document.querySelector(` [data-layer-name="${getSrc}"]`)
         const delay = 0
-        const duration = 2
+        const duration = 5
 
         if (layer) {
             const trigger = {
@@ -33,7 +33,6 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
             // }
             gsap.to(layer, {
                 scrollTrigger: trigger, duration, delay, ease: 'expo.out', ...transitionStyle,
-
             })
 
             gsap.to(img, {
@@ -43,11 +42,13 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
                 delay
             })
         }
-    })
+    };
+
     return (
         <div style={{
             overflow: "hidden", position: "relative",
             width: "100%",
+            height: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -63,6 +64,7 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
                 }}
                 className="colorLayer"></div>
             <img loading="lazy"
+                onLoad={handleLoad}
                 height={height} width={width} data-image-name={getSrc} src={getSrc} alt={newAlt} {...props} />
         </div>
     )

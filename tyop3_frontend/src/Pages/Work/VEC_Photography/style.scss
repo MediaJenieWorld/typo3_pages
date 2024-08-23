@@ -1,20 +1,6 @@
 .VEC_Photography {
     padding: 0;
 
-    .section-1 {
-        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
-        background-color: #ebebeb;
-
-        h1 {
-            font-size: calc(var(--text-84) * 1.5);
-        }
-
-        h2 {
-            font-size: var(--text-84);
-            color: rgba(25, 27, 29, .6)
-        }
-    }
-
     .description {
         padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
         display: grid;
@@ -47,12 +33,12 @@
     .padding {
         padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
 
-        p {
+        .p {
             padding: calc(var(--main-p-x) * 4) 0;
         }
     }
 
-    p,
+    .p,
     pre {
         font-weight: 400;
         color: rgba(25, 27, 29, .6);
@@ -112,9 +98,6 @@
     .VEC_Photography {
         font-size: 8px;
 
-
-
-        .section-1,
         .description,
         .hero-image,
         .grid,
@@ -125,7 +108,7 @@
         .padding {
             padding: calc(var(--main-p-x)* 2) calc(var(--main-p-x) * 2);
 
-            p {
+            .p {
                 padding: 0;
             }
         }
@@ -135,15 +118,6 @@
 
 @media screen and (max-width:480px) {
     .VEC_Photography {
-        .section-1 {
-            font-size: 6px;
-
-            h1 {
-                overflow-wrap: break-word;
-                // word-break: break-all;
-                hyphens: manual;
-            }
-        }
 
         .description {
             display: flex;
@@ -151,7 +125,6 @@
         }
 
         .grid,
-        .section-1,
         .hero-image,
         .description {
             padding: calc(var(--main-p-x)* 2) var(--main-p-x);

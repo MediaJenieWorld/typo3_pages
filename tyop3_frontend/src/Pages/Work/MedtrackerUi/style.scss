@@ -1,39 +1,11 @@
 .MedtrackerUiPage {
     padding: 0;
 
-    .section-1 {
-        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
-        background-color: #ebebeb;
-
-        h1 {
-            font-size: calc(var(--text-84) * 1.5);
-        }
-
-        h2 {
-            font-size: var(--text-84);
-            color: rgba(25, 27, 29, .6)
-        }
-    }
-
-    .description {
-        padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: var(--main-p-x);
-
-        .time {
-            grid-column: span 2;
-        }
-
-        .txt {
-            grid-column: 3 / -1;
-        }
-    }
 
     .padding {
         padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
 
-        p {
+        .p {
             padding: calc(var(--main-p-x) * 4) 0;
 
         }
@@ -51,7 +23,7 @@
         }
     }
 
-    p {
+    .p {
         color: rgba(25, 27, 29, .6);
         font-size: var(--text-28);
     }
@@ -61,8 +33,6 @@
     .MedtrackerUiPage {
         font-size: 8px;
 
-        .section-1,
-        .description,
         .padding,
         .hero-image {
             padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
@@ -81,22 +51,6 @@
 
 @media screen and (max-width:480px) {
     .MedtrackerUiPage {
-        .section-1 {
-            font-size: 6px;
-
-            h1 {
-                overflow-wrap: break-word;
-                // word-break: break-all;
-                hyphens: manual;
-            }
-        }
-
-        .description {
-            grid-template-columns: 1fr;
-        }
-
-        .section-1,
-        .description,
         .hero-image {
             padding: calc(var(--main-p-x)* 2) var(--main-p-x);
         }
