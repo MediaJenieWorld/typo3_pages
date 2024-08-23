@@ -16,32 +16,21 @@
   }
 }
 
-.line-wrapper {
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+/* .Ani {
+  height: 200vh;
+  padding-top: 50vh;
 
-  font-size: 2rem;
-  .word-wrapper {
-    display: inline-block;
-    transform: translateY(100%);
-    animation: reveals 3s 1 forwards;
-    overflow: hidden;
-
-    .char-wrapper {
+  .line-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    .word-wrapper {
       display: inline-block;
-      transform: translateY(100%);
-      animation: reveals 3s 1 forwards;
+      overflow: hidden;
+
+      .char-wrapper {
+        display: inline-block;
+      }
     }
   }
-}
-
-@keyframes reveals {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
+} */

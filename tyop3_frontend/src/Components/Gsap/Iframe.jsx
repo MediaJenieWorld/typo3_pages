@@ -5,14 +5,12 @@ import { useLayoutEffect } from "react"
 gsap.registerPlugin(ScrollTrigger);
 
 // eslint-disable-next-line react/prop-types
-const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionStyle = { x: "-100%" }, ...props }) => {
-    let newAlt = alt || src
-    let getSrc = src.includes("http") ? src : "/assets/" + src
+const Gsap_iframe = ({ title, src, layerStyle = "#fff", transitionStyle = { x: "-100%" }, ...props }) => {
 
     useLayoutEffect(() => {
-        const img = document.querySelector(`[data-image-name="${getSrc}"]`)
+        const img = document.querySelector(`[data-image-name="${src}"]`)
         img.style.scale = "1.1"
-        const layer = document.querySelector(`[data-layer-name="${getSrc}"]`)
+        const layer = document.querySelector(`[data-layer-name="${src}"]`)
         const delay = 0
         const duration = 2
 
@@ -46,15 +44,14 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
     })
     return (
         <div style={{
-            overflow: "hidden", position: "relative",
-            width: "100%",
+            overflow: "hidden", position: "relative", width: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center"
         }} className="overflow-wrapper">
             <div
-                data-layer-name={getSrc}
+                data-layer-name={src}
                 style={{
                     position: "absolute",
                     height: "100%", width: "100%",
@@ -62,10 +59,16 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
                     backgroundColor: layerStyle, zIndex: 3
                 }}
                 className="colorLayer"></div>
-            <img loading="lazy"
-                height={height} width={width} data-image-name={getSrc} src={getSrc} alt={newAlt} {...props} />
+
+            <iframe
+                data-image-name={src}
+                width="1154" height="649" src={src || "https://www.youtube.com/embed/0DBgKh8EBIg"} title={title || "MedTracker AD"}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen {...props}></iframe>
         </div>
     )
 }
 
-export default GsapImage
+export default Gsap_iframe

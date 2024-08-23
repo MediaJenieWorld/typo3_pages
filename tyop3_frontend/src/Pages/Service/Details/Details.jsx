@@ -121,7 +121,7 @@ const DetailsPage = () => {
                 <h2 className="text-60 text-700">Applied Psychology</h2>
                 <p className="text-32 text-400">
                   Veterans, seasoned, grey-haired, golden-haired,
-                  freshers, rebels... MediaJenie has an eclectic
+                  freshers, rebels... MediaJenie has an electric
                   mix of passionate professionals from different
                   domains. Our leadership team comprises of
                   industry veterans with 20+ years experience in

@@ -62,7 +62,11 @@ const WorkPage = () => {
         />
         <div className="overlay">
           <pre className="text-84 text-700">Gloria Jeans Coffee</pre>
-          <h3 className="text-48 text-500">For Gloria Jeans Coffee - India launch -, we designed & developed the website.</h3>
+          <h3 className="text-48 text-500">{`Beginest Harbor 5,
+2nd Floor, 3rd Cross,
+Residency Road,
+Bengaluru – 560 025
+India`}</h3>
           {/* <pre className="text-32 text-500">{descriptionText}</pre> */}
           <KnowMoreBtn link={"/work/Gloria_Coffee"} lable="VIEW WORK" />
         </div>
