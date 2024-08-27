@@ -30,15 +30,19 @@ const menuItems = [
     url: "/services",
     links: [
       {
-        label: "Consulting",
-        href: "/services/details",
+        label: "Customer Insight",
+        href: "/services/customer_insight",
       },
       {
         label: "Design",
-        href: "/services/details",
+        href: "/services/design",
       },
       {
-        label: "Digital",
+        label: "Consulting",
+        href: "/services/consulting",
+      },
+      {
+        label: "Details",
         href: "/services/details",
       },
     ],

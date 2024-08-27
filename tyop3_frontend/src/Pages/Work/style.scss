@@ -138,6 +138,8 @@
 
 @media screen and (max-width:480px) {
   .Work {
+    font-size: 7px;
+    --main-p-x: .6rem;
 
     .card-section {
       grid-template-columns: 1fr;
@@ -146,12 +148,5 @@
         height: 250px;
       }
     }
-  }
-}
-
-@media screen and (max-width:480px) {
-  .Work {
-    font-size: 7px;
-    --main-p-x: .6rem;
   }
 }

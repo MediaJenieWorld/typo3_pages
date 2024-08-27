@@ -9,8 +9,16 @@ const CardsPage = lazy(() => import("./Pages/page"));
 const About = lazy(() => import("./Pages/About/About"));
 const BehindUs = lazy(() => import("./Pages/BehindUs/BehindUs"));
 // const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
+
+// Service Page
 const ServicePage = lazy(() => import("./Pages/Service/Service"));
 const DetailsPage = lazy(() => import("./Pages/Service/Details/Details"));
+const Consulting_Page = lazy(() => import("./Pages/Service/Consulting/Consulting"));
+const CustomerInsight_Page = lazy(() => import("./Pages/Service/CustomerInsight/CustomerInsight"));
+const Design_Page = lazy(() => import("./Pages/Service/Design/Design"));
+
+// Service Page
+
 const WorkPage = lazy(() => import("./Pages/Work/Work"));
 const ContactPage = lazy(() => import("./Pages/Contact/Contact"));
 const WordPressPage = lazy(() => import("./Components/WorkPress/WordPressPage"));
@@ -49,7 +57,7 @@ const App = () => {
           <Route path="/pre" element={<CardsPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-
+          {/* Work And Projects */}
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/Medtracker" element={<MedtrackerPage />} />
           <Route path="/work/MedtrackerUi" element={<MedtrackerUiPage />} />
@@ -72,12 +80,18 @@ const App = () => {
 
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />
+          {/* Service */}
           <Route path="/services" element={<ServicePage />} />
+          <Route path="/services/details" element={<DetailsPage />} />
+          <Route path="/services/consulting" element={<Consulting_Page />} />
+          <Route path="/services/customer_insight" element={<CustomerInsight_Page />} />
+          <Route path="/services/design" element={<Design_Page />} />
+
+
           <Route path="/terms" element={<WordPressPage />} />
 
           <Route path="/resource" element={<ResourcePage />} />
           <Route path="/resource/blog" element={<ResourceBlogPage />} />
-          <Route path="/services/details" element={<DetailsPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
