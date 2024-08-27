@@ -30,10 +30,10 @@ const Safe_Tree_Page = () => {
                 </div>
             </div>
             <div className="hero-image">
-                <GsapImage height={"auto"} width={"100%"} src={"/Work/Safe_Tree/tree (1).gif"} />
+                <GsapImage transitionStyle={{ x: "100%" }} height={"auto"} width={"100%"} src={"/Work/Safe_Tree/tree (1).gif"} />
             </div>
             <div className="hero-image">
-                <GsapImage height={"auto"} width={"100%"} src={"/Work/Safe_Tree/tree (2).gif"} />
+                <GsapImage transitionStyle={{ x: "-100%" }} height={"auto"} width={"100%"} src={"/Work/Safe_Tree/tree (2).gif"} />
             </div>
             <div className="description">
                 <div style={{ justifySelf: "center" }} className='time text-60 text-600'>

@@ -4,6 +4,7 @@ import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import ImageComp from "@/Components/Image";
 import ScrollToTop from "@/Components/ScrollTop";
 import { Fragment } from "react";
+import LineSplitter from "@/Components/Gsap/Line_Ani";
 
 const headingText = `We are a CX Agency based in Bangalore.`;
 
@@ -13,69 +14,6 @@ const descriptionText = "through great customer experiences.";
 const story = `We are a customer-experience
 agency from Bangalore, India.`
 // eslint-disable-next-line react/prop-types
-
-const testimonialData = [
-  {
-    heading: `“MediaJenie worked with us closely in changing
-the overall digital experience of our customers.
-From revamping our website to content and digital
-media management, they supported us through the
-year.”`,
-    summary: "",
-    author: "Puneet Singh",
-    position: "CEO | Encryption Consulting LLC - USA"
-  },
-  {
-    heading:
-      `“I just wanted to share our experience and let you
-know that it’s been great working with you. We're
-glad we decided to work with you. Thank you so
-much for a job well done.You guys are the best!
-Keep up the great work!”`,
-    summary: "",
-    author: "Nirmal Narayan",
-    position: "Founder-CEO"
-  },
-  {
-    heading: `“Good Supporting Team. The quality of work is
-good. The feedback system with customers is very
-good. We will give an overall 9 points out of 10!
-Vishwanath Bettadapura.”`,
-    summary: "",
-    author: "Toyoda Gosei",
-    position: "Asst. Manager - Sales"
-  },
-  {
-    heading:
-      `“Managing NPS and CSAT was a challenge for us.
-MediaJenie took this off our shoulders and
-managed it smoothly. The reports and insights
-were really helpful.”`,
-    summary: "",
-    author: "COO",
-    position: "F & B Brand, Bangalore"
-  },
-  {
-    heading:
-      `“Excellent support by the operations team, the
-ideation process is amazing, and are highly
-committed. Looking forward to many years of great
-content with MediaJenie.”`,
-    summary: "",
-    author: "Shareeq Mohammed",
-    position: "Toni Rossi"
-  },
-  {
-    heading:
-      `“CX audit & NPS by MediaJenie helped us in
-understanding the critical areas we needed to
-focus. They supported us in fixing these gaps in
-our marketing & service areas..”`,
-    summary: "",
-    author: "Fintech Start-up",
-    position: "VP Marketing"
-  }
-]
 
 const successStoriesData = [
   {
@@ -196,7 +134,11 @@ const Home = () => {
         <TestimonialSlider data={testimonialData} />
       </div> */}
       <div className="success-stories">
-        <h2 className="text-84 text-700">Success Stories</h2>
+        <h2 className="text-84 text-700">
+          <LineSplitter>
+            Success Stories
+          </LineSplitter>
+        </h2>
         <div className="list">
           {successStoriesData.map((item, index) => {
             return <div className="story-list-item" key={index}>
@@ -239,10 +181,20 @@ const SuccessStoryConatiner = ({ data }) => {
   const { category, heading, text } = data
   return <Fragment>
     <h3 className="text-36">
-      {heading}
+      <LineSplitter>
+        {heading}
+      </LineSplitter>
     </h3>
-    <p className="text-28 text-500">{text}</p>
-    <h4 className="category text-32 text-600">{category}</h4>
+    <div className="text-28 text-500">
+      <LineSplitter>
+        {text}
+      </LineSplitter>
+    </div>
+    <div className="category text-32 text-600">
+      <LineSplitter>
+        {category}
+      </LineSplitter>
+    </div>
   </Fragment>
 }
 

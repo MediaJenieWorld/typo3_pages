@@ -18,7 +18,7 @@ const VEC_Photography = () => {
             />
             <div className="grid">
                 <GsapImage src={"/Work/VEC_Photography/vc-photo-03.webp"} height={"auto"} width={"auto"} />
-                <GsapImage src={"/Work/VEC_Photography/vc-photo-02.jpg"} height={"auto"} width={"auto"} />
+                <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/VEC_Photography/vc-photo-02.jpg"} height={"auto"} width={"auto"} />
             </div>
             <div className="description">
                 <div className="time"></div>
@@ -30,7 +30,7 @@ const VEC_Photography = () => {
             </div>
             <div className="hero-image">
                 <GsapImage height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-01.webp"} />
-                <GsapImage height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-04.webp"} />
+                <GsapImage transitionStyle={{ x: "100%" }} height={"auto"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-04.webp"} />
             </div>
             <div className="centered">
                 <div style={{ color: "#191b1d", width: "770px" }} className='text-42'>
@@ -43,10 +43,10 @@ const VEC_Photography = () => {
 
             <div className="description">
                 <div className="time">
-                    <GsapImage style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-05.jpg"} />
+                    <GsapImage transitionStyle={{ y: "-100%" }} style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-05.jpg"} />
                 </div>
                 <div className="txt">
-                    <GsapImage style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-06.webp"} />
+                    <GsapImage transitionStyle={{ y: "100%" }} style={{ objectFit: "cover" }} height={"100%"} width={"100%"} src={"/Work/VEC_Photography/vc-photo-06.webp"} />
                 </div>
             </div>
             <div className="description">

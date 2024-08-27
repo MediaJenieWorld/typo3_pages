@@ -1,28 +1,31 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all";
+import "./styles/Image.scss"
 
 gsap.registerPlugin(ScrollTrigger);
 
 // eslint-disable-next-line react/prop-types
-const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionStyle = { x: "-100%" }, ...props }) => {
+const GsapImage = ({ height, width, src, alt, scrub = false, markers = false, imageCSS_Style = {}, layerCSS_Style = { backgroundColor: "#fff" },
+    image_transitionStyle = {},
+    transitionStyle = { x: "-100%" }, ...props }) => {
     let newAlt = alt || src
     let getSrc = src.includes("http") ? src : "/assets/" + src
-
+    const date = new Date().getMilliseconds()
+    const generateRandomId = Math.random().toPrecision(3) + date
 
     const handleLoad = () => {
-        const img = document.querySelector(`[data-image-name="${getSrc}"]`)
-        img.style.scale = "1.1"
-        const layer = document.querySelector(` [data-layer-name="${getSrc}"]`)
-        const delay = 0
-        const duration = 5
+        const img = document.querySelector(`[data-image-name="${generateRandomId}"]`)
+        const layer = document.querySelector(` [data-layer-name="${generateRandomId}"]`)
+        const delay = .20
+        const duration = 2
 
         if (layer) {
             const trigger = {
                 trigger: img,
-                start: "top center",
+                start: "center bottom",
                 end: "bottom center",
-                // markers: 1,
-                // scrub: 1
+                markers,
+                scrub
             }
             // const imgTrigger = {
             //     trigger: img,
@@ -39,33 +42,26 @@ const GsapImage = ({ height, width, src, alt, layerStyle = "#fff", transitionSty
                 ease: 'expo.out',
                 scrollTrigger: trigger, scale: 1,
                 duration,
-                delay
+                delay,
+                ...image_transitionStyle
             })
         }
     };
 
     return (
-        <div style={{
-            overflow: "hidden", position: "relative",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
-        }} className="overflow-wrapper">
+        <div className="overflow-wrapper">
             <div
-                data-layer-name={getSrc}
+                data-layer-name={generateRandomId}
                 style={{
-                    position: "absolute",
-                    height: "100%", width: "100%",
-                    top: "0", left: "0",
-                    backgroundColor: layerStyle, zIndex: 3
+                    ...layerCSS_Style
                 }}
                 className="colorLayer"></div>
             <img loading="lazy"
+                style={{
+                    ...imageCSS_Style
+                }}
                 onLoad={handleLoad}
-                height={height} width={width} data-image-name={getSrc} src={getSrc} alt={newAlt} {...props} />
+                height={height} width={width} data-image-name={generateRandomId} src={getSrc} alt={newAlt} {...props} />
         </div>
     )
 }

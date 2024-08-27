@@ -32,10 +32,17 @@
                 color: var(--header-link-color);
             }
 
+            // img {
+            //     border-radius: 50%;
+            //     background-color: #fff;
+            //     object-fit: cover;
+            // }
             img {
                 border-radius: 50%;
                 background-color: #fff;
                 object-fit: cover;
+                padding: 0px;
+                border: 2px solid #3F51B5;
             }
         }
 
