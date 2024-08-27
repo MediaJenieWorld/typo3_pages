@@ -128,6 +128,8 @@ We help you:
       </div>
       <div className="section-3">
         <h4 className="text-32 text-600">What we do?</h4>
+        <h4 className="text-32 text-600">We bring your brand & customers closer through great customer experiences</h4>
+        
         <pre className="text-60 text-600">
           {`Our services are spread across
 5 areas & practices`}
@@ -151,7 +153,7 @@ We help you:
         >
           Testimonial
         </h3>
-        <TestimonialsSlider />
+        <TestimonialsSlider data={testimonialData()}  />
       </div>
     </div>
   );
@@ -249,5 +251,71 @@ function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE" }) {
       <a href={link || "#link"}>{lable}</a>
     </button>
   );
+}
+
+
+function testimonialData() {
+  return [
+    {
+      heading: `“MediaJenie worked with us closely in changing
+  the overall digital experience of our customers.
+  From revamping our website to content and digital
+  media management, they supported us through the
+  year.”`,
+      summary: "",
+      author: "Puneet Singh",
+      position: "CEO | Encryption Consulting LLC - USA"
+    },
+    {
+      heading:
+        `“I just wanted to share our experience and let you
+  know that it’s been great working with you. We're
+  glad we decided to work with you. Thank you so
+  much for a job well done.You guys are the best!
+  Keep up the great work!”`,
+      summary: "",
+      author: "Nirmal Narayan",
+      position: "Founder-CEO"
+    },
+    {
+      heading: `“Good Supporting Team. The quality of work is
+  good. The feedback system with customers is very
+  good. We will give an overall 9 points out of 10!
+  Vishwanath Bettadapura.”`,
+      summary: "",
+      author: "Toyoda Gosei",
+      position: "Asst. Manager - Sales"
+    },
+    {
+      heading:
+        `“Managing NPS and CSAT was a challenge for us.
+  MediaJenie took this off our shoulders and
+  managed it smoothly. The reports and insights
+  were really helpful.”`,
+      summary: "",
+      author: "COO",
+      position: "F & B Brand, Bangalore"
+    },
+    {
+      heading:
+        `“Excellent support by the operations team, the
+  ideation process is amazing, and are highly
+  committed. Looking forward to many years of great
+  content with MediaJenie.”`,
+      summary: "",
+      author: "Shareeq Mohammed",
+      position: "Toni Rossi"
+    },
+    {
+      heading:
+        `“CX audit & NPS by MediaJenie helped us in
+  understanding the critical areas we needed to
+  focus. They supported us in fixing these gaps in
+  our marketing & service areas..”`,
+      summary: "",
+      author: "Fintech Start-up",
+      position: "VP Marketing"
+    }
+  ]
 }
 export default ServicePage;

@@ -161,6 +161,7 @@
                 display: flex;
                 justify-content: flex-end;
                 white-space: nowrap;
+                flex-wrap: wrap;
 
                 a {
                     // font-size: 1vmax;
@@ -172,7 +173,7 @@
                     transition: color .1s ease-in-out, text-decoration .1s ease-in-out;
 
                     &:last-child {
-                        border: none;
+                        border-color: transparent;
                         padding-right: 0;
                     }
 

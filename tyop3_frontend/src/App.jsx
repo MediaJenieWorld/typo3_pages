@@ -8,6 +8,8 @@ const Home = lazy(() => import("./Pages/Home/Home"));
 const CardsPage = lazy(() => import("./Pages/page"));
 const About = lazy(() => import("./Pages/About/About"));
 const BehindUs = lazy(() => import("./Pages/BehindUs/BehindUs"));
+const Work_Gallery_Page = lazy(() => import("./Pages/Work/Gallery/Gallery"));
+
 // const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
 
 // Service Page
@@ -77,6 +79,7 @@ const App = () => {
           <Route path="/work/Karunashraya" element={<Karunashraya_Page />} />
           <Route path="/work/Vivekananda_Yoga" element={<Vivekananda_Yoga_Page />} />
           <Route path="/work/ToniRossi" element={<ToniRossie_page />} />
+          <Route path="/work/Gallery" element={<Work_Gallery_Page />} />
 
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />

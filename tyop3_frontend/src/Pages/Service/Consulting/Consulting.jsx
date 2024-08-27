@@ -64,8 +64,8 @@ const Consulting_Page = () => {
                     <div className="img">
                         <ImageComp
                             loading="lazy"
-                            src={"/Home/blue-ball.webp"}
-                            alt={"/Home/blue-ball.webp"}
+                            src={"/Home/blue-particle.webp"}
+                            alt={"/Home/blue-particle.webp"}
                             height={400}
                             width={400}
                         />
@@ -78,8 +78,8 @@ const Consulting_Page = () => {
                     <div className="img">
                         <ImageComp
                             loading="lazy"
-                            src={"/Home/blue-ball.webp"}
-                            alt={"/Home/blue-ball.webp"}
+                            src={"/Home/blue-particle.webp"}
+                            alt={"/Home/blue-particle.webp"}
                             height={400}
                             width={400}
                         />

@@ -52,8 +52,8 @@ const menuItems = [
     url: "/work",
     links: [
       {
-        label: "Work Gallery",
-        href: "/work",
+        label: "Gallery",
+        href: "/work/Gallery",
       },
     ],
   },

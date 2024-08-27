@@ -84,7 +84,7 @@ const Home = () => {
               <p className="text-36 text-600">
                 Customer Experience Consulting to improve Sales
               </p>
-              <KnowMoreBtn link={"/about"} />
+              <KnowMoreBtn link={"/services/consulting"} />
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ const Home = () => {
               <p className="text-36 text-600">
                 Digital Experience for one of the leading organization in USA
               </p>
-              <KnowMoreBtn link={"/about"} />
+              <KnowMoreBtn link={"/work/Gallery"} />
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Home = () => {
               <p className="text-36 text-600">
                 How you can use AI to improve customer experience?
               </p>
-              <KnowMoreBtn link={"/about"} />
+              <KnowMoreBtn link={"/resource"} />
             </div>
           </div>
         </div>

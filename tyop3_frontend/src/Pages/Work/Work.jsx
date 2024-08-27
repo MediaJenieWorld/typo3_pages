@@ -13,8 +13,6 @@ const WorkPage = () => {
   const nextPageId = new Number(id) + 1
 
   const cards = getProjectsByPage(id)
-  console.log(cards);
-
 
   const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE" }) => {
     return (

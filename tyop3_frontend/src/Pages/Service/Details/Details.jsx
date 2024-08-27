@@ -65,7 +65,10 @@ const DetailsPage = () => {
       <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">
         <pre className="text-84 text-600">{`What we do?`}</pre>
+        
         <pre className="text-28">{`Strategic Consulting & Research`}</pre>
+        
+        <h4 className="text-32 text-600">Driven by research, behaviour insights, intelligence and applied psychology, we design, produce, implement, deliver and manage services to make your brand loved by your customers.</h4>
       </div>
       <div className="cards-section">
         {fakeCardData.map((card, i) => {

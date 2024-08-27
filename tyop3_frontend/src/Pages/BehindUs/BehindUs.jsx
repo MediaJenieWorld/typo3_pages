@@ -37,7 +37,7 @@ function UserCard({ imgSrc, name, tag }) {
 
   return (
     <div className="userCard">
-      <img loading="lazy" loading="lazy" height={200} width={200} src={imgSrc} alt={name} />
+      <img loading="lazy" height={200} width={200} src={imgSrc} alt={name} />
       <div className="bottom">
         <h3>{name}</h3>
         <p>{tag}</p>
