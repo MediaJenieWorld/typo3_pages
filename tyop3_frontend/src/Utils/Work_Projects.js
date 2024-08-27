@@ -128,6 +128,19 @@ India. We planned, designed and executed the digital media campaign.`,
     text: "ToniRossi Catalogue",
     link: "/work/ToniRossi",
   },
+  {
+    imageSrc: "/assets/Work/NLF/cover.webp",
+    title: `Brand identity design for Namma Live Fish (NLF), a startup that brings fresh-live-fish`,
+    text: "NLF - Design",
+    link: "/work/NLF",
+  },
+  {
+    imageSrc: "/assets/Work/TR-Camp/tr (1).webp",
+    title: `ToniRossi - a fast-growing fashion-footwear brand - is known for its sustainable methods
+of shoe making.`,
+    text: "ToniRossi - Campaign Services",
+    link: "/work/TR_Campaign",
+  },
 ];
 
 export function getProjectsByPage(page_id, loadNumbers = 7) {

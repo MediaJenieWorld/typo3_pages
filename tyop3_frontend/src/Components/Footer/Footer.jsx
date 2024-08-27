@@ -15,9 +15,12 @@ const Footer = () => {
       </div>
       <div className="section section-2 text-28">
         <Link to="/services">Services</Link>
-        <Link to="/services/details">Consulting</Link>
-        <Link to="/services/details">Design</Link>
-        <Link to="/services/details">Digital</Link>
+        <Link to="/services/consulting">Consulting</Link>
+        <Link to="/services/design">Design</Link>
+        <Link to="/customer_insight">Customer_Insight</Link>
+        <Link to="/services/details">Details</Link>
+ 
+     
       </div>
       <div className="section section-2 text-28">
         <Link to="/resource">Resource</Link>

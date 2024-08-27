@@ -46,6 +46,9 @@ const Restaurant_Brand_Page = lazy(() => import("./Pages/Work/Restaurant_Brand/R
 const Karunashraya_Page = lazy(() => import("./Pages/Work/Karunashraya/Karunashraya"));
 const Vivekananda_Yoga_Page = lazy(() => import("./Pages/Work/Vivekananda_Yoga/Vivekananda_Yoga"));
 const ToniRossie_page = lazy(() => import("./Pages/Work/ToniRossi/ToniRossi"));
+const NLF_Page = lazy(() => import("./Pages/Work/NLF/NLF"));
+const TR_Campaign_Page = lazy(() => import("./Pages/Work/TR_Campaign/TR_Campaign"));
+
 
 const App = () => {
 
@@ -61,6 +64,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           {/* Work And Projects */}
           <Route path="/work" element={<WorkPage />} />
+          <Route path="/work/Gallery" element={<Work_Gallery_Page />} />
           <Route path="/work/Medtracker" element={<MedtrackerPage />} />
           <Route path="/work/MedtrackerUi" element={<MedtrackerUiPage />} />
           <Route path="/work/VE_Coffee" element={<VE_Coffee />} />
@@ -79,7 +83,9 @@ const App = () => {
           <Route path="/work/Karunashraya" element={<Karunashraya_Page />} />
           <Route path="/work/Vivekananda_Yoga" element={<Vivekananda_Yoga_Page />} />
           <Route path="/work/ToniRossi" element={<ToniRossie_page />} />
-          <Route path="/work/Gallery" element={<Work_Gallery_Page />} />
+          <Route path="/work/ToniRossi" element={<ToniRossie_page />} />
+          <Route path="/work/NLF" element={<NLF_Page />} />
+          <Route path="/work/TR_Campaign" element={<TR_Campaign_Page />} />
 
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />
