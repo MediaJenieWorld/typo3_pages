@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Karunashraya_Page = () => {
     return (
@@ -23,6 +24,7 @@ const Karunashraya_Page = () => {
                 <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/karunashraya/karunashraya (1).webp"} height={"auto"} width={"auto"} />
                 <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/karunashraya/karunashraya (2).webp"} height={"auto"} width={"auto"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

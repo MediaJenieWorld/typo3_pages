@@ -112,9 +112,38 @@
     padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 2rem;
-    min-height: 150px;
+    flex-wrap: wrap;
+
+    .jump-wrapper {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+
+      .jumpTo {
+        background-color: #ffdd2c;
+        width: max-content;
+        padding: 10px 30px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: var(--main-p-x);
+
+        select {
+          appearance: none;
+          padding: 5px 20px;
+          border-radius: 5px;
+        }
+
+        option {
+          appearance: none;
+          display: block;
+          padding: 10px 20px;
+          margin: 10px 20px;
+        }
+      }
+    }
   }
 }
 

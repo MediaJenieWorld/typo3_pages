@@ -3,6 +3,7 @@ import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import LineSplitter from '@/Components/Gsap/Line_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const VEC_Photography = () => {
     return (
@@ -57,7 +58,7 @@ const VEC_Photography = () => {
                     </LineSplitter>
                 </div>
             </div>
-
+            <ProjectFooter />
         </div>
     )
 }

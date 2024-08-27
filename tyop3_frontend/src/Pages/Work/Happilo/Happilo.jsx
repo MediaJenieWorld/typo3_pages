@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Happilo_Page = () => {
     return (
@@ -49,6 +50,7 @@ const Happilo_Page = () => {
                 <GsapImage transitionStyle={{ y: "-100%" }} src={"/Work/Happilo/Happilo (2).webp"} height={"auto"} width={"auto"} />
                 <GsapImage transitionStyle={{ x: "-100%" }} src={"/Work/Happilo/Happilo (3).webp"} height={"auto"} width={"auto"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

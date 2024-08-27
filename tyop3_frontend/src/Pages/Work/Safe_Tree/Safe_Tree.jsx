@@ -3,6 +3,7 @@ import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import LineSplitter from '@/Components/Gsap/Line_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Safe_Tree_Page = () => {
     return (
@@ -59,6 +60,7 @@ const Safe_Tree_Page = () => {
                     </LineSplitter>
                 </div>
             </div>
+            <ProjectFooter />
         </div>
     )
 }

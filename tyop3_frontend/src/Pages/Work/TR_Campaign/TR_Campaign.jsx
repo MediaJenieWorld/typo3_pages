@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const TR_Campaign_Page = () => {
     return (
@@ -31,6 +32,7 @@ Execution" />
                 <GsapImage src={"/Work/TR-Camp/tr (4).webp"} height={"auto"} width={"auto"} />
                 <GsapImage src={"/Work/TR-Camp/tr (5).webp"} height={"auto"} width={"auto"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

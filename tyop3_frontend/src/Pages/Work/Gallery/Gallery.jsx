@@ -1,6 +1,7 @@
 import ImageComp from "@/Components/Image";
 import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
+import ProjectFooter from "@/Components/ProjectFooter.jsx/ProjectFooter";
 
 const Work_Gallery_Page = () => {
     const images = [
@@ -111,6 +112,7 @@ Vaishnavi Estate Coffee`}
                     </div>)
                 })}
             </div>
+            <ProjectFooter />
         </div>
     );
 };

@@ -3,8 +3,9 @@ import "./style.scss";
 import LineSplitter from '@/Components/Gsap/Line_Ani';
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
-const Test = () => {
+const AppleBeesPage = () => {
 
     return (
         <div className='AppleBeesPage'>
@@ -42,9 +43,9 @@ const Test = () => {
                     </LineSplitter>
                 </div>
             </div>
-
+            <ProjectFooter />
         </div>
     )
 }
 
-export default Test
+export default AppleBeesPage

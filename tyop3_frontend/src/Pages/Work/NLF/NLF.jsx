@@ -1,6 +1,7 @@
 import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
+import ProjectFooter from "@/Components/ProjectFooter.jsx/ProjectFooter";
 
 const NLF_Page = () => {
     return (
@@ -16,6 +17,7 @@ const NLF_Page = () => {
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/NLF/nlf (2).webp"} />
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/NLF/nlf (1).webp"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

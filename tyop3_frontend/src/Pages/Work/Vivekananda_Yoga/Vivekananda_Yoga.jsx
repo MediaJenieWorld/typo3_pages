@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Vivekananda_Yoga_Page = () => {
     return (
@@ -19,8 +20,8 @@ India. We planned, designed and executed the digital media campaign." />
                 <GsapImage src={"/Work/Vivekananda_Yoga/yoga (1).webp"} height={"auto"} width={"auto"} />
                 <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/Vivekananda_Yoga/yoga (2).webp"} height={"auto"} width={"auto"} />
                 <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/Vivekananda_Yoga/yoga (4).webp"} height={"auto"} width={"auto"} />
-
             </div>
+            <ProjectFooter />
         </div>
     )
 }

@@ -152,3 +152,30 @@ export function getProjectsByPage(page_id, loadNumbers = 7) {
   const pageEnd = pageStart + loadNumbers;
   return shalowCopy.slice(pageStart, pageEnd) || [];
 }
+
+export function generateProjectsPagination(steps = 7) {
+  if (steps <= 0) {
+    return 1;
+  }
+  return Math.ceil(allProjects.length / steps);
+}
+
+export function generatePreAndNextProjects(projectLink) {
+  const findIndex = allProjects.findIndex((val) => val.link === projectLink);
+
+  if (findIndex === -1) {
+    return {
+      nextProject: null,
+      prevProject: null,
+    };
+  }
+
+  const nextProject =
+    findIndex < allProjects.length - 1 ? allProjects[findIndex + 1] : null;
+  const prevProject = findIndex > 0 ? allProjects[findIndex - 1] : null;
+
+  return {
+    nextProject,
+    prevProject,
+  };
+}

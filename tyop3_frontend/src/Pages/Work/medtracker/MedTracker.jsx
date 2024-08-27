@@ -3,6 +3,7 @@ import "./style.scss";
 import LineSplitter from '@/Components/Gsap/Line_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import Gsap_iframe from '@/Components/Gsap/Iframe';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const MedtrackerPage = () => {
     return (
@@ -29,6 +30,7 @@ const MedtrackerPage = () => {
                     </LineSplitter>
                 </div>
             </div>
+            <ProjectFooter />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const ToniRossie_page = () => {
     return (
@@ -18,6 +19,7 @@ const ToniRossie_page = () => {
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/tonirossi/tonirossi (3).webp"} />
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/tonirossi/tonirossi (1).webp"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

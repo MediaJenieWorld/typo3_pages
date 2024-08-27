@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Restaurant_Brand_Page = () => {
     return (
@@ -39,9 +40,8 @@ capture this essence, without making them look like stock photography.
                 <GsapImage transitionStyle={{ x: "-100%" }} src={"/Work/Restaurant_Brand/food (10).webp"} height={"auto"} width={"auto"} />
 
                 <GsapImage transitionStyle={{ x: "100%" }} src={"/Work/Restaurant_Brand/food (1).webp"} height={"auto"} width={"auto"} />
-
-
             </div>
+            <ProjectFooter />
         </div>
     )
 }

@@ -3,6 +3,7 @@ import "./style.scss";
 import LineSplitter from '@/Components/Gsap/Line_Ani';
 import Gsap_iframe from '@/Components/Gsap/Iframe';
 import ProjectHead from '@/Components/Gsap/ProjectHead';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const VE_Coffee = () => {
     return (
@@ -59,6 +60,7 @@ const VE_Coffee = () => {
                     </LineSplitter>
                 </div>
             </div>
+            <ProjectFooter />
         </div>
     )
 }

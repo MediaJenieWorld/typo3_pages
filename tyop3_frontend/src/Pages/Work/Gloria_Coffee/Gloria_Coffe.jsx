@@ -3,6 +3,7 @@ import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import LineSplitter from '@/Components/Gsap/Line_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Gloria_Coffee_Page = () => {
     return (
@@ -37,6 +38,7 @@ const Gloria_Coffee_Page = () => {
             <div className="hero-image">
                 <GsapImage height={"auto"} width={"100%"} src={"/Work/GloriaCoffee/GloriaCoffee (3).webp"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }

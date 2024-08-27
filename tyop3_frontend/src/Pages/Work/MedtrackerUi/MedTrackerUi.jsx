@@ -3,6 +3,7 @@ import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
 import LineSplitter from '@/Components/Gsap/Line_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const MedtrackerUiPage = () => {
     return (
@@ -30,7 +31,7 @@ const MedtrackerUiPage = () => {
             <div className="hero-image">
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/MedTracker/medtrack (1).webp"} />
             </div>
-
+            <ProjectFooter />
         </div>
     )
 }

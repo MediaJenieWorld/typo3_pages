@@ -2,11 +2,12 @@
 import { useLocation } from "react-router-dom";
 import "./style.scss";
 // import ScrollToTop from "@/Components/ScrollTop";
-import { getProjectsByPage } from "@/Utils/Work_Projects";
+import { generateProjectsPagination, getProjectsByPage } from "@/Utils/Work_Projects";
 
 const WorkPage = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location?.search);
+  const totalPages = generateProjectsPagination()
 
   const getId = queryParams.get('id') || 1
   const id = isNaN(getId) ? 1 : getId == 0 ? 1 : getId
@@ -97,11 +98,19 @@ const WorkPage = () => {
           );
         })}
       </div>}
-      {cards.length >= 7 && <div className="centered">
+      <div className="centered">
         {id > 1 && <KnowMoreBtn link={`/work?id=${id - 1}`} lable="Previous Page" />}
         <KnowMoreBtn link={"#id"} lable={id} />
-        <KnowMoreBtn link={`/work?id=${nextPageId}`} lable="Next Page" />
-      </div>}
+        {cards.length >= 7 && <KnowMoreBtn link={`/work?id=${nextPageId}`} lable="Next Page" />}
+        <div className="jump-wrapper">
+          <div className="jumpTo">
+            <label className="text-24 text-600" htmlFor="jump">Jump To The Page</label>
+            <select className="text-24 text-600" defaultValue={id} onChange={(e) => window.location.replace(`/work?id=${e?.target?.value}`)} name="jump" id="jump">
+              {Array.from({ length: totalPages }).map((val, index) => <option key={index} value={index + 1}>{index + 1}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

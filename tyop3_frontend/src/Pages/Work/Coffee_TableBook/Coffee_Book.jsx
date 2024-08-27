@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.scss";
 import ProjectHead from '@/Components/Gsap/ProjectHead';
 import GsapImage from '@/Components/Gsap/Image_Ani';
+import ProjectFooter from '@/Components/ProjectFooter.jsx/ProjectFooter';
 
 const Coffee_Book_Page = () => {
     return (
@@ -27,6 +28,7 @@ const Coffee_Book_Page = () => {
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/coffeeTableBook/book_page (3).webp"} />
                 <GsapImage transitionStyle={{ y: "100%" }} height={"auto"} width={"100%"} src={"/Work/coffeeTableBook/book_page (1).webp"} />
             </div>
+            <ProjectFooter />
         </div>
     )
 }
