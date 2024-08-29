@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StaggeredWords = ({ children, duration = .5, delay = .2, scrub = false, markers = false, initX = "0%", initY = "100%",
+const StaggeredWords = ({ children, duration = 2, delay = 0, scrub = false, markers = false, initX = "0%", initY = "100%",
     layerCSS_Style = { transform: `translate(${initX}, ${initY})` },
     transitionStyle = { x: "0%", y: "0%" } }) => {
 

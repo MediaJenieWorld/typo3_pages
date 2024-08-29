@@ -56,13 +56,14 @@ const fakeTestimonials = [
 const TestimonialsSlider = ({ data = fakeTestimonials }) => {
   return (
     <Carousel
+      autoPlay={true}
       renderArrowPrev={(a) => arrowPre(a)}
       renderArrowNext={(a) => arrowNext(a)}
       infiniteLoop={true}
       showArrows={true}
       showThumbs={false}
       renderIndicator={(clickHandler, isSelected, index) => <li onClick={clickHandler} key={index} className={`dot ${isSelected ? "selected" : ""}`} ></li>
-      }>
+      }>6
       {
         data.map((testimonial, index) => (
           <div key={index} className="test-card">

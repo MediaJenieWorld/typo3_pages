@@ -112,15 +112,29 @@ const ServicePage = () => {
 Customer Experiences built on insights, strategy, design,
 digital, content & managed services.
 
-We help you:
-
-- Go C2B (Customer to Business)
-- “Really Know Your Customer” (RKYC), and listen to them.
-- With data & insights driven strategies
-- Business-process improvement.
-- Design & implement CX solutions.
-- Support you with managed services.`}
+We help you:`}
         </pre>
+        <ul>
+          <li className="text-28 text-600">
+            Go C2B (Customer to Business)
+          </li>
+          <li className="text-28 text-600">
+            Really Know Your Customer” (RKYC), and listen to them.
+          </li>
+          <li className="text-28 text-600">
+            With data & insights driven strategies
+          </li>
+          <li className="text-28 text-600">
+            Business-process improvement.
+          </li>
+          <li className="text-28 text-600">
+            Design & implement CX solutions.
+          </li>
+          <li className="text-28 text-600">
+            Support you with managed services.
+          </li>
+        </ul>
+
       </div>
       {/* <Container data={containerTwoContent()} /> */}
       <div className="section-2">

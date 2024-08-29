@@ -4,6 +4,7 @@ import TestimonialSlider from "@/Components/Testomonials/Testimonial_Slider";
 import Counter from "./Count";
 import ScrollToTop from "@/Components/ScrollTop";
 import { Fragment } from "react";
+import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 
 const headingText = `Thinkers, artists, analysts, 
 strategists, coders, producers, rebels, 
@@ -43,13 +44,21 @@ businesses & ideas.`}
         <img loading="lazy" src="/assets/Home/About-Hero.webp" alt="Banner" />
         <div className="overlay">
           <h1 className="text-84 text-700">
-            From 1-man startups
+            <StaggeredLine initX={"0%"} initY={"-100%"} >
+              From 1-man startups
+            </StaggeredLine>
           </h1>
           <h3 className="text-48 text-400">
-            to family-owned businesses, fast-growing brands, and some very large
-            corporates, we have had the honor of working with
+            <StaggeredLine>
+              to family-owned businesses, fast-growing brands, and some very large
+              corporates, we have had the honor of working with
+            </StaggeredLine>
           </h3>
-          <h4 className="text-32 text-400">some interesting clients.</h4>
+          <h4 className="text-32 text-400">
+            <StaggeredLine>
+              some interesting clients.
+            </StaggeredLine>
+          </h4>
         </div>
       </div>
       <div className="section-5">
