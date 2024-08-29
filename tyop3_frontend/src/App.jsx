@@ -29,7 +29,7 @@ const ResourceBlogPage = lazy(() => import("./Pages/Resource/Blog/Blog"));
 
 // Projects
 const MedtrackerUiPage = lazy(() => import("./Pages/Work/MedtrackerUi/MedTrackerUi"));
-const MedtrackerPage = lazy(() => import("./Pages/Work/Medtracker/MedTracker"));
+const MedtrackerPage = lazy(() => import("./Pages/Work/medtracker/MedTracker"));
 const VE_Coffee = lazy(() => import("./Pages/Work/VE_Coffee/VE_Coffee"));
 const VEC_Photography = lazy(() => import("./Pages/Work/VEC_Photography/VEC_Photography"));
 const AppleBeesPage = lazy(() => import("./Pages/Work/AppleBees/AppleBees"));
