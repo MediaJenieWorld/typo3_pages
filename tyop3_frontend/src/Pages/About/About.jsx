@@ -55,6 +55,7 @@ businesses & ideas.`}
       <div className="section-5">
         <div className="text-center-wrapper">
           <h2 className="text-72 text-600">Our Principles & Values</h2>
+          <br />
           <table className="items">
             <>  {principlesAndValues().map((data, i) =>
               <tr key={i}>
@@ -128,10 +129,10 @@ businesses & ideas.`}
           <div className="card">
             <div className="text-wrapper">
               <p className="text-32 text-400">
-              Open, unbiased and respectful.
-We encourage constant learning, exploration and problem solving.
-People are given freedom, flexibility and responsibilities.
-To reach their potential, push limits and deliver awesome outcomes.
+                Open, unbiased and respectful.
+                We encourage constant learning, exploration and problem solving.
+                People are given freedom, flexibility and responsibilities.
+                To reach their potential, push limits and deliver awesome outcomes.
 
               </p>
               <button className="button">Know More</button>

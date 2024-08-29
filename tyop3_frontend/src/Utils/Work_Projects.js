@@ -141,6 +141,22 @@ of shoe making.`,
     text: "ToniRossi - Campaign Services",
     link: "/work/TR_Campaign",
   },
+  {
+    imageSrc: "/assets/Work/Ashok_Maanay/cover.webp",
+    link: "/work/Ashok_Maanay",
+    text: "Ashok Maanay - Content Production",
+    title: `One of the finest fashion designers, Ashok Maanay is known for his exquisite collection
+apt for royals. For Bangalore Fashion Week, where he was presenting the collections,
+we were tasked to produce a series of imagery and brochures. We worked with talents
+like Ravi Awana - Gladrags Winner, and Raiza Wilson - Actress, to create some stunning
+visuals to present his outfits in all the grandeur.`,
+  },
+  {
+    imageSrc: "/assets/Work/Karlsson_Leather/cover.jpg",
+    link: "/work/Karlsson_Leather",
+    text: "Karlsson Leather - Digital",
+    title: `Karlsson Leather is a luxury bespoke leather furniture brand. We designed and developed websites for Indian and UAE markets.`,
+  },
 ];
 
 export function getProjectsByPage(page_id, loadNumbers = 7) {

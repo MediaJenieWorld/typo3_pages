@@ -54,7 +54,7 @@ const Consulting_Page = () => {
                 <h3 className='text-60 heading'>
                     Want to know more?
                 </h3>
-                <KnowMoreBtn label='Get in touch' />
+                <KnowMoreBtn link={"/contact"} label='Get in touch' />
             </div>
             <div className="card-section">
                 <h1 className='text-84 text-700 heading '>

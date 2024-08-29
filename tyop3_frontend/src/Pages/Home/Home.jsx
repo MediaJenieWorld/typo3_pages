@@ -4,7 +4,8 @@ import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import ImageComp from "@/Components/Image";
 import ScrollToTop from "@/Components/ScrollTop";
 import { Fragment } from "react";
-import LineSplitter from "@/Components/Gsap/Line_Ani";
+// import LineSplitter from "@/Components/Gsap/Line_Ani";
+import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 
 const headingText = `We are a CX Agency based in Bangalore.`;
 
@@ -57,10 +58,26 @@ const Home = () => {
           loading="eager"
           height={"960px"} width={"100%"} src="/assets/Home/Home-Hero-Image2.webp" alt="Banner" />
         <div className="overlay">
-          <pre className="text-84 text-700">{headingText}</pre>
-          <h3 className="text-48 text-500">{subHeadingText}</h3>
-          <h4 className="text-32 text-500">{descriptionText}</h4>
-          <KnowMoreBtn link={"/about"} />
+          <div className="text-84 text-700">
+            <StaggeredLine layerCSS_Style={{ opacity: 0 }}
+              transitionStyle={{ opacity: 1 }}
+              duration={3} initX="-100%" initY="0%" >
+              {headingText}
+            </StaggeredLine>
+          </div>
+          <h3 className="text-48 text-500">
+            <StaggeredWords duration={4} initX="100%" initY="0%" >
+              {subHeadingText}
+            </StaggeredWords>
+          </h3>
+          <h4 className="text-32 text-500">
+            <StaggeredWords duration={4} initX="-100%" initY="0%" >
+              {descriptionText}
+            </StaggeredWords>
+          </h4>
+          <StaggeredLine duration={4} initX="0%" initY="100%" >
+            <KnowMoreBtn link={"/about"} />
+          </StaggeredLine>
         </div>
       </div>
       <div className="home-section-2">
@@ -134,11 +151,11 @@ const Home = () => {
         <TestimonialSlider data={testimonialData} />
       </div> */}
       <div className="success-stories">
-        <h2 className="text-84 text-700">
-          <LineSplitter>
+        <div className="text-84 text-700">
+          <StaggeredWords initX="0" initY="100%">
             Success Stories
-          </LineSplitter>
-        </h2>
+          </StaggeredWords>
+        </div>
         <div className="list">
           {successStoriesData.map((item, index) => {
             return <div className="story-list-item" key={index}>
@@ -180,20 +197,20 @@ const Home = () => {
 const SuccessStoryConatiner = ({ data }) => {
   const { category, heading, text } = data
   return <Fragment>
-    <h3 className="text-36">
-      <LineSplitter>
+    <div className="text-36">
+      <StaggeredWords>
         {heading}
-      </LineSplitter>
-    </h3>
+      </StaggeredWords>
+    </div>
     <div className="text-28 text-500">
-      <LineSplitter>
+      <StaggeredWords>
         {text}
-      </LineSplitter>
+      </StaggeredWords>
     </div>
     <div className="category text-32 text-600">
-      <LineSplitter>
+      <StaggeredWords>
         {category}
-      </LineSplitter>
+      </StaggeredWords>
     </div>
   </Fragment>
 }

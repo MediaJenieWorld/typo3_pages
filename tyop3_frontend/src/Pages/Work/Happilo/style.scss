@@ -62,11 +62,6 @@
             padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
             row-gap: calc(var(--main-p-x) * 2);
         }
-
-        // .hero-image {
-        //     padding: 0;
-        // }
-
         .grid {
             display: flex;
             flex-direction: column;
@@ -84,9 +79,9 @@
     .Happilo_Page {
 
         .grid,
-        .hero-image {
-            row-gap: var(--main-p-x);
-            padding: calc(var(--main-p-x)* 2) var(--main-p-x);
-        }
+ .hero-image {
+     row-gap: var(--main-p-x);
+     padding: calc(var(--main-p-x)* 2) var(--main-p-x);
+ }
     }
 }

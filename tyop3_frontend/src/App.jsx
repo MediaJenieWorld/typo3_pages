@@ -48,6 +48,10 @@ const Vivekananda_Yoga_Page = lazy(() => import("./Pages/Work/Vivekananda_Yoga/V
 const ToniRossie_page = lazy(() => import("./Pages/Work/ToniRossi/ToniRossi"));
 const NLF_Page = lazy(() => import("./Pages/Work/NLF/NLF"));
 const TR_Campaign_Page = lazy(() => import("./Pages/Work/TR_Campaign/TR_Campaign"));
+const Ashok_Maanay_Page = lazy(() => import("./Pages/Work/Ashok_Maanay/Ashok_Maanay"));
+const Robert_Bosch_Page = lazy(() => import("./Pages/Work/Robert_Bosch/Robert_Bosch"));
+const Karlsson_Leather_Page = lazy(() => import("./Pages/Work/Karlsson_Leather/Karlsson_Leather"));
+
 
 
 const App = () => {
@@ -86,6 +90,9 @@ const App = () => {
           <Route path="/work/ToniRossi" element={<ToniRossie_page />} />
           <Route path="/work/NLF" element={<NLF_Page />} />
           <Route path="/work/TR_Campaign" element={<TR_Campaign_Page />} />
+          <Route path="/work/Ashok_Maanay" element={<Ashok_Maanay_Page />} />
+          <Route path="/work/Robert_Bosch" element={<Robert_Bosch_Page />} />
+          <Route path="/work/Karlsson_Leather" element={<Karlsson_Leather_Page />} />
 
           <Route path="/behindUs" element={<BehindUs />} />
           <Route path="/contact" element={<ContactPage />} />

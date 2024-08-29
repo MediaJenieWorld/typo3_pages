@@ -38,6 +38,10 @@
             }
         }
 
+        a {
+            width: max-content;
+        }
+
         &.social {
             flex-direction: row;
             gap: 1em;

@@ -12,7 +12,7 @@ const fakeData = [
     heading: "Consulting",
     description: fakeDes,
     imgSrc: "/assets/Service/image-10.webp",
-    link: "no-link",
+    link: "/services/consulting",
     description: `
     Research & Intelligence
     User Research
@@ -31,7 +31,7 @@ Branding
 Communication
 Marketing`,
     imgSrc: "/assets/Service/image-9.webp",
-    link: "no-link",
+    link: "/services/design",
   },
   {
     heading: "Digital",
@@ -49,13 +49,13 @@ Content Management
 Automation
 Martech`,
     imgSrc: "/assets/Service/image-11.webp",
-    link: "no-link",
+    link: "/services/details",
   },
   {
     heading: "CX Services",
     description: fakeDes,
     imgSrc: "/assets/Service/image-10.webp",
-    link: "no-link",
+    link: "/services/customer_insight",
     description: `
 CX Audit
 RKYC
@@ -129,7 +129,7 @@ We help you:
       <div className="section-3">
         <h4 className="text-32 text-600">What we do?</h4>
         <h4 className="text-32 text-600">We bring your brand & customers closer through great customer experiences</h4>
-        
+
         <pre className="text-60 text-600">
           {`Our services are spread across
 5 areas & practices`}
@@ -153,7 +153,7 @@ We help you:
         >
           Testimonial
         </h3>
-        <TestimonialsSlider data={testimonialData()}  />
+        <TestimonialsSlider data={testimonialData()} />
       </div>
     </div>
   );

@@ -1,51 +1,81 @@
-import React, { Fragment, useLayoutEffect, useRef } from 'react';
-import "./styles/LineAnimation.scss";
-import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import "./styles/LineAnimation.scss"
 import { ScrollTrigger } from 'gsap/all';
-import { promiseImgLoaded } from '@/Utils/checksImagesLoaded';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WordSplitter = ({ word }) => {
-    return (
-        <div className="word-wrapper">
-            {word}
-        </div>
-    );
-};
+const StaggeredWords = ({ children, duration = .5, delay = .2, scrub = false, markers = false, initX = "0%", initY = "100%",
+    layerCSS_Style = { transform: `translate(${initX}, ${initY})` },
+    transitionStyle = { x: "0%", y: "0%" } }) => {
 
-const LineSplitter = ({ delay = 1, children }) => {
-    const line = children || "No Words";
+
+    layerCSS_Style.transform = `translate(${initX}, ${initY})`
+    transitionStyle.x = "0%"
+    transitionStyle.y = "0%"
+
     const wordsRef = useRef([]);
 
-    useLayoutEffect(() => {
-        wordsRef.current.forEach((wordRef, index) => {
-            gsap.to(`#word-${index}`,
-                {
-                    scrollTrigger: {
-                        trigger: wordRef,
-                        start: "top 80%",
-                        markers: 1, scrub: 1
-                    },
-                    y: "100%",
-                    duration: 0.5, delay: index * 0.2
+
+    useEffect(() => {
+        wordsRef.current.forEach((word, index) => {
+            gsap.to(word, {
+                scrollTrigger: {
+                    trigger: word,
+                    start: "top 90%",
+                    scrub, markers,
                 },
-            );
+                duration,
+                ease: 'expo.out',
+                delay: index * delay,
+                ...transitionStyle
+            });
         });
 
-    }, [children]);
+    }, []);
 
-    return (
-        <div className="line-wrapper">
-            {line.split(' ').map((word, index) => (
-                <Fragment key={index}>
-                    <div id={'word-' + index} style={{ display: "contents" }} ref={el => wordsRef.current[index] = el}>
-                        <WordSplitter word={word} />
-                    </div>
-                </Fragment>
-            ))}
+    const words = children.split(' ').map((word, index) => (
+        <div className='word-wrapper' key={index} >
+            <div className="char-wrapper" ref={el => wordsRef.current[index] = el} style={{ ...layerCSS_Style }}>
+                {word}
+            </div>
         </div>
-    );
+    ));
+
+    return <div className='line-wrapper'>{words}</div>;
 };
 
-export default LineSplitter;
+export default StaggeredWords;
+
+
+export const StaggeredLine = ({ children, duration = 2, delay = 0,
+    trigger,
+    scrub = false, markers = false, initX = "100%", initY = "0%",
+    layerCSS_Style = {},
+    transitionStyle = {} }) => {
+
+    layerCSS_Style.transform = `translate(${initX}, ${initY})`
+    transitionStyle.x = "0%"
+    transitionStyle.y = "0%"
+
+    const lineRef = useRef();
+
+    useEffect(() => {
+        gsap.to(lineRef.current, {
+            scrollTrigger: {
+                trigger: lineRef.current,
+                start: "-=10% 90%",
+                scrub, markers, ...trigger
+            },
+            duration,
+            ease: 'expo.out',
+            delay,
+            ...transitionStyle,
+        });
+    }, []);
+    return <div style={{ overflow: "hidden" }} className='line-wrapper'>
+        <div style={{ ...layerCSS_Style }} ref={lineRef} className='word-wrapper'  >
+            {children}
+        </div>
+    </div>;
+};

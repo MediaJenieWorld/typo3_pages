@@ -1,0 +1,171 @@
+.Robert_Bosch_Page {
+    padding: 0;
+
+    .section-1 {
+        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
+        background-color: #ebebeb;
+
+        .h1 {
+            font-size: calc(var(--text-84) * 1.5);
+        }
+
+        .h2 {
+            font-size: var(--text-84);
+            color: rgba(25, 27, 29, .6)
+        }
+    }
+
+    .ProjectHead .description {
+        padding-bottom: 20px;
+    }
+
+    .grid {
+        padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 8);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        column-gap: calc(var(--main-p-x) * 2);
+        row-gap: calc(var(--main-p-x) * 4);
+
+        &.col-3 {
+            grid-template-columns: repeat(3, 1fr);
+
+            img {
+                max-height: 400px !important;
+            }
+        }
+    }
+
+    .hero-image {
+        margin-bottom: 5rem;
+        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 8);
+        display: flex;
+        flex-direction: column;
+        gap: var(--main-p-x);
+        align-items: center;
+        justify-content: center;
+
+        img {
+            object-fit: contain;
+            // max-width: 1000px;
+            max-height: fit-content;
+            width: 100%;
+        }
+    }
+
+    .description {
+        padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--main-p-x);
+
+        .time {
+            grid-column: span 2;
+        }
+
+        .txt {
+            grid-column: 3 / -1;
+        }
+    }
+
+    .padding {
+        padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 4);
+
+        p {
+            padding: calc(var(--main-p-x) * 4) 0;
+        }
+    }
+
+    .p,
+    .pre {
+        font-weight: 400;
+        color: rgba(25, 27, 29, .6);
+        font-size: var(--text-28);
+    }
+
+    .centered {
+        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .Robert_Bosch_Page .grid {
+        display: block;
+
+    }
+
+}
+
+
+@media screen and (max-width:750px) {
+    .Robert_Bosch_Page {
+        font-size: 8px;
+
+        .section-1,
+        .description,
+        .hero-image,
+        .grid,
+        .padding {
+            padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
+        }
+
+        .padding {
+            padding: calc(var(--main-p-x)* 2) calc(var(--main-p-x) * 2);
+
+            p {
+                padding: 0;
+            }
+        }
+
+        .grid,
+        .hero-image {
+            padding: calc(var(--main-p-x)* 3) calc(var(--main-p-x) * 2);
+            row-gap: calc(var(--main-p-x) * 2);
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                height: unset;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width:480px) {
+    .Robert_Bosch_Page {
+        .section-1 {
+            font-size: 6px;
+
+            h1 {
+                overflow-wrap: break-word;
+                // word-break: break-all;
+                hyphens: manual;
+            }
+        }
+
+        .description {
+            display: block;
+        }
+
+        .grid,
+        .hero-image .section-1,
+        .description {
+            padding: calc(var(--main-p-x)* 2) var(--main-p-x);
+        }
+
+        .grid,
+        .hero-image {
+            row-gap: var(--main-p-x);
+            padding: calc(var(--main-p-x)* 2) var(--main-p-x);
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./style.scss";
+import { resourceLink } from "@/Utils/api";
 
 const Footer = () => {
   return (
@@ -17,13 +18,13 @@ const Footer = () => {
         <Link to="/services">Services</Link>
         <Link to="/services/consulting">Consulting</Link>
         <Link to="/services/design">Design</Link>
-        <Link to="/customer_insight">Customer_Insight</Link>
+        <Link to="/services/customer_insight">Customer Insight</Link>
         <Link to="/services/details">Details</Link>
- 
-     
+
+
       </div>
       <div className="section section-2 text-28">
-        <Link to="/resource">Resource</Link>
+        <Link to={resourceLink}>Resource</Link>
         <Link to="/about/behindUs">Company</Link>
         <Link to="/about/behindUs">People</Link>
         <Link to="/work">Our Work</Link>

@@ -1,42 +1,55 @@
 /* eslint-disable react/prop-types */
 import "./style.scss";
 import ScrollToTop from "@/Components/ScrollTop";
+import { resourceLink } from "@/Utils/api";
 
 
 const cards = [
   {
     imageSrc: "/assets/Resource/image.webp",
-    title: "", text: ""
+    title: "Increasing Customer Satisfaction And Loyalty Through CX",
+    text: "How can we create an exceptional customer experience that keeps our customers coming back for more? This question reverberates through boardrooms, executive meetings, and strategy sessions across businesses worldwide. In an era where customers wield unprecedented power, the answer lies in mastering Customer Experience (CX). CX is the total of emotions, perceptions, and interactions that...",
+    link: "https://mediajenie.com/increasing-customer-satisfaction-and-loyalty-through-cx/"
   },
   {
     imageSrc: "/assets/Resource/image (1).webp",
-    title: "", text: ""
+    title: "How To Improve Your ROI In Marketing Through Optimization Of Customer Experience?",
+    text: "How do you transform mundane customer interactions into memorable moments? How can you turn satisfied customers into loyal ones who not only stick around but also bring others along too? Each customer touchpoint shapes their perception of your brand. Get it right, and you’ve won a loyal customer. Get it wrong, and they might vanish...",
+    link: "https://mediajenie.com/how-to-improve-your-roi-in-marketing-through-optimization-of-customer-experience/"
   },
   {
     imageSrc: "/assets/Resource/image (2).webp",
-    title: "", text: ""
+    title: "Losing Customers? Reduce Your Churn Rate Through CX Transformation",
+    text: "Are your customers slipping through the cracks? It’s a question that keeps many business owners awake at night. The churn rate – the percentage of customers who said goodbye to your brand – can be a silent profit killer. The stakes are high: companies lose an average of 20-30% of their customers annually. That’s a...",
+    link: "https://mediajenie.com/losing-customers-reduce-your-churn-rate-through-cx-transformation/"
   },
   {
     imageSrc: "/assets/Resource/image (3).webp",
-    title: "", text: ""
+    title: "How To Transform Sales And Profitability Through CX (Customer Experience) Transformation?",
+    text: "Picture this: Your business is a high-speed train speeding through the digital landscape. The tracks ahead are lined with opportunities, but also risky curves. What’s the one lever that can ensure your train stays on course, accelerates, and outpaces the competition? Customer Experience (CX) transformation – the secret weapon used by smart businesses to skyrocket...",
+    link: "https://mediajenie.com/how-to-transform-sales-and-profitability-through-cx-customer-experience-transformation/"
   },
   {
     imageSrc: "/assets/Resource/image (4).webp",
-    title: "", text: ""
+    title: "How To Retain Customers? CX Transformation To Improve Retention",
+    text: "Do your customers vanish before you even realise why? Even though your product or service may be the best, do you still feel your customers are slipping away and you’re unable to hold on to them? Customer retention isn’t a trick, it’s a strategy, and it has the potential to transform your business.  Acquiring new...",
+    link: "https://mediajenie.com/how-to-retain-customers-cx-transformation-to-improve-retention/"
   },
   {
     imageSrc: "/assets/Resource/image (5).webp",
-    title: "", text: ""
+    title: "The Power of Trust: How to Deliver Outstanding Customer Experience",
+    text: "In the ever-evolving realm of business, trust stands as the pivotal foundation for exceptional customer experiences and enduring relationships. This post unveils the profound influence of trust on customer interactions and unravels strategies to cultivate trust for building long-lasting connections. The Vital Role of Trust: Trust serves as the heart of outstanding customer experiences. It’s...",
+    link: "https://mediajenie.com/the-power-of-trust-how-to-deliver-outstanding-customer-experience/"
   },
 ]
 
+
 const ResourcePage = () => {
 
-
-  const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE" }) => {
+  const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE", btnProps, linkProps }) => {
     return (
-      <button className={btnClass + " button"}>
-        <a href={link || "#link"}>{lable}</a>
+      <button {...btnProps} className={btnClass + " button"}>
+        <a href={link || "#link"} {...linkProps}>{lable}</a>
       </button>
     );
   };
@@ -45,9 +58,9 @@ const ResourcePage = () => {
     <div className="ResourcePage">
       <ScrollToTop />
       <div className="section-1">
-        <h4 className="text-32 text-600">Our Work</h4>
+        <h4 className="text-32 text-600">Our Blogs</h4>
         <pre className="text-60 text-600">
-          {`Here is a sneak peak to our work across different industries and services.`}
+          {`Here is a sneak peak to our blogs on across different industries and services.`}
         </pre>
       </div>
       <div className="search-section">
@@ -66,19 +79,15 @@ const ResourcePage = () => {
               />
             </div>
             <div className="text-container">
-              <p className="text-36 text-600">
-                Increasing customer satisfaction and loyalty through customer experience.
-              </p>
-              <p className="text-28 text-400">
-                How can we create an exceptional customer experience that keeps our customers coming back for more?
-              </p>
-              <KnowMoreBtn lable="VIEW PROJECT" />
+              <p className="text-36 text-600">{data.title} </p>
+              <p className="text-28 text-400">{data.text}  </p>
+              <KnowMoreBtn linkProps={{ target: "_blank" }} link={data.link} lable="VIEW BLOG" />
             </div>
           </div>)
         })}
       </div>
       <div className="centered">
-        <KnowMoreBtn link={"#"} lable="LOAD MORE PROJECTS" />
+        <KnowMoreBtn link={resourceLink} lable="LOAD MORE BLOGS" />
       </div>
     </div>
   );

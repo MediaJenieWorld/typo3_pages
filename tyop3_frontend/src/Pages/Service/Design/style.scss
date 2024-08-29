@@ -51,6 +51,7 @@
     min-height: 300px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-content: center;
     row-gap: var(--main-p-x);
     column-gap: calc(var(--main-p-x) * 2);

@@ -1,7 +1,7 @@
 export function checkAllImagesLoaded() {
   const header = document.querySelector(".header1");
   const images = document.querySelectorAll(
-    header.nextSibling.className + "img"
+    header?.nextSibling?.className || "body " + " img"
   ); // Select all image elements
   let notLoaded = [];
 
@@ -19,7 +19,7 @@ export function promiseImgLoaded() {
   return new Promise((resolve) => {
     const header = document.querySelector(".header1");
     const images = document.querySelectorAll(
-      header.nextSibling.className + " img"
+      header?.nextSibling?.className || "body " + " img"
     ); // Select all image elements
     let notLoaded = [];
 
