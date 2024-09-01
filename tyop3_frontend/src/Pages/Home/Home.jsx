@@ -6,6 +6,7 @@ import ScrollToTop from "@/Components/ScrollTop";
 import { Fragment } from "react";
 // import LineSplitter from "@/Components/Gsap/Line_Ani";
 import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
+import GsapImage from "@/Components/Gsap/Image_Ani";
 
 const headingText = `We are a CX Agency based in Bangalore.`;
 
@@ -82,69 +83,89 @@ const Home = () => {
       </div>
       <div className="home-section-2">
         {/* <h4 className="text-32 text-600">Introduction</h4> */}
-        <pre className="text-60 text-600">{story}
-        </pre>
-        <KnowMoreBtn link={"/services"} btnClass="purple" label="View Services" />
+        <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+          <pre className="text-60 text-600">
+            {story}
+          </pre>
+        </StaggeredLine>
+        <StaggeredLine duration={1} delay={.01} initY="0%" initX="100%" >
+          <KnowMoreBtn link={"/services"} label="View Services" />
+        </StaggeredLine>
       </div>
       <AllServices />
       <div className="cards-section">
         <div className="card">
-          <ImageComp loading="lazy"
-            src="Home/blue-particle.webp"
-            alt="blue.jpg"
-            height={400}
-            width={400}
-          />
-          <div className="text-container">
-            <p className="text-24 text-600">FEATURED SERVICE</p>
-            <div className="bottom">
-              <p className="text-36 text-600">
-                Customer Experience Consulting to improve Sales
-              </p>
-              <KnowMoreBtn link={"/services/consulting"} />
+          <StaggeredLine duration={2} delay={.7} initX="100%" initY="0">
+            <ImageComp loading="lazy"
+              src="Home/blue-particle.webp"
+              alt="blue.jpg"
+              height={400}
+              width={400}
+            />
+            <div className="text-container">
+              <p className="text-24 text-600">FEATURED SERVICE</p>
+              <div className="bottom">
+                <p className="text-36 text-600">
+                  Customer Experience Consulting to improve Sales
+                </p>
+                <KnowMoreBtn link={"/services/consulting"} />
+              </div>
             </div>
-          </div>
+          </StaggeredLine>
         </div>
         <div className="card">
-          <ImageComp loading="lazy"
-            src="Home/red-rays.webp"
-            alt="blue.jpg"
-            height={400}
-            width={400}
-          />
-          <div className="text-container">
-            <p className="text-24 text-600">LATEST WORK</p>
-            <div className="bottom">
-              <p className="text-36 text-600">
-                Digital Experience for one of the leading organization in USA
-              </p>
-              <KnowMoreBtn link={"/work/Gallery"} />
+          <StaggeredLine duration={2} delay={.7} initX="100%" initY="0">
+            <ImageComp loading="lazy"
+              src="Home/red-rays.webp"
+              alt="blue.jpg"
+              height={400}
+              width={400}
+            />
+            <div className="text-container">
+              <p className="text-24 text-600">LATEST WORK</p>
+              <div className="bottom">
+                <p className="text-36 text-600">
+                  Digital Experience for one of the leading organization in USA
+                </p>
+                <KnowMoreBtn link={"/work/Gallery"} />
+              </div>
             </div>
-          </div>
+          </StaggeredLine>
         </div>
         <div className="card">
-          <ImageComp loading="lazy"
-            src="Home/blue-ball.webp"
-            alt="blue.jpg"
-            height={400}
-            width={400}
-          />
-          <div className="text-container">
-            <p className="text-24 text-600">KNOWLEDGE</p>
-            <div className="bottom">
-              <p className="text-36 text-600">
-                How you can use AI to improve customer experience?
-              </p>
-              <KnowMoreBtn link={"/resource"} />
+          <StaggeredLine duration={2} delay={.7} initX="100%" initY="0">
+            <ImageComp loading="lazy"
+              src="Home/blue-ball.webp"
+              alt="blue.jpg"
+              height={400}
+              width={400}
+            />
+            <div className="text-container">
+              <p className="text-24 text-600">KNOWLEDGE</p>
+              <div className="bottom">
+                <p className="text-36 text-600">
+                  How you can use AI to improve customer experience?
+                </p>
+                <KnowMoreBtn link={"/resource"} />
+              </div>
             </div>
-          </div>
+          </StaggeredLine>
         </div>
       </div>
       <div className="home-section-2">
-        <h4 className="text-60 text-600">Our Clients</h4>
-        <p className="text-32 text-400">{`In the last 15 years, we have had the honor of working with some exciting brands. From startups, SMEs to large corporates and non-profit organizations...From different industries and countries across the globe.`}
-        </p>
-        <KnowMoreBtn link={"/services"} btnClass="purple" label="View Services" />
+        <div className="text-60 text-600">
+          <StaggeredLine duration={1} delay={.01} initY="100%" initX="0%" >
+            Our Clients
+          </StaggeredLine>
+        </div>
+        <div className="text-32 text-400">
+          <StaggeredLine duration={1} delay={.01} initY="100%" initX="0%" >
+            {`In the last 15 years, we have had the honor of working with some exciting brands. From startups, SMEs to large corporates and non-profit organizations...From different industries and countries across the globe.`}
+          </StaggeredLine>
+        </div>
+        <StaggeredLine duration={1} delay={.01} initY="100%" initX="0%" >
+          <KnowMoreBtn link={"/services"} btnClass="purple" label="View Services" />
+        </StaggeredLine>
       </div>
       {/* <div className="testimonials">
         <h3 className="text-32 text-700 text-container">What our customers say?</h3>
@@ -152,7 +173,7 @@ const Home = () => {
       </div> */}
       <div className="success-stories">
         <div className="text-84 text-700">
-          <StaggeredWords initX="0" initY="100%">
+          <StaggeredWords duration={3} delay={.35} initX="0" initY="100%">
             Success Stories
           </StaggeredWords>
         </div>
@@ -167,27 +188,32 @@ const Home = () => {
       </div>
       <div id="section6" className="Big-container">
         <div className="left parent">
-          <ImageComp loading="lazy"
+          <GsapImage loading="lazy"
             className="backImage"
             src="Home/Card.webp"
             alt="bg-image"
             height="700"
             width="500"
+            transitionStyle={{ x: "100%" }}
           />
           {/* <h1>Big Heading Text goes here</h1> */}
         </div>
         <div className="right">
-          <div className="card">
-            <div className="all">
-              <div className="text-wrapper">
-                <h2 className="text-60 text-700">Why CX is critical?</h2>
-                <p className="text-32 text-400">
-                  When products, technology and services become commoditized and brands face intense competition, “experience” will be the one aspect that differentiate them from the rest. If you focus on delivering great customer experience (CX) at every touch point of your brand, you are not just driving growth & profit, but also becoming a better organization internally. Because, to deliver great CX, you need to REALLY KNOW your customer. By having a deeper understanding about them and delivering experiences that connects with them at an emotional level, your brand is forging a deeper, stronger and meaningful bond with the right audience.
-                </p>
+          <StaggeredLine
+            layerCSS_Style={{ zIndex: 5, opacity: 0, transform: "translate(100%,0%)" }} delay={1} duration={2.5}
+            transitionStyle={{ transform: "translate(0%,0%)", opacity: 1 }}>
+            <div className="card">
+              <div className="all">
+                <div className="text-wrapper">
+                  <h2 className="text-60 text-700">Why CX is critical?</h2>
+                  <p className="text-32 text-400">
+                    When products, technology and services become commoditized and brands face intense competition, “experience” will be the one aspect that differentiate them from the rest. If you focus on delivering great customer experience (CX) at every touch point of your brand, you are not just driving growth & profit, but also becoming a better organization internally. Because, to deliver great CX, you need to REALLY KNOW your customer. By having a deeper understanding about them and delivering experiences that connects with them at an emotional level, your brand is forging a deeper, stronger and meaningful bond with the right audience.
+                  </p>
+                </div>
+                <KnowMoreBtn link={"/about"} />
               </div>
-              <KnowMoreBtn link={"/about"} />
             </div>
-          </div>
+          </StaggeredLine>
         </div>
       </div>
     </div>
@@ -198,12 +224,12 @@ const SuccessStoryConatiner = ({ data }) => {
   const { category, heading, text } = data
   return <Fragment>
     <div className="text-36">
-      <StaggeredWords>
+      <StaggeredWords >
         {heading}
       </StaggeredWords>
     </div>
     <div className="text-28 text-500">
-      <StaggeredWords>
+      <StaggeredWords delay={.05}>
         {text}
       </StaggeredWords>
     </div>
@@ -218,30 +244,58 @@ const SuccessStoryConatiner = ({ data }) => {
 function AllServices() {
   return <div className="All-Services">
     <div className="service-heading">
-      <p className="text-48 text-600">{`Brand growth & sales are outcomes of
+      <div className="text-48 text-600">
+        <StaggeredWords delay={.025} initY="100%" initX="0%">
+          {`Brand growth & sales are outcomes of
 great customer experiences. By
 understanding your audience, and
 making every experience memorable - at
 every touch point - we bring them closer
-to your brand.`}</p>
-      <p className="text-48 text-600">
-        {`15+ Years | 100s of Clients | 360 Degree
+to your brand.`}
+        </StaggeredWords>
+      </div>
+      <div className="text-48 text-600">
+        <StaggeredWords delay={.025} initY="100%" initX="0%">
+          {`15+ Years | 100s of Clients | 360 Degree
 Solutions`}
-      </p>
+        </StaggeredWords>
+      </div>
     </div>
     <div className="service-content">
-      <p className="text-32 text-400">Research & Strategy</p>
-      <p className="text-32 text-400">Insights</p>
-      <p className="text-32 text-400">CX Consulting</p>
-      <p className="text-32 text-400">Design</p>
-      <p className="text-32 text-400">Digital Media</p>
-      <p className="text-32 text-400">Tech Solutions</p>
-      <p className="text-32 text-400">Content Production</p>
-      <p className="text-32 text-400">Campaigns</p>
-      <p className="text-32 text-400">Marketing Services</p>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Research & Strategy
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Insights
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        CX Consulting
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Design
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Digital Media
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Tech Solutions
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Content Production
+      </StaggeredLine> </div>
+      <div className="text-32 text-400"> <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+        Campaigns
+      </StaggeredLine> </div>
+      <div className="text-32 text-400">
+        <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
+          Marketing Services
+        </StaggeredLine>
+      </div>
     </div>
     <div className="btn">
-      <KnowMoreBtn link={"/services"} btnClass="purple" label="View Services" />
+      {/* <StaggeredLine duration={1} initY="100%" initX="0%" > */}
+      <KnowMoreBtn link={"/services"} label="View Services" />
+      {/* </StaggeredLine> */}
     </div>
   </div>
 }

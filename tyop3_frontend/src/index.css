@@ -121,7 +121,7 @@ body {
 }
 
 .button {
-  font-size: 1.5em;
+  font-size: 1.9em;
   padding: 10px 30px;
   background: #ffdd2c;
   border-radius: 5px;
@@ -152,7 +152,7 @@ body {
     padding: 0;
     a {
       display: block;
-      padding: 10px 30px;
+      padding: 12px 30px;
     }
   }
 }

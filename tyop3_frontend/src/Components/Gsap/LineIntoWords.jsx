@@ -5,12 +5,16 @@ import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StaggeredWords = ({ children, duration = 2, delay = 0, scrub = false, markers = false, initX = "0%", initY = "100%",
+const StaggeredWords = ({ children,
+    duration = 2, delay = .1,
+    scrub = false, markers = false,
+    initX = "0%", initY = "100%",
+    defaultStyle = true,
     layerCSS_Style = { transform: `translate(${initX}, ${initY})` },
     transitionStyle = { x: "0%", y: "0%" } }) => {
 
 
-    layerCSS_Style.transform = `translate(${initX}, ${initY})`
+    layerCSS_Style.transform = `translate(${defaultStyle ? initX : "0%"}, ${defaultStyle ? initY : "0%"})`
     transitionStyle.x = "0%"
     transitionStyle.y = "0%"
 
@@ -22,7 +26,7 @@ const StaggeredWords = ({ children, duration = 2, delay = 0, scrub = false, mark
             gsap.to(word, {
                 scrollTrigger: {
                     trigger: word,
-                    start: "top 90%",
+                    start: "top 80%",
                     scrub, markers,
                 },
                 duration,
@@ -50,11 +54,11 @@ export default StaggeredWords;
 
 export const StaggeredLine = ({ children, duration = 2, delay = 0,
     trigger,
+    defaultStyle = true,
     scrub = false, markers = false, initX = "100%", initY = "0%",
     layerCSS_Style = {},
     transitionStyle = {} }) => {
-
-    layerCSS_Style.transform = `translate(${initX}, ${initY})`
+    layerCSS_Style.transform = `translate(${defaultStyle ? initX : "0%"}, ${defaultStyle ? initY : "0%"})`
     transitionStyle.x = "0%"
     transitionStyle.y = "0%"
 
@@ -64,7 +68,7 @@ export const StaggeredLine = ({ children, duration = 2, delay = 0,
         gsap.to(lineRef.current, {
             scrollTrigger: {
                 trigger: lineRef.current,
-                start: "-=10% 90%",
+                start: "top 80%",
                 scrub, markers, ...trigger
             },
             duration,

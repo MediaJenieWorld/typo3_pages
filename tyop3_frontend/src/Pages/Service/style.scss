@@ -88,10 +88,17 @@
       display: flex;
       gap: var(--text-72);
 
+
+
       .left {
         flex-basis: 30%;
 
+        .line-wrapper {
+          height: 100%;
+        }
+
         img {
+          height: 100%;
           width: 100%;
           min-width: 320px;
         }

@@ -82,8 +82,8 @@ const Header = () => {
     <header className="header1">
       <div className="top">
         <div className="logo">
-          <img loading="lazy" src="/user-48.png" height={40} width={40} alt="Logo" />
-          <h3 className="text-16 text-700">CX Agent</h3>
+          <img loading="lazy" src="/MJ_Logo.webp" height={40} width={40} alt="Logo" />
+          {/* <h3 className="text-16 text-700">CX Agent</h3> */}
         </div>
         <button
           className={isMenuOpen ? "menu-toggle active " : "menu-toggle"}

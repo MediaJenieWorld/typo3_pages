@@ -26,8 +26,11 @@
       text-align: center;
       color: #fff;
 
-      h4 {
-        padding: 0 var(--main-p-x);
+      .text-48.text-500 {
+        .line-wrapper {
+          justify-content: center;
+
+        }
       }
     }
   }
@@ -73,6 +76,12 @@
     gap: 50px;
     padding: var(--col-gap) calc(var(--main-p-x) + 1em);
     overflow-x: auto;
+    overflow-y: hidden;
+
+    .word-wrapper {
+      background-color: transparent;
+      width: 100%;
+    }
 
     .card {
       flex-shrink: 0;
@@ -83,10 +92,11 @@
       gap: var(--col-gap);
       justify-content: space-between;
       position: relative;
-      background-color: red;
+
 
       img {
         width: 100%;
+        transition: scale .3s ease-in-out;
       }
 
       .text-container {
@@ -113,6 +123,13 @@
           }
         }
       }
+
+      &:hover {
+        img {
+          scale: 1.1;
+        }
+      }
+
     }
   }
 
@@ -374,6 +391,25 @@
 @media screen and (max-width:480px) {
   .home {
     font-size: 6px;
+
+    .success-stories {
+      font-size: 8px;
+      padding: calc(var(--main-p-y) * 2) var(--main-p-x);
+
+      .text-84 {
+        font-size: calc(var(--text-84) + .5rem);
+      }
+    }
+
+    .All-Services {
+      .service-content {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .btn {
+        font-size: 9px;
+      }
+    }
 
     .Big-container {
       padding: 4em;

@@ -96,39 +96,6 @@ const Design_Page = () => {
                 </h3>
                 <KnowMoreBtn link={"/contact"} label='Get in touch' />
             </div>
-            <div className="card-section">
-                <h1 className='text-84 text-700 heading '>
-                    Dive Deeper
-                </h1>
-                <div className="card">
-                    <div className="img">
-                        <ImageComp
-                            loading="lazy"
-                            src={"/Home/blue-particle.webp"}
-                            alt={"/Home/blue-particle.webp"}
-                            height={400}
-                            width={400}
-                        />
-                    </div>
-                    <div className="text-container">
-                        <p className="text-36 text-600">Name of the work or project goes here in 2 lines</p>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="img">
-                        <ImageComp
-                            loading="lazy"
-                            src={"/Home/blue-particle.webp"}
-                            alt={"/Home/blue-particle.webp"}
-                            height={400}
-                            width={400}
-                        />
-                    </div>
-                    <div className="text-container">
-                        <p className="text-36 text-600">Name of the work or project goes here in 2 lines</p>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import TestimonialsSlider from "@/Components/Testomonials/Testimonial_Slider";
 import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
 import ScrollToTop from "@/Components/ScrollTop";
+import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 
 const fakeDes =
   "Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text.";
@@ -49,7 +50,7 @@ Content Management
 Automation
 Martech`,
     imgSrc: "/assets/Service/image-11.webp",
-    link: "/services/details",
+    link: "/services/digital",
   },
   {
     heading: "CX Services",
@@ -75,11 +76,10 @@ Videos & Films
 Audio
 Print`,
     imgSrc: "/assets/Service/image-9.webp",
-    link: "no-link",
+    link: "/services/content_services",
   },
   {
-    heading: `Marketing & Managed
-Services`,
+    heading: `Marketing & Managed Services`,
     description: `
 Campaigns
 Digital Marketing
@@ -90,7 +90,7 @@ eXperience Process Enhancement
 eXperience Review Framework
 & More…`,
     imgSrc: "/assets/Service/image-11.webp",
-    link: "no-link",
+    link: "/services/marketing_services",
   },
 ];
 
@@ -106,48 +106,127 @@ const ServicePage = () => {
       <ScrollToTop />
       <CoverPageImage src={"/assets/Service/service-hero.webp"} />
       <div className="section-1">
-        <pre className="text-84 text-600">{story}</pre>
-        <pre className="text-28 text-600">
-          {`We bring your brand & customers closer through great
-Customer Experiences built on insights, strategy, design,
-digital, content & managed services.
-
-We help you:`}
-        </pre>
-        <ul>
-          <li className="text-28 text-600">
-            Go C2B (Customer to Business)
-          </li>
-          <li className="text-28 text-600">
-            Really Know Your Customer” (RKYC), and listen to them.
-          </li>
-          <li className="text-28 text-600">
-            With data & insights driven strategies
-          </li>
-          <li className="text-28 text-600">
-            Business-process improvement.
-          </li>
-          <li className="text-28 text-600">
-            Design & implement CX solutions.
-          </li>
-          <li className="text-28 text-600">
-            Support you with managed services.
-          </li>
-        </ul>
-
+        <StaggeredLine
+          defaultStyle={false}
+          duration={0.5}
+          delay={1}
+          layerCSS_Style={{ filter: "blur(4px)" }}
+          transitionStyle={{ filter: "blur(0px)" }}
+        >
+          <pre className="text-84 text-600">{story}</pre>
+          <br />
+          <div style={{ maxWidth: "800px" }} className="text-28 text-600">
+            <StaggeredWords
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              We bring your brand & customers closer through great Customer
+              Experiences built on insights, strategy, design, digital, content
+              & managed services.
+            </StaggeredWords>
+          </div>
+          <br />
+          <span className="text-28 text-600">
+            <StaggeredWords
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+              duration={1.5}
+            >
+              We help you:
+            </StaggeredWords>
+          </span>
+          <ul>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                Go C2B (Customer to Business)
+              </li>
+            </StaggeredLine>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                “Really Know Your Customer” <p> (RKYC), and listen to them.</p>
+              </li>
+              
+            </StaggeredLine>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                With data & insights driven strategies
+              </li>
+            </StaggeredLine>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                Business-process improvement.
+              </li>
+            </StaggeredLine>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                Design & implement CX solutions.
+              </li>
+            </StaggeredLine>
+            <StaggeredLine
+              duration={1.5}
+              transitionStyle={{ opacity: 1 }}
+              layerCSS_Style={{ opacity: 0 }}
+            >
+              <li className="text-28 text-600">
+                Support you with managed services.
+              </li>
+            </StaggeredLine>
+          </ul>
+        </StaggeredLine>
       </div>
       {/* <Container data={containerTwoContent()} /> */}
       <div className="section-2">
         <img loading="lazy" src="/assets/Service/main-hero.webp" alt="Banner" />
       </div>
       <div className="section-3">
-        <h4 className="text-32 text-600">What we do?</h4>
-        <h4 className="text-32 text-600">We bring your brand & customers closer through great customer experiences</h4>
-
-        <pre className="text-60 text-600">
-          {`Our services are spread across
-5 areas & practices`}
-        </pre>
+        <div className="text-32 text-600">
+          <StaggeredWords
+            transitionStyle={{ opacity: 1 }}
+            layerCSS_Style={{ opacity: 0 }}
+            duration={1.5}
+          >
+            What we do?
+          </StaggeredWords>
+        </div>
+        <div className="text-32 text-600">
+          <StaggeredWords
+            transitionStyle={{ opacity: 1 }}
+            layerCSS_Style={{ opacity: 0 }}
+            duration={1.5}
+          >
+            We bring your brand & customers closer through great customer
+            experiences
+          </StaggeredWords>
+        </div>
+        <div className="text-60 text-600">
+          <StaggeredWords
+            transitionStyle={{ opacity: 1 }}
+            layerCSS_Style={{ opacity: 0 }}
+            duration={1.5}
+          >
+            Our services are spread across 5 areas & practices
+          </StaggeredWords>
+        </div>
       </div>
       <div className="section-4">
         {fakeData.map((val, i) => {
@@ -184,22 +263,58 @@ function ServiceProductCard({ data }) {
   return (
     <>
       <div className="left">
-        <img
-          loading="lazy"
-          height={360}
-          width={360}
-          src={imgSrc || fakeImgSrc}
-          alt={heading + " image"}
-        />
+        <StaggeredLine
+          trigger={{ start: "20% 70%" }}
+          layerCSS_Style={{ opacity: 0 }}
+          transitionStyle={{ opacity: 1 }}
+          duration={3}
+          initX="-100%"
+          initY="0%"
+        >
+          <img
+            loading="lazy"
+            height={360}
+            width={360}
+            src={imgSrc || fakeImgSrc}
+            alt={heading + " image"}
+          />
+        </StaggeredLine>
       </div>
       <div className="right">
         <div className="top">
-          <h3 className="text-60 text-600">{heading}</h3>
-          <pre style={{ color: "#191B1D" }} className="text-500 text-28">
-            {description || fakeDes}
-          </pre>
+          <StaggeredLine
+            trigger={{ start: "20% 70%" }}
+            delay={0.5}
+            layerCSS_Style={{ opacity: 0 }}
+            transitionStyle={{ opacity: 1 }}
+            initX="100%"
+            initY="0%"
+          >
+            <h3 className="text-60 text-600">{heading}</h3>
+          </StaggeredLine>
+          <StaggeredLine
+            trigger={{ start: "20% 70%" }}
+            delay={1}
+            layerCSS_Style={{ opacity: 0 }}
+            transitionStyle={{ opacity: 1 }}
+            initX="100%"
+            initY="0%"
+          >
+            <pre style={{ color: "#191B1D" }} className="text-500 text-28">
+              {description || fakeDes}
+            </pre>
+          </StaggeredLine>
         </div>
-        <KnowMoreBtn btnClass="purple" lable="View Services" />
+        <StaggeredLine
+          trigger={{ start: "20% 70%" }}
+          delay={1}
+          layerCSS_Style={{ opacity: 0 }}
+          transitionStyle={{ opacity: 1 }}
+          initX="100%"
+          initY="0%"
+        >
+          <KnowMoreBtn link={link} btnClass="purple" lable="View Services" />
+        </StaggeredLine>
       </div>
     </>
   );
@@ -231,13 +346,14 @@ function containerOneContent() {
     descriptionHeading: `We believe sales & growth of a brand are outcomes of great
 customer experiences.
  
-Is your brand offering a special experience to your
-customers? How does your digital, marketing,
-communication & content fit into that “great experience” of
-your brand?
+Is your brand offering a special experience to your customers?
+How does your digital, marketing,
+communication & content fit into that “great experience” of your brand?
+
  
-Are you measuring it? Monitoring it? Refining it?
- 
+Are you measuring it? 
+Monitoring it? Refining it? 
+
 Let's start with your users. Let's help you transform your
 brand's customer experience.`,
   };
@@ -251,7 +367,8 @@ Customer Experiences built on insights, strategy, design,
 digital, content & managed services.`,
     description: `We help you:
 - Go C2B (Customer to Business)
-- “Really Know Your Customer” (RKYC), and listen to them.
+- “Really Know Your Customer” 
+ (RKYC), and listen to them.  
 - With data & insights driven strategies
 - Business-process improvement.
 - Design & implement CX solutions.
@@ -267,7 +384,6 @@ function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE" }) {
   );
 }
 
-
 function testimonialData() {
   return [
     {
@@ -278,18 +394,17 @@ function testimonialData() {
   year.”`,
       summary: "",
       author: "Puneet Singh",
-      position: "CEO | Encryption Consulting LLC - USA"
+      position: "CEO | Encryption Consulting LLC - USA",
     },
     {
-      heading:
-        `“I just wanted to share our experience and let you
+      heading: `“I just wanted to share our experience and let you
   know that it’s been great working with you. We're
   glad we decided to work with you. Thank you so
   much for a job well done.You guys are the best!
   Keep up the great work!”`,
       summary: "",
       author: "Nirmal Narayan",
-      position: "Founder-CEO"
+      position: "Founder-CEO",
     },
     {
       heading: `“Good Supporting Team. The quality of work is
@@ -298,38 +413,35 @@ function testimonialData() {
   Vishwanath Bettadapura.”`,
       summary: "",
       author: "Toyoda Gosei",
-      position: "Asst. Manager - Sales"
+      position: "Asst. Manager - Sales",
     },
     {
-      heading:
-        `“Managing NPS and CSAT was a challenge for us.
+      heading: `“Managing NPS and CSAT was a challenge for us.
   MediaJenie took this off our shoulders and
   managed it smoothly. The reports and insights
   were really helpful.”`,
       summary: "",
       author: "COO",
-      position: "F & B Brand, Bangalore"
+      position: "F & B Brand, Bangalore",
     },
     {
-      heading:
-        `“Excellent support by the operations team, the
+      heading: `“Excellent support by the operations team, the
   ideation process is amazing, and are highly
   committed. Looking forward to many years of great
   content with MediaJenie.”`,
       summary: "",
       author: "Shareeq Mohammed",
-      position: "Toni Rossi"
+      position: "Toni Rossi",
     },
     {
-      heading:
-        `“CX audit & NPS by MediaJenie helped us in
+      heading: `“CX audit & NPS by MediaJenie helped us in
   understanding the critical areas we needed to
   focus. They supported us in fixing these gaps in
   our marketing & service areas..”`,
       summary: "",
       author: "Fintech Start-up",
-      position: "VP Marketing"
-    }
-  ]
+      position: "VP Marketing",
+    },
+  ];
 }
 export default ServicePage;

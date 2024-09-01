@@ -3,8 +3,8 @@ import CoverPageImage from "@/Components/CoverPage";
 import TestimonialSlider from "@/Components/Testomonials/Testimonial_Slider";
 import Counter from "./Count";
 import ScrollToTop from "@/Components/ScrollTop";
-import { Fragment } from "react";
 import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
+import GsapImage from "@/Components/Gsap/Image_Ani";
 
 const headingText = `Thinkers, artists, analysts, 
 strategists, coders, producers, rebels, 
@@ -23,39 +23,45 @@ const About = () => {
       <ScrollToTop />
       <CoverPageImage src="/assets/Home/Our Story.webp" />
       <div className="section-2">
-        <pre style={{ fontFamily: 'Poppins', lineHeight: "1.2em" }} className="text-84 text-600">
-          {`We help in
+        <StaggeredLine initX={"0%"} initY={"100%"} >
+          <pre style={{ fontFamily: 'Poppins', lineHeight: "1.2em" }} className="text-84 text-600">
+            {`We help in
 launching & growing brands,
 businesses & ideas.`}
-        </pre>
-        <p className="text-28">
-          We are a Customer Experience Agency. We bring your brand & customers
-          closer through great customer experiences. With a leadership team of
-          veterans having 20+ years of experience in their respective domains, we
-          provide solutions with a razor-sharp focus on your users. With us on
-          board, what you get is a rare-combination of customer experience +
-          creative + digital + content + services.
-        </p>
+          </pre>
+        </StaggeredLine>
+        <StaggeredLine initX={"0%"} initY={"100%"} >
+          <p className="text-28">
+            We are a Customer Experience Agency. We bring your brand & customers
+            closer through great customer experiences. With a leadership team of
+            veterans having 20+ years of experience in their respective domains, we
+            provide solutions with a razor-sharp focus on your users. With us on
+            board, what you get is a rare-combination of customer experience +
+            creative + digital + content + services.
+          </p>
+        </StaggeredLine>
+
       </div>
       {/* <div className="image-section">
         <ImageSlider />
       </div> */}
       <div className="hero-section">
-        <img loading="lazy" src="/assets/Home/About-Hero.webp" alt="Banner" />
+        <GsapImage duration={1.5} layerCSS_Style={{ display: "none" }}
+          imageCSS_Style={{ filter: "blur(10px)", scale: "1" }} image_transitionStyle={{ filter: "blur(0px)", scale: "1" }} loading="lazy" src="/assets/Home/About-Hero.webp" alt="Banner" />
         <div className="overlay">
           <h1 className="text-84 text-700">
-            <StaggeredLine initX={"0%"} initY={"-100%"} >
+            <StaggeredLine duration={4} delay={1} initX={"0%"} initY={"-100%"} >
               From 1-man startups
             </StaggeredLine>
           </h1>
           <h3 className="text-48 text-400">
-            <StaggeredLine>
+            <StaggeredLine duration={3} delay={1}>
               to family-owned businesses, fast-growing brands, and some very large
               corporates, we have had the honor of working with
             </StaggeredLine>
           </h3>
           <h4 className="text-32 text-400">
-            <StaggeredLine>
+            <StaggeredLine duration={3} delay={1}>
               some interesting clients.
             </StaggeredLine>
           </h4>
@@ -64,19 +70,18 @@ businesses & ideas.`}
       <div className="section-5">
         <div className="text-center-wrapper">
           <h2 className="text-72 text-600">Our Principles & Values</h2>
-          <br />
           <table className="items">
-            <>  {principlesAndValues().map((data, i) =>
+            <tbody>{principlesAndValues().map((data, i) =>
               <tr key={i}>
-                <td key={i} className="item text-28">
+                <td className="item text-28">
                   {data.title}
                 </td>
-                <td key={i} className="item text-28">
+                <td className="item text-28">
                   {data.text}
                 </td>
               </tr>
             )}
-            </>
+            </tbody>
             {/* {principlesAndValues().map((data, i) => <div key={i} className="item">
               <p className="text-28">
                 {data.title}
@@ -131,20 +136,27 @@ businesses & ideas.`}
             height="700"
             width="500"
           />
-          <pre style={{ color: "#fff" }} className="text-72 text-700">{floatingCard_Heading}
+          <pre style={{ color: "#fff" }} className="text-72 text-700">
+            <StaggeredLine initX="0" initY="100%" >
+              {floatingCard_Heading}
+            </StaggeredLine>
           </pre>
         </div>
         <div className="right">
           <div className="card">
             <div className="text-wrapper">
-              <p className="text-32 text-400">
-                Open, unbiased and respectful.
-                We encourage constant learning, exploration and problem solving.
-                People are given freedom, flexibility and responsibilities.
-                To reach their potential, push limits and deliver awesome outcomes.
+              <StaggeredLine initX="0" initY="100%" >
+                <p className="text-32 text-400">
+                  Open, unbiased and respectful.
+                  We encourage constant learning, exploration and problem solving.
+                  People are given freedom, flexibility and responsibilities.
+                  To reach their potential, push limits and deliver awesome outcomes.
 
-              </p>
-              <button className="button">Know More</button>
+                </p>
+              </StaggeredLine>
+              <StaggeredLine initX="-100%" initY="0%" >
+                <button className="button">KNOW MORE</button>
+              </StaggeredLine>
             </div>
           </div>
         </div>

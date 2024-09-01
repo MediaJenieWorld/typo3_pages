@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css"
 
+
 const Header1 = lazy(() => import("./Components/Header1/Header"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -18,7 +19,9 @@ const DetailsPage = lazy(() => import("./Pages/Service/Details/Details"));
 const Consulting_Page = lazy(() => import("./Pages/Service/Consulting/Consulting"));
 const CustomerInsight_Page = lazy(() => import("./Pages/Service/CustomerInsight/CustomerInsight"));
 const Design_Page = lazy(() => import("./Pages/Service/Design/Design"));
-
+const Digital_Page = lazy(() => import("./Pages/Service/Digital/Digital"));
+const Content_Services_Page = lazy(() => import("./Pages/Service/Content_Services/Content_Services"));
+const Marketing_Services_Page = lazy(() => import("./Pages/Service/Marketing_Services/Marketing_Services"));
 // Service Page
 
 const WorkPage = lazy(() => import("./Pages/Work/Work"));
@@ -102,6 +105,9 @@ const App = () => {
           <Route path="/services/consulting" element={<Consulting_Page />} />
           <Route path="/services/customer_insight" element={<CustomerInsight_Page />} />
           <Route path="/services/design" element={<Design_Page />} />
+          <Route path="/services/digital" element={<Digital_Page />} />
+          <Route path="/services/content_services" element={<Content_Services_Page />} />
+          <Route path="/services/marketing_services" element={<Marketing_Services_Page />} />
 
 
           <Route path="/terms" element={<WordPressPage />} />

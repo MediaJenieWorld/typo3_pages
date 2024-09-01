@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap, 5px);
-    line-gap-override: 2rem;
 
     .word-wrapper {
         display: inline-block;
