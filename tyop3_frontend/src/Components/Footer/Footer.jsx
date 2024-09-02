@@ -6,8 +6,9 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="section">
-        <h1>Logo</h1>
-        <p>Copyright © 2020</p>
+        <img style={{ objectFit: "contain" }} loading="lazy" src="/MJ_Logo.webp" height={50} width={120} alt="Logo" />
+        <br />
+        <p className="text-16 ">Copyright © 2020</p>
       </div>
       <div className="section text-28 text-400">
         <Link to="/home">Home</Link>

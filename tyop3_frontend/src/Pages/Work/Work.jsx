@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./style.scss";
 // import ScrollToTop from "@/Components/ScrollTop";
 import { generateProjectsPagination, getProjectsByPage } from "@/Utils/Work_Projects";
@@ -15,14 +15,13 @@ const WorkPage = () => {
 
   const cards = getProjectsByPage(id)
 
-  const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE" }) => {
+  const KnowMoreBtn = ({ btnClass = "", link, lable = "KNOW MORE", ...props }) => {
     return (
       <button className={btnClass + " button"}>
-        <a href={link || "#link"}>{lable}</a>
+        <a {...props} href={link || "#link"}>{lable}</a>
       </button>
     );
   };
-
   return (
     <div className="Work">
       {/* <ScrollToTop /> */}
@@ -39,14 +38,16 @@ const WorkPage = () => {
           return (
             <div key={i} className="card">
               <div className="img">
-                <img
-                  loading="lazy"
-                  src={val.imageSrc}
-                  alt={val.imageSrc}
-                  height={400}
-                  onClick={() => window.location.replace(val?.link)}
-                  width={400}
-                />
+                <Link to={val?.link}>
+                  <img
+                    loading="lazy"
+                    src={val.imageSrc}
+                    alt={val.imageSrc}
+                    height={400}
+                    onClick={() => window.location.replace(val?.link)}
+                    width={400}
+                  />
+                </Link>
               </div>
               <div className="text-container">
                 <p className="text-36 text-600">{val.title}</p>
@@ -60,14 +61,16 @@ const WorkPage = () => {
           style={{ color: "rgba(25, 27, 29, .6)" }}
           className="text-48 text-600">No More Projects</h3></div>}
       {cards.length >= 5 && <div className="hero-section">
-        <img
-          style={{ objectFit: "cover" }}
-          loading="lazy"
-          height={"960px"}
-          width={"100%"}
-          src={cards[4]?.imageSrc}
-          alt="Banner"
-        />
+        <Link to={cards[4]?.link}>
+          <img
+            style={{ objectFit: "cover" }}
+            loading="lazy"
+            height={"960px"}
+            width={"100%"}
+            src={cards[4]?.imageSrc}
+            alt="Banner"
+          />
+        </Link>
         <div className="overlay">
           <h1 className="text-84 text-700">{cards[4]?.title}</h1>
           <h3 className="text-48 text-500">{cards[4]?.text}</h3>
@@ -81,14 +84,15 @@ const WorkPage = () => {
           return (
             <div key={i} className="card">
               <div className="img">
-                <img
-                  onClick={() => window.location.replace(val?.link)}
-                  loading="lazy"
-                  src={val.imageSrc}
-                  alt={val.imageSrc}
-                  height={400}
-                  width={400}
-                />
+                <Link to={val?.link}>
+                  <img
+                    loading="lazy"
+                    src={val.imageSrc}
+                    alt={val.imageSrc}
+                    height={400}
+                    width={400}
+                  />
+                </Link>
               </div>
               <div className="text-container">
                 <p className="text-36 text-600">{val.title}</p>
@@ -99,17 +103,28 @@ const WorkPage = () => {
         })}
       </div>}
       <div className="centered">
-        {id > 1 && <KnowMoreBtn link={`/work?id=${id - 1}`} lable="Previous Page" />}
-        <KnowMoreBtn link={"#id"} lable={id} />
-        {cards.length >= 7 && <KnowMoreBtn link={`/work?id=${nextPageId}`} lable="Next Page" />}
-        <div className="jump-wrapper">
-          <div className="jumpTo">
-            <label className="text-24 text-600" htmlFor="jump">Jump To The Page</label>
-            <select className="text-24 text-600" defaultValue={id} onChange={(e) => window.location.replace(`/work?id=${e?.target?.value}`)} name="jump" id="jump">
-              {Array.from({ length: totalPages }).map((val, index) => <option key={index} value={index + 1}>{index + 1}</option>)}
-            </select>
-          </div>
-        </div>
+        {id > 2 && <KnowMoreBtn
+          style={{
+
+          }}
+          className="no-space"
+          link={`/work?id=${id - 2}`} lable="<<" />}
+        {/* Previous Page */}
+        {id > 1 && <KnowMoreBtn link={`/work?id=${id - 1}`} lable="<" />}
+        {/* Previous Page */}
+
+        {/* Current Page */}
+        <KnowMoreBtn className="pageId" link={"#id"} lable={id} />
+        {/* Current Page */}
+
+        {/* Next Page */}
+        {cards.length >= 7 && <KnowMoreBtn
+          link={`/work?id=${nextPageId}`} lable=">" />}
+        {/* Next Page */}
+
+        {id <= totalPages - 2 && <KnowMoreBtn
+          className="no-space"
+          link={`/work?id=${nextPageId + 1}`} lable=">>" />}
       </div>
     </div>
   );

@@ -13,15 +13,15 @@ const menuItems = [
     links: [
       {
         label: "Company",
-        href: "/behindUs",
+        // href: "/behindUs",
       },
       {
         label: "People",
-        href: "/behindUs",
+        // href: "/behindUs",
       },
       {
         label: "Work With Us",
-        href: "/behindUs",
+        // href: "/behindUs",
       },
     ],
   },

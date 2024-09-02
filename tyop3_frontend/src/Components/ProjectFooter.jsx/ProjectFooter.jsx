@@ -10,7 +10,7 @@ const ProjectFooter = () => {
             {prevProject !== null &&
                 <a href={prevProject.link} className="pre">
                     <ImageComp className="icon" height={50} width={"50px"} style={{ objectFit: "cover" }} prefixAssets={false} src={"/icons/arrow-left.svg"} />
-                    <h3 className='heading text-48 text-600'>{prevProject.link.split("/")[2]}</h3>
+                    <h3 className='heading text-48 text-600'>{prevProject.name}</h3>
                     <div className="layer"></div>
                     <ImageComp className="mainImg" height={200} width={"100%"} style={{ objectFit: "cover" }} prefixAssets={false} src={prevProject.imageSrc} />
                 </a>}
@@ -19,7 +19,7 @@ const ProjectFooter = () => {
                     <ImageComp className="icon" height={50} width={"50px"}
                         style={{ objectFit: "cover" }} prefixAssets={false}
                         src={"/icons/arrow-right.svg"} />
-                    <h3 className='heading text-48 text-600'>{nextProject.link.split("/")[2]}</h3>
+                    <h3 className='heading text-48 text-600'>{nextProject.name}</h3>
                     <div className="layer"></div>
                     <ImageComp className="mainImg" height={200} width={"100%"} style={{ objectFit: "cover" }} prefixAssets={false} src={nextProject.imageSrc} />
                 </a>}

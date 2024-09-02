@@ -151,9 +151,9 @@ const ServicePage = () => {
               layerCSS_Style={{ opacity: 0 }}
             >
               <li className="text-28 text-600">
-                “Really Know Your Customer” <p> (RKYC), and listen to them.</p>
+                “(RKYC) Really Know Your Customer” <p>  and listen to them.</p>
               </li>
-              
+
             </StaggeredLine>
             <StaggeredLine
               duration={1.5}
@@ -238,7 +238,6 @@ const ServicePage = () => {
         })}
       </div>
       <Container data={containerOneContent()} />
-
       <div className="testimonials">
         <h3
           style={{ color: "var(--purple)" }}
@@ -267,7 +266,7 @@ function ServiceProductCard({ data }) {
           trigger={{ start: "20% 70%" }}
           layerCSS_Style={{ opacity: 0 }}
           transitionStyle={{ opacity: 1 }}
-          duration={3}
+          duration={2}
           initX="-100%"
           initY="0%"
         >
@@ -284,7 +283,7 @@ function ServiceProductCard({ data }) {
         <div className="top">
           <StaggeredLine
             trigger={{ start: "20% 70%" }}
-            delay={0.5}
+            delay={0.2}
             layerCSS_Style={{ opacity: 0 }}
             transitionStyle={{ opacity: 1 }}
             initX="100%"
@@ -294,7 +293,7 @@ function ServiceProductCard({ data }) {
           </StaggeredLine>
           <StaggeredLine
             trigger={{ start: "20% 70%" }}
-            delay={1}
+            delay={.3}
             layerCSS_Style={{ opacity: 0 }}
             transitionStyle={{ opacity: 1 }}
             initX="100%"
@@ -306,8 +305,8 @@ function ServiceProductCard({ data }) {
           </StaggeredLine>
         </div>
         <StaggeredLine
-          trigger={{ start: "20% 70%" }}
-          delay={1}
+          trigger={{ start: "-=50% 70%" }}
+          delay={.3}
           layerCSS_Style={{ opacity: 0 }}
           transitionStyle={{ opacity: 1 }}
           initX="100%"

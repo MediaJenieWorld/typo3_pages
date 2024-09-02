@@ -13,6 +13,7 @@
     .section {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
 
         h1 {
             font-size: var(--text-60);
@@ -91,7 +92,7 @@
 
 
 
-@media (max-width: 520px) {
+@media (max-width: 580px) {
     .footer {
         row-gap: 4em;
         grid-template-columns: repeat(4, 1fr);

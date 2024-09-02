@@ -2,6 +2,7 @@ import CoverPageImage from "@/Components/CoverPage";
 import React from "react";
 import "../Common/style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
+import GetServices from "../Common/GetServices";
 
 const services = [
     {
@@ -42,26 +43,12 @@ const Marketing_Services_Page = () => {
         <div className="Marketing_Services_Page Common_Style">
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
-                <h1 className="text-84 text-600">Marketing Services</h1>
-                <h3 className="text-42 text-600">
-                    Managed services in marketing
-                </h3>
-                <p className="text-28">
-                    Build awareness, generate leads, increase sales and achieve more…
-                </p>
+                <ServiceHead
+                    heading="Marketing Services"
+                    subHeading="Managed services in marketing"
+                    para="Build awareness, generate leads, increase sales and achieve more…" />
             </div>
-
-            {services.map((service, index) => (
-                <div className={`${index == 0 && "mt"} ${index == services.length - 1 && "mb"}  section-3`} key={index}>
-                    <div className="text-center-wrapper">
-                        <h2 className="text-72 text-600">{service.title}</h2>
-                        <p className="text-28">{service.description}</p>
-                        {service.technologies && (
-                            <p className="mt text-28 text-600">{service.technologies}</p>
-                        )}
-                    </div>
-                </div>
-            ))}
+            <GetServices services={services} />
             <div className="getInTouch">
                 <h3 className="text-60 heading">Want to know more?</h3>
                 <KnowMoreBtn link={"/contact"} label="Get in touch" />

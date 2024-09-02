@@ -2,6 +2,8 @@ import CoverPageImage from "@/Components/CoverPage";
 import React from "react";
 import "../Common/style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
+import ServiceHead from "../Common/ServiceHead";
+import GetServices from "../Common/GetServices";
 
 const services = [
     {
@@ -74,28 +76,15 @@ const Digital_Page = () => {
         <div className="Digital_Page Common_Style">
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
-                <h1 className="text-84 text-600">Digital</h1>
-                <h3 className="text-42 text-600">
-                    Make your digital experience, memorable, efficient & result-oriented.
-                </h3>
-                <p className="text-28">
-                    We bring user experience design, behaviour insights, design,
+                <ServiceHead
+                    heading="Digital"
+                    subHeading="Make your digital experience, memorable, efficient & result-oriented."
+                    para="We bring user experience design, behaviour insights, design,
                     technology and coding to create the right digital solution for your
-                    brand.{" "}
-                </p>
-            </div>
+                    brand."/>
 
-            {services.map((service, index) => (
-                <div className={`${index == 0 && "mt"} ${index == services.length - 1 && "mb"}  section-3`} key={index}>
-                    <div className="text-center-wrapper">
-                        <h2 className="text-72 text-600">{service.title}</h2>
-                        <p className="text-28">{service.description}</p>
-                        {service.technologies && (
-                            <p className="mt text-28 text-600">{service.technologies}</p>
-                        )}
-                    </div>
-                </div>
-            ))}
+            </div>
+            <GetServices services={services} />
             <div className="getInTouch">
                 <h3 className="text-60 heading">Want to know more?</h3>
                 <KnowMoreBtn link={"/contact"} label="Get in touch" />

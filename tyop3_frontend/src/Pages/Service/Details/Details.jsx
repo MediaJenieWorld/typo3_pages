@@ -1,6 +1,7 @@
 import CoverPageImage from "@/Components/CoverPage";
 import "./style.scss";
 import ScrollToTop from "@/Components/ScrollTop";
+import ServiceHead from "../Common/ServiceHead";
 
 const fakeCardData = [
   {
@@ -64,11 +65,16 @@ const DetailsPage = () => {
       <ScrollToTop />
       <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">
-        <pre className="text-84 text-600">{`What we do?`}</pre>
-        
-        <pre className="text-28">{`Strategic Consulting & Research`}</pre>
-        
-        <h4 className="text-32 text-600">Driven by research, behaviour insights, intelligence and applied psychology, we design, produce, implement, deliver and manage services to make your brand loved by your customers.</h4>
+        <ServiceHead
+          heading="What we do?"
+          subHeading="Strategic Consulting & Research"
+          para="Driven by research, behaviour insights, intelligence and applied psychology, we design, produce, implement, deliver and manage services to make your brand loved by your customers."
+        />
+        <pre className="text-84 text-600">{``}</pre>
+
+        <pre className="text-28">{``}</pre>
+
+        <h4 className="text-32 text-600"></h4>
       </div>
       <div className="cards-section">
         {fakeCardData.map((card, i) => {

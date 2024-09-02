@@ -44,12 +44,13 @@
       padding-left: 1rem;
       display: block;
       position: relative;
+      list-style-type: circle;
     }
 
     li::before {
       position: absolute;
-      top: 50%;
       left: 0rem;
+      top: 12px;
       transform: translateY(-50%);
       content: "- ";
       /* Add negative sign before each list item */
@@ -268,11 +269,19 @@
   .Service {
     font-size: 7px;
 
+    .section-1 li::before {
+      top: 9px;
+    }
+
     .section-1,
     .section-3,
     .section-4,
     .two-text-sections {
       padding: calc(var(--main-p-y)* 6) var(--main-p-x);
+    }
+
+    .section-4 .card .top {
+      line-height: 24px;
     }
 
     .two-text-sections {
