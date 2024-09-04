@@ -10,20 +10,21 @@ const menuItems = [
   {
     title: "About Us",
     url: "/about",
-    links: [
-      {
-        label: "Company",
-        // href: "/behindUs",
-      },
-      {
-        label: "People",
-        // href: "/behindUs",
-      },
-      {
-        label: "Work With Us",
-        // href: "/behindUs",
-      },
-    ],
+    links: []
+    // links: [
+    //   {
+    //     label: "Company",
+    //     // href: "/behindUs",
+    //   },
+    //   {
+    //     label: "People",
+    //     // href: "/behindUs",
+    //   },
+    //   {
+    //     label: "Work With Us",
+    //     // href: "/behindUs",
+    //   },
+    // ],
   },
   {
     title: "Our Services",
@@ -44,6 +45,18 @@ const menuItems = [
       {
         label: "Details",
         href: "/services/details",
+      },
+      {
+        label: "Digital",
+        href: "/services/digital",
+      },
+      {
+        label: "Content Services",
+        href: "/services/content_services",
+      },
+      {
+        label: "Marketing Services",
+        href: "/services/marketing_services",
       },
     ],
   },

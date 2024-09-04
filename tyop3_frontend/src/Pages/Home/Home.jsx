@@ -3,10 +3,23 @@ import "./style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import ImageComp from "@/Components/Image";
 import ScrollToTop from "@/Components/ScrollTop";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 // import LineSplitter from "@/Components/Gsap/Line_Ani";
 import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 import GsapImage from "@/Components/Gsap/Image_Ani";
+import Validations from "@/Utils/FormValidations"
+import { useForm } from "react-hook-form";
+import { getCountryDataList } from 'countries-list'
+import Custom_Centered_DynamicDialog from "@/Components/Models/Dialog/Center_Dialog";
+import { contactFormApi } from "@/Utils/api"
+
+const {
+  firstName,
+  email,
+  phoneNumber,
+} = Validations
+
+const countries = getCountryDataList()
 
 const headingText = `We are a CX Agency based in Bangalore.`;
 
@@ -17,40 +30,45 @@ const story = `We are a customer-experience
 agency from Bangalore, India.`
 // eslint-disable-next-line react/prop-types
 
-const successStoriesData = [
-  {
-    heading: "Tech Consulting Company - USA",
-    text: "Generated 10X return & revenue. Grew organic traffic by 1600% and leads by 1500% in one year.",
-    category: "Digital Marketing",
-  },
-  {
-    heading: "Global F&B brand",
-    text: "Designed developed and launched the website of a Global F&B brand for the Indian market entry.",
-    category: "Website",
-  },
-  {
-    heading: "Coffee brand | Karnataka",
-    text: "Helped a century-old traditional coffee grower launch their own brand.",
-    category: "Brand Launch & Growth",
-  },
-  {
-    heading: "Fintech Startup, Gurugram",
-    text: "Transformed the website experience / Tech-stack - Vue-JS + Strapi.",
-    category: "UX + UI + Website",
-  },
-  {
-    heading: "Resort | Maharashtra",
-    text: "Grew revenue from online booking by 1200% Increased leads by 2100%.",
-    category: "Digital Marketing",
-  },
-  {
-    heading: "F & B Brand",
-    text: "Managed NPS administration & insights generation. Designed & implemented CX initiatives across channels.",
-    category: "CX Consulting & Managed Services",
-  },
-]
+
 
 const Home = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const [modelState, setModelState] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const submitForm = async (data) => {
+    if (loading) return
+    try {
+      setLoading(true)
+      const names = data.fullName.split(" ")
+      data.firstName = names[0] ? names[0] : ""
+      data.lastName = names[1] ? names[1] : ""
+
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      };
+
+      const response = await fetch(contactFormApi, requestOptions);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      alert("Form submitted successfully!");
+      console.log("Response data:", responseData);
+    } catch (error) {
+      alert("Form Submission Failed")
+      console.error("Error submitting form:", error || error.message);
+    }
+    setLoading(false)
+  };
   return (
     <div className="home">
       <ScrollToTop />
@@ -77,10 +95,55 @@ const Home = () => {
             </StaggeredWords>
           </h4>
           <StaggeredLine duration={4} initX="0%" initY="100%" >
-            <KnowMoreBtn link={"/about"} />
+            <button className="button" onClick={() => setModelState(true)}>
+              Know More
+            </button>
           </StaggeredLine>
         </div>
       </div>
+      <Custom_Centered_DynamicDialog modelWidth={"100%"} modelHeight={"calc(100vh - var(--header-h) - 30px)"} state={modelState} setModelState={setModelState}>
+        <div className="model">
+          <span onClick={() => setModelState(false)} className={"closeBtn"}>
+            X
+          </span>
+          <h1 className="text-42">Please Share your contact details & requirement for a free quatos</h1>
+          <form onSubmit={handleSubmit(submitForm)} className="form">
+            <div className="fields">
+              <div className="field">
+                <input {...register("fullName")} type="text" placeholder="Full Name" />
+                {errors?.fullName && <p>{errors?.fullName.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("email", email)} type="email" placeholder="Email Address" />
+                {errors?.email && <p>{errors?.email.message}</p>}
+              </div>
+              <div className="field">
+                <select {...register("country")} defaultValue={"India"} placeholder="Country Code" >
+                  {countries.map((country, i) => <option value={country.name} key={i}>{country.name} {` (+${country.phone})`}</option>)}
+                </select>
+                {errors?.code && <p>{errors?.code.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("phoneNumber", phoneNumber)} type="number" placeholder="Phone Number" />
+                {errors?.phoneNumber && <p>{errors?.phoneNumber.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("company")} type="text" placeholder="company" />
+              </div>
+              <div className="field">
+                <textarea {...register("subject")} name="subject" id="subject" placeholder="Your Message"></textarea>
+              </div>
+            </div>
+            <div className="centered">
+              <button className="text-24 button">
+                submit
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </Custom_Centered_DynamicDialog>
+
       <div className="home-section-2">
         {/* <h4 className="text-32 text-600">Introduction</h4> */}
         <StaggeredLine duration={1} delay={.01} initY="0%" initX="-100%" >
@@ -299,5 +362,39 @@ Solutions`}
     </div>
   </div>
 }
+
+
+const successStoriesData = [
+  {
+    heading: "Tech Consulting Company - USA",
+    text: "Generated 10X return & revenue. Grew organic traffic by 1600% and leads by 1500% in one year.",
+    category: "Digital Marketing",
+  },
+  {
+    heading: "Global F&B brand",
+    text: "Designed developed and launched the website of a Global F&B brand for the Indian market entry.",
+    category: "Website",
+  },
+  {
+    heading: "Coffee brand | Karnataka",
+    text: "Helped a century-old traditional coffee grower launch their own brand.",
+    category: "Brand Launch & Growth",
+  },
+  {
+    heading: "Fintech Startup, Gurugram",
+    text: "Transformed the website experience / Tech-stack - Vue-JS + Strapi.",
+    category: "UX + UI + Website",
+  },
+  {
+    heading: "Resort | Maharashtra",
+    text: "Grew revenue from online booking by 1200% Increased leads by 2100%.",
+    category: "Digital Marketing",
+  },
+  {
+    heading: "F & B Brand",
+    text: "Managed NPS administration & insights generation. Designed & implemented CX initiatives across channels.",
+    category: "CX Consulting & Managed Services",
+  },
+]
 
 export default Home;

@@ -23,7 +23,7 @@ const consultingServices = [
 
 const Consulting_Page = () => {
     return (
-        <div className='Consulting_Page'>
+        <div className='Consulting_Page Common_Style'>
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
                 <ServiceHead

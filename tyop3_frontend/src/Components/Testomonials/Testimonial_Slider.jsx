@@ -63,15 +63,15 @@ const TestimonialsSlider = ({ data = fakeTestimonials }) => {
       showArrows={true}
       showThumbs={false}
       renderIndicator={(clickHandler, isSelected, index) => <li onClick={clickHandler} key={index} className={`dot ${isSelected ? "selected" : ""}`} ></li>
-      }>6
+      }>
       {
         data.map((testimonial, index) => (
           <div key={index} className="test-card">
-            <h3 className="text-42 text-600">{testimonial.heading}</h3>
-            <p className="text-28">{testimonial.summary}</p>
+            <h3 className="text-42 text-600">{testimonial?.heading}</h3>
+            <p className="text-28">{testimonial?.summary}</p>
             <div className="author">
-              <p className="text-28 text-600">{testimonial.author}</p>
-              <p className="text-16 text-600">{testimonial.position}</p>
+              <p className="text-28 text-600">{testimonial?.author}</p>
+              <p className="text-16 text-600">{testimonial?.position}</p>
             </div>
           </div>
         ))

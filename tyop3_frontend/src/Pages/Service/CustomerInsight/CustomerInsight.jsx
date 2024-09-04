@@ -8,7 +8,7 @@ import { StaggeredLine } from '@/Components/Gsap/LineIntoWords';
 
 const CustomerInsight_Page = () => {
     return (
-        <div className='CustomerInsight_Page'>
+        <div className='CustomerInsight_Page Common_Style'>
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
                 <ServiceHead

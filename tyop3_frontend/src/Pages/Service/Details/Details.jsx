@@ -61,7 +61,7 @@ const faq = [{
 
 const DetailsPage = () => {
   return (
-    <div className="Details">
+    <div className="Details Common_Style">
       <ScrollToTop />
       <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">

@@ -3,6 +3,7 @@ import React from "react";
 import "../Common/style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import GetServices from "../Common/GetServices";
+import ServiceHead from "../Common/ServiceHead";
 
 const services = [
     {

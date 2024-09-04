@@ -1,5 +1,6 @@
 import { StaggeredLine } from '@/Components/Gsap/LineIntoWords'
 import React from 'react'
+import "./style.scss"
 
 const ServiceHead = ({ heading, subHeading, para }) => {
     return (

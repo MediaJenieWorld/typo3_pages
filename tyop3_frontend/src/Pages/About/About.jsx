@@ -6,18 +6,62 @@ import ScrollToTop from "@/Components/ScrollTop";
 import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 import GsapImage from "@/Components/Gsap/Image_Ani";
 
-const headingText = `Thinkers, artists, analysts, 
-strategists, coders, producers, rebels, 
-experts & more...`
-const subHeadingText = "Passionate, honest, creative, hardworking.";
-const descriptionText = "";
-const story = `Our story.
-Who we are & what we do?`
+import Validations from "@/Utils/FormValidations"
+import { useForm } from "react-hook-form";
+import { getCountryDataList } from 'countries-list'
+import Custom_Centered_DynamicDialog from "@/Components/Models/Dialog/Center_Dialog";
+import { contactFormApi } from "@/Utils/api"
+import { useState } from "react";
 
 const floatingCard_Heading = `Our
 Work Culture`
 
+
+const {
+  firstName,
+  email,
+  phoneNumber,
+} = Validations
+
+const countries = getCountryDataList()
+
 const About = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm()
+
+  const [modelState, setModelState] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const submitForm = async (data) => {
+    if (loading) return
+    try {
+      setLoading(true)
+      const names = data.fullName.split(" ")
+      data.firstName = names[0] ? names[0] : ""
+      data.lastName = names[1] ? names[1] : ""
+
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      };
+
+      const response = await fetch(contactFormApi, requestOptions);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      alert("Form submitted successfully!");
+      console.log("Response data:", responseData);
+    } catch (error) {
+      alert("Form Submission Failed")
+      console.error("Error submitting form:", error || error.message);
+    }
+    setLoading(false)
+  };
   return (
     <div className="About">
       <ScrollToTop />
@@ -155,12 +199,57 @@ businesses & ideas.`}
                 </p>
               </StaggeredLine>
               <StaggeredLine initX="-100%" initY="0%" >
-                <button className="button">KNOW MORE</button>
+                <button className="button" onClick={() => setModelState(true)}>
+                  Know More
+                </button>
               </StaggeredLine>
             </div>
           </div>
         </div>
       </div>
+      <Custom_Centered_DynamicDialog modelWidth={"100%"} modelHeight={"calc(100vh - var(--header-h) - 30px)"} state={modelState} setModelState={setModelState}>
+        <div className="model">
+          <span onClick={() => setModelState(false)} className={"closeBtn"}>
+            X
+          </span>
+          <h1 className="text-42">Please Share your contact details & requirement for a free quatos</h1>
+          <form onSubmit={handleSubmit(submitForm)} className="form">
+            <div className="fields">
+              <div className="field">
+                <input {...register("fullName")} type="text" placeholder="Full Name" />
+                {errors?.fullName && <p>{errors?.fullName.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("email", email)} type="email" placeholder="Email Address" />
+                {errors?.email && <p>{errors?.email.message}</p>}
+              </div>
+              <div className="field">
+                <select {...register("country")} defaultValue={"India"} placeholder="Country Code" >
+                  {countries.map((country, i) => <option value={country.name} key={i}>{country.name} {` (+${country.phone})`}</option>)}
+                </select>
+                {errors?.code && <p>{errors?.code.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("phoneNumber", phoneNumber)} type="number" placeholder="Phone Number" />
+                {errors?.phoneNumber && <p>{errors?.phoneNumber.message}</p>}
+              </div>
+              <div className="field">
+                <input {...register("company")} type="text" placeholder="company" />
+              </div>
+              <div className="field">
+                <textarea {...register("subject")} name="subject" id="subject" placeholder="Your Message"></textarea>
+              </div>
+            </div>
+            <div className="centered">
+              <button className="text-24 button">
+                submit
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </Custom_Centered_DynamicDialog>
+
     </div>
   );
 };

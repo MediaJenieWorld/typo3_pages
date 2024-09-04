@@ -31,7 +31,7 @@ const designServices = [
 
 const Design_Page = () => {
     return (
-        <div className='Design_Page'>
+        <div className='Design_Page Common_Style'>
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
                 <ServiceHead

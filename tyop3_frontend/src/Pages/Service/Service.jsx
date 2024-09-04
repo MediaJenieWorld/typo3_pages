@@ -266,7 +266,6 @@ function ServiceProductCard({ data }) {
           trigger={{ start: "20% 70%" }}
           layerCSS_Style={{ opacity: 0 }}
           transitionStyle={{ opacity: 1 }}
-          duration={2}
           initX="-100%"
           initY="0%"
         >
