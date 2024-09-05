@@ -14,7 +14,6 @@ import Custom_Centered_DynamicDialog from "@/Components/Models/Dialog/Center_Dia
 import { contactFormApi } from "@/Utils/api"
 
 const {
-  firstName,
   email,
   phoneNumber,
 } = Validations
@@ -106,42 +105,45 @@ const Home = () => {
           <span onClick={() => setModelState(false)} className={"closeBtn"}>
             X
           </span>
-          <h1 className="text-42">Please Share your contact details & requirement for a free quatos</h1>
-          <form onSubmit={handleSubmit(submitForm)} className="form">
-            <div className="fields">
-              <div className="field">
-                <input {...register("fullName")} type="text" placeholder="Full Name" />
-                {errors?.fullName && <p>{errors?.fullName.message}</p>}
-              </div>
-              <div className="field">
-                <input {...register("email", email)} type="email" placeholder="Email Address" />
-                {errors?.email && <p>{errors?.email.message}</p>}
-              </div>
-              <div className="field">
-                <select {...register("country")} defaultValue={"India"} placeholder="Country Code" >
-                  {countries.map((country, i) => <option value={country.name} key={i}>{country.name} {` (+${country.phone})`}</option>)}
-                </select>
-                {errors?.code && <p>{errors?.code.message}</p>}
-              </div>
-              <div className="field">
-                <input {...register("phoneNumber", phoneNumber)} type="number" placeholder="Phone Number" />
-                {errors?.phoneNumber && <p>{errors?.phoneNumber.message}</p>}
-              </div>
-              <div className="field">
-                <input {...register("company")} type="text" placeholder="company" />
-              </div>
-              <div className="field">
-                <textarea {...register("subject")} name="subject" id="subject" placeholder="Your Message"></textarea>
-              </div>
-            </div>
-            <div className="centered">
-              <button className="text-24 button">
-                submit
-              </button>
-            </div>
+          <div className="model-container">
 
-          </form>
+            <h1 className="text-42">Please share your contact details & requirement for a free quatos</h1>
+            <form onSubmit={handleSubmit(submitForm)} className="form">
+              <div className="fields">
+                <div className="field">
+                  <input {...register("fullName")} type="text" placeholder="Full Name" />
+                  {errors?.fullName && <p>{errors?.fullName.message}</p>}
+                </div>
+                <div className="field">
+                  <input {...register("email", email)} type="email" placeholder="Email Address" />
+                  {errors?.email && <p>{errors?.email.message}</p>}
+                </div>
+                <div className="field">
+                  <select {...register("country")} defaultValue={"India"} placeholder="Country Code" >
+                    {countries.map((country, i) => <option value={country.name} key={i}>{country.name} {` (+${country.phone})`}</option>)}
+                  </select>
+                  {errors?.code && <p>{errors?.code.message}</p>}
+                </div>
+                <div className="field">
+                  <input {...register("phoneNumber", phoneNumber)} type="number" placeholder="Phone Number" />
+                  {errors?.phoneNumber && <p>{errors?.phoneNumber.message}</p>}
+                </div>
+                <div className="field">
+                  <input {...register("company")} type="text" placeholder="company" />
+                </div>
+                <div className="field">
+                  <textarea {...register("subject")} name="subject" id="subject" placeholder="Your Message"></textarea>
+                </div>
+              </div>
+              <div className="centered">
+                <button className="text-24 button">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+
       </Custom_Centered_DynamicDialog>
 
       <div className="home-section-2">
@@ -179,7 +181,7 @@ const Home = () => {
         <div className="card">
           <StaggeredLine duration={2} delay={.7} initX="100%" initY="0">
             <ImageComp loading="lazy"
-              src="Home/red-rays.webp"
+              src="/Work/Karlsson_Leather/cover.webp"
               alt="blue.jpg"
               height={400}
               width={400}
@@ -188,9 +190,9 @@ const Home = () => {
               <p className="text-24 text-600">LATEST WORK</p>
               <div className="bottom">
                 <p className="text-36 text-600">
-                  Digital Experience for one of the leading organization in USA
+                  Karlsson Leather is a luxury bespoke leather furniture brand.
                 </p>
-                <KnowMoreBtn link={"/work/Gallery"} />
+                <KnowMoreBtn link={"/work/Karlsson_Leather"} />
               </div>
             </div>
           </StaggeredLine>

@@ -6,9 +6,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="section">
-        <img style={{ objectFit: "contain" }} loading="lazy" src="/MJ_Logo.webp" height={50} width={120} alt="Logo" />
+        <img style={{ height: "60px", objectFit: "cover", width: "180px" }} loading="lazy"
+          src="/icons/footer-logo.webp" height={50} width={120} alt="Logo" />
         <br />
-        <p className="text-16 ">Copyright © 2020</p>
+        <p style={{ textAlign: "center" }} className="text-16">Copyright © 2020</p>
       </div>
       <div className="section text-28 text-400">
         <Link to="/home">Home</Link>
@@ -21,8 +22,6 @@ const Footer = () => {
         <Link to="/services/design">Design</Link>
         <Link to="/services/customer_insight">Customer Insight</Link>
         <Link to="/services/details">Details</Link>
-
-
       </div>
       <div className="section section-2 text-28">
         <Link to={resourceLink}>Resource</Link>

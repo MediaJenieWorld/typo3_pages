@@ -169,7 +169,7 @@ visuals to present his outfits in all the grandeur.`,
     name: "Ashok Maanay",
   },
   {
-    imageSrc: "/assets/Work/Karlsson_Leather/cover.jpg",
+    imageSrc: "/assets/Work/Karlsson_Leather/cover.webp",
     link: "/work/Karlsson_Leather",
     text: "Karlsson Leather - Digital",
     title: `Karlsson Leather is a luxury bespoke leather furniture brand. We designed and developed websites for Indian and UAE markets.`,

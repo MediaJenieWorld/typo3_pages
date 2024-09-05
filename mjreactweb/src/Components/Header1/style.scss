@@ -39,11 +39,9 @@
             //     object-fit: cover;
             // }
             img {
-                background-color: #fff;
-                object-fit: contain;
-                width: fit-content;
-                padding: 4px;
-                border-radius: 4px;
+                height: 60px;
+                object-fit: cover;
+                width: 180px;
             }
         }
 

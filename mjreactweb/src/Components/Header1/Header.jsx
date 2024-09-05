@@ -64,10 +64,10 @@ const menuItems = [
     title: "Our Work",
     url: "/work",
     links: [
-      {
-        label: "Gallery",
-        href: "/work/Gallery",
-      },
+      // {
+      //   label: "Gallery",
+      //   href: "/work/Gallery",
+      // },
     ],
   },
   {
@@ -95,7 +95,7 @@ const Header = () => {
     <header className="header1">
       <div className="top">
         <div className="logo">
-          <img loading="lazy" src="/MJ_Logo.webp" height={40} width={40} alt="Logo" />
+          <img loading="lazy" src="/icons/header-logo.webp" height={60} width={180} alt="Logo" />
           {/* <h3 className="text-16 text-700">CX Agent</h3> */}
         </div>
         <button

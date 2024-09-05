@@ -109,7 +109,6 @@ const App = () => {
           <Route path="/services/content_services" element={<Content_Services_Page />} />
           <Route path="/services/marketing_services" element={<Marketing_Services_Page />} />
 
-
           <Route path="/terms" element={<WordPressPage />} />
 
           <Route path="/resource" element={<ResourcePage />} />
