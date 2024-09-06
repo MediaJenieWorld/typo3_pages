@@ -179,7 +179,7 @@ const Home = () => {
         <div className="card">
           <StaggeredLine duration={2} delay={.7} initX="100%" initY="0">
             <ImageComp loading="lazy"
-              src="/Work/Karlsson_Leather/cover.webp"
+              src="Home/red-rays.webp"
               alt="blue.jpg"
               height={400}
               width={400}

@@ -1,6 +1,8 @@
 import CoverPageImage from "@/Components/CoverPage";
 import "./style.scss";
 import ServiceHead from "../Common/ServiceHead";
+import GsapImage from "@/Components/Gsap/Image_Ani";
+import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 
 const fakeCardData = [
   {
@@ -78,80 +80,97 @@ const DetailsPage = () => {
         {fakeCardData.map((card, i) => {
           return (
             <div className="card" key={i}>
-              <img
-                loading="lazy"
-                src={card.imgSrc}
-                alt={card.imgSrc}
-                height={450}
-                width={350}
-              />
-              <div className="text-container">
-                <p className="text-24 text-600">{card.category}</p>
-                <div className="bottom">
-                  <p className="text-36 text-600">{card.label}</p>
+              <StaggeredLine delay={i * .4} initX="100%" initY="0">
+                <img
+                  loading="lazy"
+                  src={card.imgSrc}
+                  alt={card.imgSrc}
+                  height={450}
+                  width={350}
+                />
+                <div className="text-container">
+                  <p className="text-24 text-600">{card.category}</p>
+                  <div className="bottom">
+                    <p className="text-36 text-600">{card.label}</p>
+                  </div>
                 </div>
-              </div>
+              </StaggeredLine>
             </div>
           );
         })}
       </div>
-      <div className="section-3">
-        <div className="text-center-wrapper">
-          <h2 className="text-72 text-600">User Focused. Insight Driven.</h2>
-          <p className="text-28">
+      <StaggeredLine duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
+        <div className="section-3">
+          <div className="text-center-wrapper">
+            <h2 className="text-72 text-600">User Focused. Insight Driven.</h2>
+            <p className="text-28">
 
-            We are a Customer Experience Agency. We bring your brand & customers
-            closer through great customer experiences. With a leadership team of
-            veterans having 20+ years of experience in their respective domains, we
-            provide solutions with a razor-sharp focus on your users. With us on
-            board, what you get is a rare-combination of customer experience +
-            creative + digital + content + services.
-          </p>
+              We are a Customer Experience Agency. We bring your brand & customers
+              closer through great customer experiences. With a leadership team of
+              veterans having 20+ years of experience in their respective domains, we
+              provide solutions with a razor-sharp focus on your users. With us on
+              board, what you get is a rare-combination of customer experience +
+              creative + digital + content + services.
+            </p>
+          </div>
         </div>
-      </div>
+      </StaggeredLine>
+
       <div id="section-4" className="Big-container">
         <div className="left parent">
-          <img
-            loading="lazy"
+          <GsapImage loading="lazy"
             className="backImage"
             src="/assets/Service/float-card.webp"
             alt="bg-image"
             height="700"
             width="500"
+            transitionStyle={{ x: "100%" }}
           />
           {/* <h1>Big Heading Text goes here</h1> */}
         </div>
         <div className="right">
-          <div className="card">
-            <div className="all">
-              <div className="text-wrapper">
-                <h2 className="text-60 text-700">Applied Psychology</h2>
-                <p className="text-32 text-400">
-                  Veterans, seasoned, grey-haired, golden-haired,
-                  freshers, rebels... MediaJenie has an electric
-                  mix of passionate professionals from different
-                  domains. Our leadership team comprises of
-                  industry veterans with 20+ years experience in
-                  their respective domains.
-                </p>
+          <StaggeredLine
+            layerCSS_Style={{ zIndex: 5, opacity: 0, transform: "translate(100%,0%)" }} delay={1} duration={2.5}
+            transitionStyle={{ transform: "translate(0%,0%)", opacity: 1 }}>
+
+            <div className="card">
+              <div className="all">
+                <div className="text-wrapper">
+                  <h2 className="text-60 text-700">Applied Psychology</h2>
+                  <p className="text-32 text-400">
+                    Veterans, seasoned, grey-haired, golden-haired,
+                    freshers, rebels... MediaJenie has an electric
+                    mix of passionate professionals from different
+                    domains. Our leadership team comprises of
+                    industry veterans with 20+ years experience in
+                    their respective domains.
+                  </p>
+                </div>
+                <KnowMoreBtn />
               </div>
-              <KnowMoreBtn />
             </div>
-          </div>
+          </StaggeredLine>
         </div>
       </div>
       <div className="FAQ">
-        <h2 className="text-72 text-600">Frequently Asked Questions</h2>
+        <StaggeredLine initY="100%" initX="0"  >
+          <h2 className="text-72 text-600">Frequently Asked Questions</h2>
+        </StaggeredLine>
         {faq.map((data, i) => {
           return (
-            <details key={i}>
-              <summary className="text-32 text-500">
-                {data.title}
-              </summary>
-              <div className="content">
-                <div className="text-28 text-300">{data.text}</div>
-              </div>
-            </details>
+            <div className="wrapper" key={i}>
+              <StaggeredLine initY="100%" initX="0">
+                <details style={{ width: "100%" }}>
+                  <summary className="text-32 text-500">
+                    {data.title}
+                  </summary>
+                  <div className="content">
+                    <div className="text-28 text-300">{data.text}</div>
+                  </div>
+                </details>
+              </StaggeredLine>
+            </div>
+
           );
         })}
       </div>

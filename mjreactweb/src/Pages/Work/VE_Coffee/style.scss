@@ -61,6 +61,10 @@
         font-size: var(--text-28);
     }
 
+    .p {
+        color: #000;
+    }
+
     .centered {
         padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
         display: flex;

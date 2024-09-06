@@ -23,12 +23,12 @@ const Footer = () => {
         <Link to="/services/customer_insight">Customer Insight</Link>
         <Link to="/services/details">Details</Link>
       </div>
-      <div className="section section-2 text-28">
+      {/* <div className="section section-2 text-28">
 
         <Link to="/services/digital">Digital</Link>
         <Link to="/services/content_services">Content Services</Link>
         <Link to="/services/marketing_services">Marketing Services</Link>
-      </div>
+      </div> */}
       <div className="section section-2 text-28">
         <Link to={resourceLink}>Resource</Link>
         <Link to="/about/behindUs">Company</Link>
@@ -52,7 +52,7 @@ const Footer = () => {
             alt="social-icon"
           />
         </Link>
-        <Link to="https://www.linkedin.com/company/mediajenie/">
+        <Link to="https://x.com/company/mediajenie/">
           <img loading="lazy"
             height={24}
             width={24}
@@ -60,7 +60,8 @@ const Footer = () => {
             alt="social-icon"
           />
         </Link>
-        <Link to="#">
+        <Link to="https://www.linkedin.com/company/mediajenie/">
+        
           <img loading="lazy"
             height={24}
             width={24}
