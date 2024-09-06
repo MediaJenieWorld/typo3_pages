@@ -2,7 +2,6 @@
 import "./style.scss";
 import KnowMoreBtn from "@/Components/KnowMoreBtn";
 import ImageComp from "@/Components/Image";
-import ScrollToTop from "@/Components/ScrollTop";
 import { Fragment, useState } from "react";
 // import LineSplitter from "@/Components/Gsap/Line_Ani";
 import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
@@ -70,7 +69,6 @@ const Home = () => {
   };
   return (
     <div className="home">
-      <ScrollToTop />
       <div className="hero-section">
         <img style={{ objectFit: "cover" }}
           loading="eager"

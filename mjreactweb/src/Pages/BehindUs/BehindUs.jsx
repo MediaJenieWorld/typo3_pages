@@ -2,14 +2,12 @@
 import TestimonialsSlider from "@/Components/Testomonials/Testimonial_Slider";
 import "./style.scss"
 import CoverPageImage from "@/Components/CoverPage";
-import ScrollToTop from "@/Components/ScrollTop";
 
 const BehindUs = () => {
   const story = `People behind.
 Young, crazy, old & wild.`
   return (
     <div className='BehindUs'>
-      <ScrollToTop />
       <CoverPageImage src={"/assets/Home/Behind-Hero.webp"} />
       <div className="section-2">
         <pre style={{ fontFamily: 'Poppins', lineHeight: "1.2em" }} className="text-84 text-600">

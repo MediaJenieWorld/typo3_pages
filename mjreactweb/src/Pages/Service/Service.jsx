@@ -1,7 +1,6 @@
 import TestimonialsSlider from "@/Components/Testomonials/Testimonial_Slider";
 import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
-import ScrollToTop from "@/Components/ScrollTop";
 import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 
 const fakeDes =
@@ -103,7 +102,6 @@ paragraph can go here in 200 words. This can be multi-line text. `;
 const ServicePage = () => {
   return (
     <div className="Service">
-      <ScrollToTop />
       <CoverPageImage src={"/assets/Service/service-hero.webp"} />
       <div className="section-1">
         <StaggeredLine

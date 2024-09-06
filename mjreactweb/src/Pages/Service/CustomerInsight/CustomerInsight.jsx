@@ -17,58 +17,43 @@ const CustomerInsight_Page = () => {
                     para="Take informed decisions backed by customer insights, to transform your customer experience at all touch points."
                 />
             </div>
-
-            <div className="section-3 mt mb">
-                <div className="text-center-wrapper">
-                    <div className="top">
-                        <h2 className="text-72 text-600">
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
+            <StaggeredLine duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
+                <div className="section-3 mt mb">
+                    <div className="text-center-wrapper">
+                        <div className="top">
+                            <h2 className="text-72 text-600">
                                 Services & Capabilities
-                            </StaggeredLine>
-                        </h2>
-                        <ul className='text-28'>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
+                            </h2>
+                            <ul className='text-28'>
                                 <li>
                                     Research - User / Market / Product
                                 </li>
-                            </StaggeredLine>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
                                 <li>
                                     Customer Insights - Market/ Behaviour
                                 </li>
-                            </StaggeredLine>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
                                 <li>
                                     Data Science
                                 </li>
-                            </StaggeredLine>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
                                 <li>
                                     Behaviour Science
                                 </li>
-                            </StaggeredLine>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
                                 <li>
                                     Applied Psychology
                                 </li>
-                            </StaggeredLine>
-                        </ul>
-                    </div>
-                    <div className="bottom">
-                        <h2 className="text-48 text-600">
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
+                            </ul>
+                        </div>
+                        <div className="bottom">
+                            <h2 className="text-48 text-600">
                                 Applications
-                            </StaggeredLine>
-
-                        </h2>
-                        <p className='text-28'>
-                            <StaggeredLine transitionStyle={{ opacity: 1 }} layerCSS_Style={{ opacity: 0 }} initX='100%' initY='0'>
+                            </h2>
+                            <p className='text-28'>
                                 Marketing | Sales | Communication | Product Design | User Experience | Customer Retention
-                            </StaggeredLine>
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </StaggeredLine>
+
             <div className="getInTouch">
                 <h3 className='text-60 heading'>
                     Want to know more?

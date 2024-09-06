@@ -15,15 +15,15 @@ const VE_Coffee = () => {
                 description="When Vaishnavi Estate with its 100 years of legacy, launched its coffee brand, we had to make sure it is perceived and accepted across various audience segments. Nothing better than some short video content."
             />
             <div style={{ paddingTop: "0px" }} className="description">
-                <div className='txt p text-28'>
-                    <LineSplitter>
+                <div style={{ fontWeight: "700" }} className='txt p text-28 '>
+                    <LineSplitter >
                         - Concept
                     </LineSplitter>
                 </div>
-                <div className='txt p text-28'>
+                <div style={{ fontWeight: "700" }} className='txt p text-28'>
                     <LineSplitter>- Production</LineSplitter>
                 </div>
-                <div className='txt p text-28'>
+                <div style={{ fontWeight: "700" }} className='txt p text-28'>
                     <LineSplitter>
                         - Post Production
                     </LineSplitter>

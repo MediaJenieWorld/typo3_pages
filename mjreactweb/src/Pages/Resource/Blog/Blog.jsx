@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import ImageComp from "@/Components/Image";
 import "./style.scss";
-import ScrollToTop from "@/Components/ScrollTop";
 
 
 const cards = [
@@ -19,7 +18,6 @@ const ResourceBlogPage = () => {
 
   return (
     <div className="ResourceBlogPage">
-      <ScrollToTop />
       <div className="section-1">
         <h4 className="text-32 text-600">Resources | Blog</h4>
         <pre className="text-60 text-600">

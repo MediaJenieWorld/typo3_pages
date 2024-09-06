@@ -33,8 +33,7 @@ const allProjects = [
   {
     imageSrc: "/assets/Work/image.webp",
     title: "Gloria Jeans Coffee",
-    text: ` For Gloria Jeans Coffee - India launch, we designed &
-                        developed the website.`,
+    text: ` For Gloria Jeans Coffee - India launch we designed & developed the website.`,
     link: "/work/Gloria_Coffee",
     name: "Gloria Coffee",
   },

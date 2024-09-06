@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation } from "react-router-dom";
 import "./style.scss";
-// import ScrollToTop from "@/Components/ScrollTop";
 import { generateProjectsPagination, getProjectsByPage } from "@/Utils/Work_Projects";
 
 const WorkPage = () => {
@@ -24,7 +23,6 @@ const WorkPage = () => {
   };
   return (
     <div className="Work">
-      {/* <ScrollToTop /> */}
       <div className="section-1">
         <h4 className="text-32 text-600">Our Work</h4>
         <pre className="text-60 text-600">

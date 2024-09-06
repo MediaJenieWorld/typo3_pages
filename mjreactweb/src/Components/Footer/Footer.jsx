@@ -24,6 +24,12 @@ const Footer = () => {
         <Link to="/services/details">Details</Link>
       </div>
       <div className="section section-2 text-28">
+
+        <Link to="/services/digital">Digital</Link>
+        <Link to="/services/content_services">Content Services</Link>
+        <Link to="/services/marketing_services">Marketing Services</Link>
+      </div>
+      <div className="section section-2 text-28">
         <Link to={resourceLink}>Resource</Link>
         <Link to="/about/behindUs">Company</Link>
         <Link to="/about/behindUs">People</Link>

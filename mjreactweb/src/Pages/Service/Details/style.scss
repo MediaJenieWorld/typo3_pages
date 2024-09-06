@@ -1,17 +1,6 @@
 .Details {
   padding: 0;
 
-  .section-1 {
-    padding: calc(var(--main-p-x) * 6) calc(var(--main-p-x) * 4);
-
-    h1 {
-      line-height: var(--text-20);
-    }
-
-    p {
-      padding-top: 2em;
-    }
-  }
 
   .cards-section {
     display: flex;
@@ -19,6 +8,14 @@
     gap: 50px;
     padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x) * 4);
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
     .card {
       min-width: 300px;

@@ -25,7 +25,7 @@ const Gloria_Coffee_Page = () => {
             <div className="description">
                 <div style={{ justifySelf: "center", gridColumn: "span 3" }} className='time padding py-0 text-42 text-600'>
                     <LineSplitter>
-                        For Gloria Jeans Coffee - India launch -, we designed &
+                        For Gloria Jeans Coffee - India launch we designed &
                         developed the website.
                     </LineSplitter>
                 </div>

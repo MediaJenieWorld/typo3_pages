@@ -1,6 +1,5 @@
 import CoverPageImage from "@/Components/CoverPage";
 import "./style.scss";
-import ScrollToTop from "@/Components/ScrollTop";
 import ServiceHead from "../Common/ServiceHead";
 
 const fakeCardData = [
@@ -62,7 +61,6 @@ const faq = [{
 const DetailsPage = () => {
   return (
     <div className="Details Common_Style">
-      <ScrollToTop />
       <CoverPageImage src={"/assets/Service/cover.webp"} />
       <div className="section-1">
         <ServiceHead

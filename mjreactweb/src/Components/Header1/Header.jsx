@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./style.scss";
 import { Link, useLocation } from "react-router-dom";
+import ScrollToTop from "../ScrollTop";
 
 const menuItems = [
   {
@@ -88,11 +89,13 @@ const Header = () => {
 
   useEffect(() => {
     return () => setIsMenuOpen(false)
+
   }, [location]);
 
 
   return (
     <header className="header1">
+      <ScrollToTop />
       <div className="top">
         <div className="logo">
           <img loading="lazy" src="/icons/header-logo.webp" height={60} width={180} alt="Logo" />

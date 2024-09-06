@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import "./style.scss";
-import ScrollToTop from "@/Components/ScrollTop";
 import { resourceLink } from "@/Utils/api";
 
 
@@ -56,7 +55,6 @@ const ResourcePage = () => {
 
   return (
     <div className="ResourcePage">
-      <ScrollToTop />
       <div className="section-1">
         <h4 className="text-32 text-600">Our Blogs</h4>
         <pre className="text-60 text-600">

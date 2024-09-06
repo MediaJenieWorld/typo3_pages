@@ -12,10 +12,7 @@ const VEC_Photography = () => {
                 title="VEC Photography"
                 category="Content Production"
                 date="Vaishnavi Estate Coffee - 2022"
-                description="Vaishnavi Estate Coffee (VEC) is a top coffee grower from Coorg, India. They have been
-                    growing coffee since 1928 in their estates. When VEC wanted to launch their own brand
-                    of fresh-coffee powder, it was a given that we need to produce some great visuals that
-                    capture the real side of the brand."
+                description="Vaishnavi Estate Coffee (VEC) is a top coffee grower from Coorg, India. They have been growing coffee since 1928 in their estates. When VEC wanted to launch their own brand of fresh-coffee powder, it was a given that we need to produce some great visuals that capture the real side of the brand."
             />
             <div className="grid">
                 <GsapImage src={"/Work/VEC_Photography/vc-photo-03.webp"} height={"auto"} width={"auto"} />

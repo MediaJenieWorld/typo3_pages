@@ -2,7 +2,6 @@ import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
 import TestimonialSlider from "@/Components/Testomonials/Testimonial_Slider";
 import Counter from "./Count";
-import ScrollToTop from "@/Components/ScrollTop";
 import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
 import GsapImage from "@/Components/Gsap/Image_Ani";
 
@@ -64,7 +63,6 @@ const About = () => {
   };
   return (
     <div className="About">
-      <ScrollToTop />
       <CoverPageImage src="/assets/Home/Our Story.webp" />
       <div className="section-2">
         <StaggeredLine initX={"0%"} initY={"100%"} >
