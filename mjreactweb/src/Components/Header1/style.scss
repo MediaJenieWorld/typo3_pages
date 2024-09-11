@@ -200,6 +200,13 @@
     }
 }
 
+@media screen and (max-width:1024px) {
+    .header1 {
+        --header-h: 70px
+    }
+
+}
+
 @media screen and (max-width:600px) {
     .header1 .menu {
         font-size: 10px;

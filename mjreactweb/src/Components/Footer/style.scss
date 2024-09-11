@@ -65,11 +65,25 @@
 
 }
 
+
+// @media (max-width: 1024px) {
+//     .footer {
+//         display: flex;
+//         flex-direction: column;
+
+//         .section {
+//             &:nth-of-type(1) {
+//                 align-items: start;
+//             }
+//         }
+//     }
+// }
+
 @media (max-width: 768px) {
     .footer {
         font-size: 9px;
         row-gap: 4em;
-        // grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
 
         .section {
             &:nth-of-type(1) {

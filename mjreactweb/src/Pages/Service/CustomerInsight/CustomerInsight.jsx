@@ -6,6 +6,8 @@ import ServiceHead from '../Common/ServiceHead';
 import { StaggeredLine } from '@/Components/Gsap/LineIntoWords';
 
 
+
+
 const CustomerInsight_Page = () => {
     return (
         <div className='CustomerInsight_Page Common_Style'>
@@ -17,7 +19,7 @@ const CustomerInsight_Page = () => {
                     para="Take informed decisions backed by customer insights, to transform your customer experience at all touch points."
                 />
             </div>
-            <StaggeredLine duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
+            <StaggeredLine trigger={{ start: "center 75%" }} duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
                 <div className="section-3 mt mb">
                     <div className="text-center-wrapper">
                         <div className="top">

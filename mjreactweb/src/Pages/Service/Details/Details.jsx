@@ -3,27 +3,33 @@ import "./style.scss";
 import ServiceHead from "../Common/ServiceHead";
 import GsapImage from "@/Components/Gsap/Image_Ani";
 import { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
+import Connect_Form from "@/Components/Models/Form/Connect_Form";
+import { useState } from "react";
 
-const fakeCardData = [
+const cardsData = [
   {
     category: "SERVICE",
-    label: "User Research & Insights",
+    label: "Focus on Customer Experience (CX) to differentiate and grow your brand",
     imgSrc: "/assets/Service/msg593987909-835.webp",
+    link: "/services/consulting"
   },
   {
     category: "CASE STUDY",
     label: "User Research & Insights",
     imgSrc: "/assets/Service/msg593987909-836.webp",
+    link: "/services/customer_insight"
   },
   {
     category: "FEATURED WORK",
-    label: "User Research & Insights",
+    label: "Toni Rossi - Campaign Services",
     imgSrc: "/assets/Service/owl.webp",
+    link: "/work/ToniRossi"
   },
   {
     category: "HAND PICKED",
     label: "User Research & Insights",
     imgSrc: "/assets/Service/woman.webp",
+    link: "/services/content_services"
   },
 ];
 
@@ -61,6 +67,9 @@ const faq = [{
 ]
 
 const DetailsPage = () => {
+
+  const [modelState, setModelState] = useState(false);
+
   return (
     <div className="Details Common_Style">
       <CoverPageImage src={"/assets/Service/cover.webp"} />
@@ -77,9 +86,9 @@ const DetailsPage = () => {
         <h4 className="text-32 text-600"></h4>
       </div>
       <div className="cards-section">
-        {fakeCardData.map((card, i) => {
+        {cardsData.map((card, i) => {
           return (
-            <div className="card" key={i}>
+            <div className="card" key={i} onClick={() => location.pathname = card.link}>
               <StaggeredLine delay={i * .4} initX="100%" initY="0">
                 <img
                   loading="lazy"
@@ -146,12 +155,15 @@ const DetailsPage = () => {
                     their respective domains.
                   </p>
                 </div>
-                <KnowMoreBtn />
+                <KnowMoreBtn onClick={() => {
+                  setModelState(true)
+                }} />
               </div>
             </div>
           </StaggeredLine>
         </div>
       </div>
+      <Connect_Form modelState={modelState} setModelState={setModelState} />
       <div className="FAQ">
         <StaggeredLine initY="100%" initX="0"  >
           <h2 className="text-72 text-600">Frequently Asked Questions</h2>
@@ -178,10 +190,11 @@ const DetailsPage = () => {
   );
 };
 
-function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE" }) {
+function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE", ...props }) {
   return (
-    <button className={btnClass + " button"}>
-      <a href={link || "#link"}>{lable}</a>
+    <button className={btnClass + " button"} {...props}>
+      {!link && lable}
+      {link && <a href={link || "#link"}>{lable}</a>}
     </button>
   );
 }

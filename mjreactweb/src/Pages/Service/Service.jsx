@@ -302,8 +302,9 @@ function ServiceProductCard({ data }) {
           </StaggeredLine>
         </div>
         <StaggeredLine
-          trigger={{ start: "-=50% 70%" }}
-          delay={.3}
+          trigger={{ start: "-=100px 80%" }}
+          delay={.2}
+          duration={1}
           layerCSS_Style={{ opacity: 0 }}
           transitionStyle={{ opacity: 1 }}
           initX="100%"

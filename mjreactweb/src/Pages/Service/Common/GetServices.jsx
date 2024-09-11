@@ -5,7 +5,9 @@ const GetServices = ({ services = [] }) => {
     return (
         <>
             {services.map((service, index) => (
-                <StaggeredLine duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
+                <StaggeredLine
+                    trigger={index == 0 ? { start: "center 75%" } : {}}
+                    duration={2} layerCSS_Style={{ opacity: 0 }} transitionStyle={{ opacity: 1 }} initX='100%' initY='0%'>
                     <div className={`${index == 0 && "mt"} ${index == services.length - 1 && "mb"}  section-3`} key={index}>
                         <div className="text-center-wrapper">
                             <h2 className="text-72 text-600">
@@ -21,7 +23,7 @@ const GetServices = ({ services = [] }) => {
                             )}
                         </div>
                     </div>
-                </StaggeredLine>
+                </StaggeredLine >
             ))}
         </>
     )

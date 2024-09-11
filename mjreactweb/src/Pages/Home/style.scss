@@ -20,22 +20,24 @@
       height: 40px;
       width: 40px;
       border-radius: 50%;
-      background-color: #fff;
+      background-color: #ffdd2c;
       font-weight: 900;
       font-size: 16px;
       transition: .2s ease-in-out;
 
       &:hover {
-        background-color: #ffdd2c;
+        color: #fff;
+        background-color: #000;
       }
     }
 
     .model-container {
+      overflow-y: auto;
+      height: calc(100vh - var(--header-h) - 60px);
       position: relative;
       z-index: 9;
       margin-top: 30px;
       padding: 30px 40px;
-      height: fit-content;
       display: flex;
       flex-direction: column;
       gap: calc(var(--main-p-x) * 1.5);
@@ -102,6 +104,16 @@
           &:hover {
             border-color: #000;
           }
+        }
+      }
+
+      button {
+        background-color: #000;
+        color: #fff;
+
+        &:hover {
+          background-color: #ffdd2c;
+          color: #000;
         }
       }
 

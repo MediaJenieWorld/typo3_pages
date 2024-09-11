@@ -18,10 +18,14 @@ const Footer = () => {
       </div>
       <div className="section section-2 text-28">
         <Link to="/services">Services</Link>
-        <Link to="/services/consulting">Consulting</Link>
-        <Link to="/services/design">Design</Link>
-        <Link to="/services/customer_insight">Customer Insight</Link>
         <Link to="/services/details">Details</Link>
+        <Link to="/services/design">Design</Link>
+        <Link to="/services/digital">Digital</Link>
+        <Link to="/services/consulting">Consulting</Link>
+      
+        <Link to="/services/customer_insight">Customer Insight</Link>
+        <Link to="/services/content_services">Content Services</Link>
+        <Link to="/services/marketing_services">Marketing Services</Link>
       </div>
       {/* <div className="section section-2 text-28">
 
@@ -52,14 +56,14 @@ const Footer = () => {
             alt="social-icon"
           />
         </Link>
-        <Link to="https://x.com/company/mediajenie/">
+        {/* <Link to="https://x.com/company/mediajenie/">
           <img loading="lazy"
             height={24}
             width={24}
             src="/icons/twitter.svg"
             alt="social-icon"
           />
-        </Link>
+        </Link> */}
         <Link to="https://www.linkedin.com/company/mediajenie/">
         
           <img loading="lazy"
