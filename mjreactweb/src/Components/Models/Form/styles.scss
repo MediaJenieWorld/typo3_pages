@@ -21,6 +21,7 @@
         font-size: 16px;
         transition: .2s ease-in-out;
 
+
         &:hover {
             color: #fff;
             background-color: #000;
@@ -101,9 +102,39 @@
                     border-color: #000;
                 }
             }
+
+            .select {
+                padding-right: 10px;
+            }
         }
 
-        button {
+        .time-model {
+            opacity: 0;
+            height: 0px;
+            width: 0px;
+            position: fixed;
+            z-index: 99;
+            top: var(--header-h);
+            left: 50%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: center;
+
+            .closeTime {
+                position: absolute;
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%, -50%);
+            }
+
+            &.active {
+                opacity: 1;
+                height: max-content;
+                width: 80vw;
+            }
+        }
+
+        button.star {
             background-color: #000;
             color: #fff;
 
@@ -118,5 +149,8 @@
             justify-content: center;
         }
 
+        .timeIcon {
+            padding: 5px 10px;
+        }
     }
 }

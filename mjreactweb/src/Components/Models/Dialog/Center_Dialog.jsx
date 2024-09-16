@@ -8,6 +8,7 @@ const Custom_Centered_DynamicDialog = ({
   setModelState,
   state,
   children,
+  mainStyle,
 }) => {
   modelHeight = modelHeight || "max-content";
   modelWidth = modelWidth || "max-content";
@@ -22,6 +23,7 @@ const Custom_Centered_DynamicDialog = ({
       <div
         className={`${styles.Insight_dialog} ${state ? styles.active : styles.close
           }`}
+        style={mainStyle}
       >
 
         <label

@@ -34,6 +34,7 @@ db.once("open", () => {
 app.get("/", (req, res) => {
   res.send("Hello, This is MediaJenie Typo-3 Server !");
 });
+
 app.post("/addContactDetails", async (req, res) => {
   try {
     const body = req.body;

@@ -124,6 +124,11 @@ body {
     animation: moveRight 1s forwards;
   }
 }
+.pr,
+.pr * {
+  margin: revert-layer;
+  padding: revert-layer;
+}
 
 .button {
   font-size: 14px;

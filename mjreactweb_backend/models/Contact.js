@@ -5,12 +5,12 @@ const contactSchema = new mongoose.Schema(
     subject: {
       type: String,
       // default: "",
-        required: true,
+      required: true,
     },
     firstName: {
       type: String,
       // default: "",
-        required: true,
+      required: true,
     },
     lastName: {
       type: String,
@@ -20,12 +20,12 @@ const contactSchema = new mongoose.Schema(
     email: {
       type: String,
       // default: "",
-        required: true,
+      required: true,
     },
     phoneNumber: {
       type: String,
       // default: "",
-        required: true,
+      required: true,
     },
     organization: {
       type: String,
@@ -36,6 +36,15 @@ const contactSchema = new mongoose.Schema(
       type: String,
       default: "",
       //   required: true,
+    },
+    service: {
+      type: String,
+    },
+    time: {
+      type: String,
+    },
+    date: {
+      type: String,
     },
     categories: {
       type: [String],
