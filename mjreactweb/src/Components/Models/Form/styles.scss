@@ -86,6 +86,15 @@
                 }
             }
 
+            select option {
+                padding: 0px 5px;
+
+            }
+
+            .w-full {
+                width: 100%;
+            }
+
             textarea {
                 font-family: "Poppins", sans-serif;
                 border: 1px solid #7D7D7D;
@@ -151,6 +160,15 @@
 
         .timeIcon {
             padding: 5px 10px;
+            background-color: #ffdd2c;
+            color: #000;
         }
+    }
+}
+
+.p-component {
+    * {
+        margin: revert-layer;
+        padding: revert-layer;
     }
 }
