@@ -1,0 +1,36 @@
+.loading {
+  background-color: var(--theme-color);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transform: translateX(-100%);
+  animation: toRightLoading var(--animation-time) forwards ease-in-out;
+}
+
+@keyframes toRightLoading {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* .Ani {
+  height: 200vh;
+  padding-top: 50vh;
+
+  .line-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    .word-wrapper {
+      display: inline-block;
+      overflow: hidden;
+
+      .char-wrapper {
+        display: inline-block;
+      }
+    }
+  }
+} */

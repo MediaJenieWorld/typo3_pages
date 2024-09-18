@@ -1,0 +1,20 @@
+.WordPress {
+    padding: calc(var(--main-p-x) * 4) calc(var(--main-p-x) * 3);
+    font-size: 14px;
+
+    p {
+        margin: 1rem;
+    }
+
+    p:has(strong) {
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .WordPress {
+        padding: calc(var(--main-p-x) * 2) calc(var(--main-p-x));
+    }
+}

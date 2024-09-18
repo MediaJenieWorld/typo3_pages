@@ -1,0 +1,132 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: dense row;
+    padding: 4rem 1rem;
+    gap: 2rem;
+    --link-color: #E2E2E2;
+    --bg-color: #000;
+    background-color: var(--bg-color);
+    color: var(--link-color);
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        h1 {
+            font-size: var(--text-60);
+        }
+
+        p {
+            font-size: .8em;
+            font-weight: 600;
+        }
+
+        &.section-2 a:nth-of-type(1) {
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 400;
+            transition: text-decoration .3s ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            width: max-content;
+        }
+
+        &.social {
+            flex-direction: row;
+            gap: 1em;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #eee;
+                height: 42px;
+                width: 42px;
+                border-radius: 50%;
+                transition: background-color .2s ease-in-out;
+
+                &:hover {
+                    background-color: #aaaaaa;
+                }
+            }
+        }
+    }
+
+}
+
+
+// @media (max-width: 1024px) {
+//     .footer {
+//         display: flex;
+//         flex-direction: column;
+
+//         .section {
+//             &:nth-of-type(1) {
+//                 align-items: start;
+//             }
+//         }
+//     }
+// }
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 9px;
+        row-gap: 4em;
+        grid-template-columns: repeat(4, 1fr);
+
+        .section {
+            &:nth-of-type(1) {
+                align-items: center;
+            }
+
+            &:not(:nth-of-type(1)) {
+                flex-basis: calc(50% - 2em);
+            }
+        }
+
+        .social {
+            grid-column: 1 / -1;
+            justify-self: center;
+        }
+    }
+
+}
+
+
+
+@media (max-width: 580px) {
+    .footer {
+        // row-gap: 4em;
+        // grid-template-columns: repeat(4, 1fr);
+
+        .section {
+            &:nth-of-type(1) {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
+
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
+            &:nth-of-type(5) {
+                grid-column: span 2;
+            }
+
+            &.social {
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+}

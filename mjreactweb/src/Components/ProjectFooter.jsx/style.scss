@@ -1,0 +1,138 @@
+.ProjectFooter {
+    cursor: pointer;
+
+    .next,
+    .pre {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        text-decoration: none;
+
+        .icon {
+            position: absolute;
+            z-index: 3;
+            top: calc(var(--main-p-x) * 2);
+            left: calc(var(--main-p-x) * 4);
+            transition: transform .5s ease-in-out;
+        }
+
+        .heading {
+            position: absolute;
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            transition: color .5s ease-in-out;
+        }
+
+        .layer {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: #f1f1f1;
+            transition: height .5s ease-in-out;
+        }
+
+        .mainImg {
+            position: relative;
+            z-index: -1;
+            filter: brightness(.6);
+        }
+    }
+
+    .pre:hover {
+        .heading {
+            color: #f1f1f1;
+        }
+
+        .icon {
+            transform: translateX(-20px);
+        }
+
+        .layer {
+            height: 0%;
+        }
+    }
+
+    .next:hover {
+        .heading {
+            color: #f1f1f1;
+        }
+
+        .icon {
+            transform: translateX(20px);
+        }
+
+        .layer {
+            height: 0%;
+        }
+    }
+
+
+    .next {
+        border-top: 1px solid #000;
+
+        .heading {
+            left: 70%;
+
+        }
+
+        .icon {
+            left: unset;
+            top: unset;
+            right: calc(var(--main-p-x) * 4);
+            bottom: calc(var(--main-p-x) * 2);
+        }
+    }
+
+}
+
+@media screen and (max-width:750px) {
+    .ProjectFooter {
+        font-size: 8px;
+
+        .pre {
+            .icon {
+                top: calc(var(--main-p-x) * 1);
+                left: calc(var(--main-p-x) *2);
+            }
+        }
+
+        .next {
+            .icon {
+                bottom: calc(var(--main-p-x) * 1);
+                right: calc(var(--main-p-x) * 2);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px) {
+    .ProjectFooter {
+
+        .next,
+        .pre {
+            .heading {
+                left: 50%;
+            }
+        }
+
+        .pre {
+            .icon {
+                top: calc(var(--main-p-x) / 2);
+                left: var(--main-p-x);
+            }
+        }
+
+        .next {
+            .icon {
+                bottom: calc(var(--main-p-x) / 2);
+                right: var(--main-p-x);
+            }
+        }
+    }
+}
