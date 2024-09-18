@@ -5,12 +5,6 @@ LOCAL_URL="mongodb://localhost:27017/typo3_Contact"
 
 
 2  typo3_pages\mjreactweb\src\Utils/api            // in frontend folder
-
-export const baseUrl = "http://localhost:5055";             // "https://xperiento.mediajenie.com/api/"
-export const contactFormApi = "http://localhost:5055/addContactDetails"; //  "https://xperiento.mediajenie.com/api/addContactDetails"
-
-
-
 export const baseUrl = "https://mjreactweb.mediajenie.com/api";
 export const contactFormApi =
   "https://mjreactweb.mediajenie.com/api/addContactDetails";
