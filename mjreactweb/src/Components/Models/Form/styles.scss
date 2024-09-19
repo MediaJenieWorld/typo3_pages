@@ -3,6 +3,7 @@
     padding: 20px;
     position: relative;
     height: 100%;
+    font-size: var(--model-fontSize, 12px);
 
     .closeBtn {
         cursor: pointer;
@@ -143,19 +144,13 @@
             }
         }
 
-        button.star {
-            background-color: #000;
-            color: #fff;
-
-            &:hover {
-                background-color: #ffdd2c;
-                color: #000;
-            }
-        }
-
         .centered {
             display: flex;
             justify-content: center;
+
+            button {
+                filter: blur(0);
+            }
         }
 
         .timeIcon {

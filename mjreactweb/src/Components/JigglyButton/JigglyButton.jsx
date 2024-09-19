@@ -1,7 +1,7 @@
 import "./JigglyButtonStyle.scss"
-const JigglyButton = ({ label = "Know More", ...btnProps }) => {
+const JigglyButton = ({ label = "Know More", btnClass = "btn-yellow", ...btnProps }) => {
     return (
-        <button  {...btnProps} className='primary-button jigglyButton btn-yellow transition ease-in-out'>
+        <button  {...btnProps} className={`jigglyButton  primary-button ${btnClass}`}>
             <span >{label}</span>
         </button>
     )

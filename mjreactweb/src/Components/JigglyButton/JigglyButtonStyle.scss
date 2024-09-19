@@ -9,17 +9,27 @@
     position: relative;
     background-color: transparent;
     border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 700ms;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-    &.transition {
-        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+
+    &.text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
     }
 
-    &.ease-in-out {
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    }
-
-    &.bg-gradient-primary {
-        background: linear-gradient(135deg, rgba(255, 206, 0, 1) 0%, rgba(255, 128, 0, 1) 100%);
+    &.sm\:text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
     }
 
     &.primary-button {
@@ -58,6 +68,14 @@
             background: #000;
         }
 
+        span {
+            color: #000;
+            mix-blend-mode: darken;
+            display: block;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 6;
+        }
 
         &.btn-yellow span {
             mix-blend-mode: lighten;
@@ -67,9 +85,12 @@
             z-index: 6;
             color: #fff;
         }
+
     }
 
     &:hover {
+        color: #fff;
+
         &::before {
             background: #000;
             -webkit-clip-path: path("M143,77 C117,96 74,100.5 45.5,91.5 C17,82.5 -10.5,57 5.5,31.5 C21.5,6 79,-5.5 130.5,4 C182,13.5 169,58 143,77 Z");
@@ -84,10 +105,17 @@
             background: #ffce00;
         }
 
-        &.btn-yellow span {
+        span {
+            display: block;
+            transition: transform 0.3s ease;
+            mix-blend-mode: difference;
             transform: translate3d(0, -10px, 0);
-            mix-blend-mode: darken;
+            color: #fff;
+        }
+
+        &.btn-yellow span {
             color: #000;
+            mix-blend-mode: unset;
         }
     }
 }

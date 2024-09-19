@@ -9,7 +9,7 @@ const CardsPage = lazy(() => import("./Pages/page"));
 const About = lazy(() => import("./Pages/About/About"));
 const BehindUs = lazy(() => import("./Pages/BehindUs/BehindUs"));
 const Work_Gallery_Page = lazy(() => import("./Pages/Work/Gallery/Gallery"));
-// const CampaignPage = lazy(() => import("./Pages/Campaign/CampaignPage"));
+const CampaignPage = lazy(() => import("./Pages/Campaign/CampaignPage"));
 
 // const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
 
@@ -65,7 +65,7 @@ const App = () => {
         <Header1 />
         <Routes>
           {/* <Route path="/" element={<AllPages />} /> */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<CampaignPage />} />
           <Route path="/pre" element={<CardsPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -113,7 +113,7 @@ const App = () => {
 
           <Route path="/resource" element={<ResourcePage />} />
           <Route path="/resource/blog" element={<ResourceBlogPage />} />
-          {/* <Route path="/Campaign" element={<CampaignPage />} /> */}
+          <Route path="/Campaign" element={<CampaignPage />} />
 
           <Route path="*" element={<Home />} />
         </Routes>

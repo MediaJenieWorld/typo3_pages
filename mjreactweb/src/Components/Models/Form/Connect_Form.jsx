@@ -11,6 +11,7 @@ import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 import { MultiSelect } from 'primereact/multiselect';
 import { Button as PrimeButtton } from 'primereact/button';
+import JigglyButton from "@/Components/JigglyButton/JigglyButton";
 
 const {
     email,
@@ -149,9 +150,7 @@ const Connect_Form = ({ modelState = false, setModelState }) => {
                             </div>
                         </div>
                         <div className="centered">
-                            <button className="text-24 star button">
-                                Submit
-                            </button>
+                            <JigglyButton label="Submit" type="submit" />
                         </div>
                     </form>
                 </div>

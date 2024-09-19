@@ -2,6 +2,8 @@ import TestimonialsSlider from "@/Components/Testomonials/Testimonial_Slider";
 import "./style.scss";
 import CoverPageImage from "@/Components/CoverPage";
 import StaggeredWords, { StaggeredLine } from "@/Components/Gsap/LineIntoWords";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 const fakeDes =
   "Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text.";
@@ -19,10 +21,11 @@ const items = [
   "Support you with managed services."
 ];
 const ServicePage = () => {
+
   return (
     <div className="Service">
       <CoverPageImage src={"/assets/Service/service-hero.webp"} />
-      <div className="section-1">
+      <div id="section-1" className="section-1">
         <StaggeredLine
           defaultStyle={false}
           duration={0.5}
@@ -35,8 +38,8 @@ const ServicePage = () => {
           <div style={{ maxWidth: "800px" }} className="text-28 text-600">
             <StaggeredWords
               transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
+              duration={1}
+              layerCSS_Style={{ opacity: 0 }}>
               We bring your brand & customers closer through great Customer
               Experiences built on insights, strategy, design, digital, content
               & managed services.
@@ -47,7 +50,8 @@ const ServicePage = () => {
             <StaggeredWords
               transitionStyle={{ opacity: 1 }}
               layerCSS_Style={{ opacity: 0 }}
-              duration={1.5}
+              duration={1}
+              delay={1}
             >
               We help you:
             </StaggeredWords>
@@ -57,7 +61,7 @@ const ServicePage = () => {
               <StaggeredLine
                 key={index}
                 duration={1.5}
-                delay={index * .05}
+                delay={2.5 + (.1 * index)}
                 transitionStyle={{ opacity: 1 }}
                 layerCSS_Style={{ opacity: 0 }}
               >
@@ -179,9 +183,8 @@ function ServiceProductCard({ data }) {
           </StaggeredLine>
         </div>
         <StaggeredLine
-          trigger={{ start: "-=100px 80%" }}
-          delay={.2}
-          duration={1}
+          // trigger={{ start: "top 80%", markers: true }}
+          delay={.3}
           layerCSS_Style={{ opacity: 0 }}
           transitionStyle={{ opacity: 1 }}
           initX="100%"
@@ -329,7 +332,7 @@ Marketing`,
     link: "/services/design",
   },
   {
-    heading: "Digital",
+    heading: "Digital Experience",
     description: `
 UX Design
 UI Design
