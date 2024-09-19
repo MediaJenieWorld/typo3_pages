@@ -48,7 +48,7 @@ const menuItems = [
         href: "/services/details",
       },
       {
-        label: "Digital",
+        label: "Digital Experience",
         href: "/services/digital",
       },
       {

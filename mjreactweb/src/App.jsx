@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css"
 
-
 const Header1 = lazy(() => import("./Components/Header1/Header"));
 const Footer = lazy(() => import("./Components/Footer/Footer"));
 const Home = lazy(() => import("./Pages/Home/Home"));
@@ -10,6 +9,7 @@ const CardsPage = lazy(() => import("./Pages/page"));
 const About = lazy(() => import("./Pages/About/About"));
 const BehindUs = lazy(() => import("./Pages/BehindUs/BehindUs"));
 const Work_Gallery_Page = lazy(() => import("./Pages/Work/Gallery/Gallery"));
+// const CampaignPage = lazy(() => import("./Pages/Campaign/CampaignPage"));
 
 // const AllPages = lazy(() => import("./Pages/Combined/AllPages"));
 
@@ -113,6 +113,8 @@ const App = () => {
 
           <Route path="/resource" element={<ResourcePage />} />
           <Route path="/resource/blog" element={<ResourceBlogPage />} />
+          {/* <Route path="/Campaign" element={<CampaignPage />} /> */}
+
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

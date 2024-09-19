@@ -37,7 +37,7 @@ const Connect_Form = ({ modelState = false, setModelState }) => {
             data.firstName = names[0] ? names[0] : ""
             data.lastName = names[1] ? names[1] : ""
             if (datetime12h) {
-                const { time, date } = getFormattedDateTime(datetime12h);
+                const { time, date } = formatDate(datetime12h);
                 data.time = time
                 data.date = date
             }
@@ -128,12 +128,18 @@ const Connect_Form = ({ modelState = false, setModelState }) => {
                             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }} className="field time">
                                 {visible && <div className={`time-model ${visible ? "active" : ""} `}>
                                     <i onClick={() => setVisible(false)} className="pi pi-times closeBtn closeTime" />
-                                    <Calendar className="pr" showIcon id="calendar-12h" value={datetime12h}
+                                    <Calendar className="pr"
+                                        showTime
+                                        showIcon
+                                        id="calendar-12h"
                                         inline
-                                        onChange={(e) => setDateTime12h(e.value)} showTime hourFormat="12" />
+                                        value={datetime12h}
+                                        dateFormat="dd/mm/yy"
+                                        onChange={(e) => setDateTime12h(e.value)}
+                                        hourFormat="24" />
                                 </div>}
                                 <div className="p-inputgroup flex-1" style={{ display: "flex" }} >
-                                    <input type="text" value={datetime12h === null ? "" : datetime12h} readOnly />
+                                    <input type="text" value={datetime12h === null ? "" : formatDate(datetime12h).input} readOnly />
                                     <PrimeButtton className="timeIcon" onClick={() => setVisible(pre => !pre)} icon="pi pi-clock" severity={visible ? "warning" : "primary"} />
                                 </div>
 
@@ -156,25 +162,16 @@ const Connect_Form = ({ modelState = false, setModelState }) => {
 
 export default Connect_Form
 
-function getFormattedDateTime(dateString) {
-    // Create a new Date object from the provided date string
-    const date = new Date(dateString);
-
-    // Check if the date is valid
-    if (isNaN(date)) {
-        return 'Invalid date';
-    }
-
-    // Extract the components
-    const optionsDate = { day: '2-digit', month: 'short', year: 'numeric' };
-    const optionsTime = { hour: '2-digit', minute: '2-digit', hour12: false };
-
-    // Format the date and time
-    const formattedDate = date.toLocaleDateString('en-GB', optionsDate); // "24 Sep 2024"
-    const formattedTime = date.toLocaleTimeString('en-GB', optionsTime); // "18:27"
-
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM'
     return {
-        date: formattedDate,
-        time: formattedTime
+        input: `${day}/${month}/${year} ${hours}:${minutes} ${ampm}`,
+        date: `${day}/${month}/${year}`,
+        time: `${hours}:${minutes} ${ampm}`
     };
 }

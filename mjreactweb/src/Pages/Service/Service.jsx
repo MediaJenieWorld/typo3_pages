@@ -7,98 +7,17 @@ const fakeDes =
   "Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text. Description text paragraph can go here in 200 words. This can be multi-line text.";
 const fakeImgSrc = "/assets/sofa-4.jpg";
 
-const fakeData = [
-  {
-    heading: "Consulting",
-    description: fakeDes,
-    imgSrc: "/assets/Service/image-10.webp",
-    link: "/services/consulting",
-    description: `
-    Research & Intelligence
-    User Research
-    Analytics
-    Audience Insights
-    Strategy
-    Customer Experience
-    Digital Media
-    Branding & Communication
-    Creative`,
-  },
-  {
-    heading: "Design",
-    description: `
-Branding
-Communication
-Marketing`,
-    imgSrc: "/assets/Service/image-9.webp",
-    link: "/services/design",
-  },
-  {
-    heading: "Digital",
-    description: `
-UX Design
-UI Design
-Web > Websites | E-commerce | Web Apps
-Mobile > Mobile Apps
-Digital Media Services> Social Media Management | Digital Marketing | SEO
-Marketing & Brand Campaigns
-Tech-solutions
-Cyber security
-CRM
-Content Management
-Automation
-Martech`,
-    imgSrc: "/assets/Service/image-11.webp",
-    link: "/services/digital",
-  },
-  {
-    heading: "CX Services",
-    description: fakeDes,
-    imgSrc: "/assets/Service/image-10.webp",
-    link: "/services/customer_insight",
-    description: `
-CX Audit
-RKYC
-NPS/CSAT/CES
-Content Experience
-Framework
-Tech Solutions
-Conversational AI`,
-  },
-  {
-    heading: "Production",
-    description: `
-Content & Copy Writing
-Illustrations
-Photography
-Videos & Films
-Audio
-Print`,
-    imgSrc: "/assets/Service/image-9.webp",
-    link: "/services/content_services",
-  },
-  {
-    heading: `Marketing & Managed Services`,
-    description: `
-Campaigns
-Digital Marketing
-SEO
-CX Services for NPS/ CSAT/ CES/ Others
-Customer Feedback Management
-eXperience Process Enhancement
-eXperience Review Framework
-& More…`,
-    imgSrc: "/assets/Service/image-11.webp",
-    link: "/services/marketing_services",
-  },
-];
-
 const story = `Our Capabilities.
 Our Services`;
 
-const storyDes = `Description text paragraph can go here in 200 words. This can be multi-line text. Description text
-paragraph can go here in 200 words. This can be multi-line text. `;
-
+const items = [
+  "Go C2B (Customer to Business)",
+  "“(RKYC) Really Know Your Customer” and listen to them.",
+  "With data & insights driven strategies",
+  "Business-process improvement.",
+  "Design & implement CX solutions.",
+  "Support you with managed services."
+];
 const ServicePage = () => {
   return (
     <div className="Service">
@@ -134,61 +53,19 @@ const ServicePage = () => {
             </StaggeredWords>
           </span>
           <ul>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                Go C2B (Customer to Business)
-              </li>
-            </StaggeredLine>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                “(RKYC) Really Know Your Customer” <p>  and listen to them.</p>
-              </li>
-
-            </StaggeredLine>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                With data & insights driven strategies
-              </li>
-            </StaggeredLine>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                Business-process improvement.
-              </li>
-            </StaggeredLine>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                Design & implement CX solutions.
-              </li>
-            </StaggeredLine>
-            <StaggeredLine
-              duration={1.5}
-              transitionStyle={{ opacity: 1 }}
-              layerCSS_Style={{ opacity: 0 }}
-            >
-              <li className="text-28 text-600">
-                Support you with managed services.
-              </li>
-            </StaggeredLine>
+            {items.map((item, index) => (
+              <StaggeredLine
+                key={index}
+                duration={1.5}
+                delay={index * .05}
+                transitionStyle={{ opacity: 1 }}
+                layerCSS_Style={{ opacity: 0 }}
+              >
+                <li className="text-28 text-600">
+                  {item}
+                </li>
+              </StaggeredLine>
+            ))}
           </ul>
         </StaggeredLine>
       </div>
@@ -227,7 +104,7 @@ const ServicePage = () => {
         </div>
       </div>
       <div className="section-4">
-        {fakeData.map((val, i) => {
+        {allServicesList().map((val, i) => {
           return (
             <div className="card" key={i}>
               <ServiceProductCard data={val} />
@@ -356,23 +233,6 @@ brand's customer experience.`,
   };
 }
 
-function containerTwoContent() {
-  return {
-    heading: `Transforming your brand & sales through CX solutions.`,
-    descriptionHeading: `We bring your brand & customers closer through great
-Customer Experiences built on insights, strategy, design,
-digital, content & managed services.`,
-    description: `We help you:
-- Go C2B (Customer to Business)
-- “Really Know Your Customer” 
- (RKYC), and listen to them.  
-- With data & insights driven strategies
-- Business-process improvement.
-- Design & implement CX solutions.
-- Support you with managed services.`,
-  };
-}
-
 function KnowMoreBtn({ btnClass = "", link, lable = "KNOW MORE" }) {
   return (
     <button className={btnClass + " button"}>
@@ -441,4 +301,91 @@ function testimonialData() {
     },
   ];
 }
+
+const allServicesList = () => [
+  {
+    heading: "Consulting",
+    description: fakeDes,
+    imgSrc: "/assets/Service/image-10.webp",
+    link: "/services/consulting",
+    description: `
+    Research & Intelligence
+    User Research
+    Analytics
+    Audience Insights
+    Strategy
+    Customer Experience
+    Digital Media
+    Branding & Communication
+    Creative`,
+  },
+  {
+    heading: "Design",
+    description: `
+Branding
+Communication
+Marketing`,
+    imgSrc: "/assets/Service/image-9.webp",
+    link: "/services/design",
+  },
+  {
+    heading: "Digital",
+    description: `
+UX Design
+UI Design
+Web > Websites | E-commerce | Web Apps
+Mobile > Mobile Apps
+Digital Media Services> Social Media Management | Digital Marketing | SEO
+Marketing & Brand Campaigns
+Tech-solutions
+Cyber security
+CRM
+Content Management
+Automation
+Martech`,
+    imgSrc: "/assets/Service/image-11.webp",
+    link: "/services/digital",
+  },
+  {
+    heading: "CX Services",
+    description: fakeDes,
+    imgSrc: "/assets/Service/image-10.webp",
+    link: "/services/customer_insight",
+    description: `
+CX Audit
+RKYC
+NPS/CSAT/CES
+Content Experience
+Framework
+Tech Solutions
+Conversational AI`,
+  },
+  {
+    heading: "Production",
+    description: `
+Content & Copy Writing
+Illustrations
+Photography
+Videos & Films
+Audio
+Print`,
+    imgSrc: "/assets/Service/image-9.webp",
+    link: "/services/content_services",
+  },
+  {
+    heading: `Marketing & Managed Services`,
+    description: `
+Campaigns
+Digital Marketing
+SEO
+CX Services for NPS/ CSAT/ CES/ Others
+Customer Feedback Management
+eXperience Process Enhancement
+eXperience Review Framework
+& More…`,
+    imgSrc: "/assets/Service/image-11.webp",
+    link: "/services/marketing_services",
+  },
+];
 export default ServicePage;
+

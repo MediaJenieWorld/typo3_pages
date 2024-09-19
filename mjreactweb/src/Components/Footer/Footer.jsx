@@ -20,8 +20,9 @@ const Footer = () => {
         <Link to="/services">Services</Link>
         <Link to="/services/details">Details</Link>
         <Link to="/services/design">Design</Link>
-        <Link to="/services/digital">Digital</Link>
         <Link to="/services/consulting">Consulting</Link>
+        <Link to="/services/digital">Digital Experience</Link>
+        
       
         <Link to="/services/customer_insight">Customer Insight</Link>
         <Link to="/services/content_services">Content Services</Link>
