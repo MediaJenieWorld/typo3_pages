@@ -10,13 +10,13 @@ const CampaignPage = () => {
     const [modelState, setModelState] = useState(false)
 
     useEffect(() => {
+        AOS.init()
         if (document) {
             const link = document.createElement("link")
             link.href = "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
             link.rel = "stylesheet"
             document.head.appendChild(link)
         }
-        AOS.init()
     }, [])
     function stateToggler() {
         setModelState(true)
@@ -28,7 +28,7 @@ const CampaignPage = () => {
             <section className="banner pt-8 md:pt-10 lg:pt-12 relative z-10 overflow-hidden">
                 <div className="container mx-auto px-4 sm:px-10 lg:px-16 xl:px-30 2xl:px-40">
                     <div className="bnr-row flex flex-wrap">
-                        <div className="bnr-lft-col w-full md:w-1/2 aos-init aos-animate" data-aos="fade-right">
+                        <div className="bnr-lft-col w-full md:w-1/2 " data-aos-delay="800" data-aos="fade-right">
                             <div className="unsetBtn ">
                                 CX Services</div>
                             <h1 className="text-3xl md:text-5xl md:leading-[1.2] font-semibold my-7">
@@ -40,7 +40,7 @@ const CampaignPage = () => {
                             <p className="text-base md:text-lg font-medium leading-7 mb-6">We help you solve these critical problems, through customer experience (CX) transformation.</p>
                             < JigglyButton onClick={stateToggler} />
                         </div>
-                        <div className="bnr-right-col w-full md:w-1/2 aos-init aos-animate" data-aos="fade-left">
+                        <div className="bnr-right-col w-full md:w-1/2 " data-aos-delay="800" data-aos="fade-left">
                             <div className="bnr-img">
                                 <img data-sizes="auto"
                                     className="w-100 lazyautosizes ls-is-cached lazyloaded" alt="man making rating icons" sizes="576px"
@@ -190,7 +190,7 @@ const CampaignPage = () => {
                 <div className="container mx-auto px-4 sm:px-10 lg:px-16 xl:px-30 2xl:px-40">
                     <h2 className="fs-4 text-center leading-tight md:leading-11 font-semibold mb-10 md:w-2/3 mx-auto text-black aos-init" data-aos="fade-up">What Makes MediaJenie Your Ideal CX Partner?</h2>
                     <div className="lg:flex gap-x-7 text-center">
-                        <div className="w-full md:w-1/4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="500">
+                        <div className="w-full lg:w-1/4 md:mt-4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="500">
                             <img data-sizes="auto" data-src="/assets/Campaign/goal.webp"
                                 src="/assets/Campaign/goal.webp"
                                 data-srcset="/assets/Campaign/goal.webp 300w,
@@ -199,7 +199,7 @@ const CampaignPage = () => {
                             <p className="text-xl font-medium leading-8 text-black">Customer Focused</p>
                             <p className="text-base leading-6 font-medium mt-4">Our analysis and solutions are focused on your customer-experience.</p>
                         </div>
-                        <div className="w-full md:w-1/4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="1000">
+                        <div className="w-full lg:w-1/4 md:mt-4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="1000">
                             <img data-sizes="auto" data-src="/assets/Campaign/monitor.webp"
                                 src="/assets/Campaign/monitor.webp"
                                 data-srcset="/assets/Campaign/monitor.webp 300w,
@@ -208,14 +208,14 @@ const CampaignPage = () => {
                             <p className="text-xl font-medium leading-8 text-black">Data Driven</p>
                             <p className="text-base leading-6 font-medium mt-4">We take data analytics seriously. Your data, our data, other data...Lets analyse.</p>
                         </div>
-                        <div className="w-full md:w-1/4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="1500">
+                        <div className="w-full lg:w-1/4 md:mt-4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="1500">
                             <img data-sizes="auto" data-src="/assets/Campaign/insight.webp" src="/assets/Campaign/insight.webp" data-srcset="/assets/Campaign/insight.webp 300w,
                 /assets/Campaign/insight.webp 600w,
                 /assets/Campaign/insight.webp 900w" className="lazyload mx-auto mb-7 w-14 h-14" alt="men data icon" />
                             <p className="text-xl font-medium leading-8 text-black">Psychological Insights</p>
                             <p className="text-base leading-6 font-medium mt-4">Most decisions by human beings are emotional. So psychological insights are critical.</p>
                         </div>
-                        <div className="w-full md:w-1/4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="2000">
+                        <div className="w-full lg:w-1/4 md:mt-4 bg-white rounded-md pt-9 pb-7 px-6 shadow-xsmall  mt-7 md:mt-0 aos-init" data-aos="fade-up" data-aos-duration="2000">
                             <img data-sizes="auto" data-src="/assets/Campaign/rating.webp" src="/assets/Campaign/rating.webp" data-srcset="/assets/Campaign/rating.webp 300w,
                 /assets/Campaign/rating.webp 600w,
                 /assets/Campaign/rating.webp 900w" className="lazyload mx-auto mb-7 w-14 h-14" alt="men rating icon" />
@@ -233,11 +233,11 @@ const CampaignPage = () => {
             </section>
             <footer className="footer-wrap py-10 md:py-16 lg:py-20 relative z-10 overflow-hidden bg-black">
                 <div className="container mx-auto px-4 sm:px-10 lg:px-16 xl:px-30 2xl:px-40">
-                    <div className="footer-top max-w-screen-lg mx-auto border-b border-white border-solid pb-8 md:pb-16">
+                    <div className="footer-top max-w-screen-lg mx-auto  pb-8 md:pb-16">
                         <h4 className="text-lg md:text-4xl font-semibold md:font-medium text-white text-center mb-6">Feedback management services to track, monitor and measure customer experience.</h4>
                         <p className="text-base md:text-lg text-white text-center">Management of NPS, CES, CSAT and Other Surveys.</p>
                     </div>
-                    <div className="footer-bottom max-w-screen-lg mx-auto pt-8 md:pt-16">
+                    {/* <div className="footer-bottom max-w-screen-lg mx-auto pt-8 md:pt-16">
                         <div className="footer-logo text-center mb-6">
                             <a href="https://www.mediajenie.com/" className="inline-block w-28 mx-auto h-12 md:h-max">
                                 <img data-sizes="auto" data-src="/assets/Campaign/mj-logo-white.webp" src="/assets/Campaign/mj-logo-white.webp" data-srcset="/assets/Campaign/mj-logo-white.webp 300w,
@@ -246,7 +246,7 @@ const CampaignPage = () => {
                             </a>
                         </div>
                         <p className="text-sm :text-base text-slate-400 text-center">All copyrights to MediaJenie, Bangalore, India</p>
-                    </div>
+                    </div> */}
                 </div>
             </footer>
 

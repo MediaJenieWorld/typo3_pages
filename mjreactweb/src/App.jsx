@@ -65,9 +65,10 @@ const App = () => {
         <Header1 />
         <Routes>
           {/* <Route path="/" element={<AllPages />} /> */}
-          <Route path="/" element={<CampaignPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/campaignPage" element={<CampaignPage />} />
           <Route path="/pre" element={<CardsPage />} />
-          <Route path="/home" element={<Home />} />
+          
           <Route path="/about" element={<About />} />
           {/* Work And Projects */}
           <Route path="/work" element={<WorkPage />} />
