@@ -136,7 +136,18 @@ const Connect_Form = ({ modelState = false, setModelState }) => {
                                         inline
                                         value={datetime12h}
                                         dateFormat="dd/mm/yy"
-                                        onChange={(e) => setDateTime12h(e.value)}
+                                        onChange={(e) => {
+                                            setDateTime12h(pre => {
+                                                const preDate = new Date(pre).getDate()
+                                                const newDate = new Date(e.value).getDate()
+                                                if (preDate !== newDate) {
+                                                    setTimeout(() => {
+                                                        setVisible(false)
+                                                    }, 300);
+                                                }
+                                                return e.value
+                                            })
+                                        }}
                                         hourFormat="24" />
                                 </div>}
                                 <div className="p-inputgroup flex-1" style={{ display: "flex" }} >

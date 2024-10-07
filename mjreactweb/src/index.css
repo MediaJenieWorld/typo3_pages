@@ -110,7 +110,9 @@ body {
   > div > div {
     padding: 0 var(--main-p-x);
   }
-  > div > div:not(.header1)::before {
+  &:has(&:not(.p-multiselect-panel.p-component.p-ripple-disabled.p-connected-overlay-enter-done))
+    > div
+    > div:not(.header1)::before {
     content: "";
     background-color: var(--theme-color);
     height: 100%;

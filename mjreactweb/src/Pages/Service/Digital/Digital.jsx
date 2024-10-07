@@ -77,7 +77,7 @@ const Digital_Page = () => {
             <CoverPageImage src={"/assets/Service/service-hero.webp"} />
             <div className="section-1">
                 <ServiceHead
-                    heading="Digital"
+                    heading="Digital Experience"
                     subHeading="Make your digital experience, memorable, efficient & result-oriented."
                     para="We bring user experience design, behaviour insights, design,
                     technology and coding to create the right digital solution for your
